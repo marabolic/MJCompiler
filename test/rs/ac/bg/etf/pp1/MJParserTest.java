@@ -1,5 +1,5 @@
 package rs.ac.bg.etf.pp1;
-
+/*
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -69,3 +69,4 @@ public class MJParserTest {
 		}
 	}
 }
+*/
