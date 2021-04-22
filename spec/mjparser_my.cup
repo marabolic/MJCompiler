@@ -53,7 +53,7 @@ scan with {:
 :}
 
 
-terminal PROG, ENUM, CONST, PRINT, READ, RETURN, VOID;
+terminal PROG, ENUM, CONST, PRINT, READ, RETURN, VOID, NEW;
 terminal DO, WHILE;
 terminal LBRACE, RBRACE, SEMI, LPAREN, RPAREN, LBRACKET, RBRACKET, QMARK, COLON;
 
@@ -68,26 +68,49 @@ terminal Character CHAR;
 terminal String IDENT;
 terminal IF, ELSE;
 
-nonterminal MethodDeclList, VarDecl, DeclList;
+nonterminal MethodDeclList;
 nonterminal FormalParamList, FormalParamDecl, FormPars, ActualPars, ActualParamList, RetType; 
-nonterminal StatementList, Statement, Addop, Mulop, Assignop, Relop;
+nonterminal StatementList, Statement, Addop, Mulop, Assignop, Relop, ;
 nonterminal Unmatched, Matched;
-nonterminal DesignatorStatement, Operation;
+nonterminal DesignatorStatement;
+nonterminal DeclList, VarDeclList, VarDecl, ConstDeclList, ConstDecl;
 
 nonterminal Program, ProgName, Designator, MethodDecl; 
 nonterminal Type, Term, Expr, Factor; 
+nonterminal Condition, CondTerm, CondFact;
 
+nonterminal BasicTypes;
 
 Program ::= (Program) PROG IDENT DeclList LBRACE MethodDeclList RBRACE ;
 
-DeclList ::= (DeclList) DeclList VarDecl
-			|
-			(NoDecl) /* epsilon */
-			;
-			
 
-	
-VarDecl ::= (VarDecl) Type:varType IDENT:varName SEMI ;
+DeclList ::= (VarDeclList) DeclList VarDeclList SEMI
+	| 
+	 (ConstDecl) DeclList ConstDeclList SEMI
+	|
+	 (NoSpecDecl) /* epsilon */
+	;
+
+VarDeclList ::= (MoreVarDecls) Type VarDeclList COMMA VarDecl
+	|
+	(SingleVarDecl) Type VarDecl
+	;
+		
+VarDecl ::= (VarDecl) IDENT
+	|
+	(ArrayDecl) IDENT LBRACKET RBRACKET
+	;
+
+
+
+ConstDeclList ::= (MoreConstDecls) CONST Type ConstDeclList COMMA ConstDecl 
+		| 
+		  (SingleConstDecl) CONST Type ConstDecl
+		;
+
+ConstDecl ::= (ConstDecl) IDENT EQUAL BasicTypes;
+
+
 
 
 MethodDeclList ::= (MethodDeclList) MethodDeclList MethodDecl
@@ -95,10 +118,15 @@ MethodDeclList ::= (MethodDeclList) MethodDeclList MethodDecl
 					(NoMethodDecl)	/* epsilon */
 				;
 			
-MethodDecl ::= (MethodDecl)	Type:retType IDENT:methName LPAREN FormPars RPAREN DeclList 
-									LBRACE StatementList RBRACE ;
+MethodDecl ::= (MethodDecl)	RetType:retType IDENT:methName LPAREN FormPars RPAREN DeclList LBRACE StatementList RBRACE ;
 
 
+RetType ::= (ActualType) Type 
+			|
+			(NoType) VOID
+			;
+			
+			
 FormPars ::= (FormParams) FormalParamList
 		|
 			(NoFormParams)	/* epsilon */
@@ -110,53 +138,46 @@ FormalParamList ::= (FormalParamDecls) FormalParamList COMMA FormalParamDecl
 					(SingleFormalParamDecl) FormalParamDecl
 				;
 
-FormalParamDecl ::= (FormalParamDecl) Type IDENT ;
+FormalParamDecl ::= (FormalParamDecl) Type IDENT
+				|
+					(ArrParamDecl) Type IDENT LBRACKET RBRACKET
+				;
 
 
-Type ::= (Type) IDENT:typeName ;
+Type ::= (Type) IDENT:typeName;
+
+
 
 StatementList ::= (StmtList) StatementList Statement
 				|
-				(NoStmt) /* epsilon */
+				(NoStmt) /* epsilon *2/
 				;
 
 Statement ::= (DesignatorStmt) DesignatorStatement SEMI
-			| 
-			  (PrintStmt) PRINT LPAREN Expr RPAREN SEMI
-			|
-			  (SurroundStmt) LBRACE StatementList RBRACE
 			|
 			  (ReturnExpr) RETURN Expr SEMI
 			|
 			  (ReturnNoExpr) RETURN SEMI
+			|
+			  (ReadStmt) READ LPAREN Designator RPAREN SEMI
+			| 
+			  (PrintStmt) PRINT LPAREN Expr RPAREN SEMI
+			|
+			  (PrintStmtNum) PRINT LPAREN Expr COMMA NUMBER RPAREN SEMI
+			|
+			  (SurroundStmt) LBRACE StatementList RBRACE
 			;
 			
-DesignatorStatement ::= (DesignatorStmt) Designator:dest EQUAL Expr:e SEMI ;
+DesignatorStatement ::= (DesignatorStmt) Designator:dest Assignop Expr:e
+					|
+						(FuncCall) Designator:fun LPAREN ActualPars RPAREN
+					|
+						(Increment) Designator INC
+					|
+						(Decrement) Designator DEC
+					;
 
 
-Expr ::= (OpExpr) Expr Addop Term
-		|
-		 (TermExpr) Term
-		;
-
-
-Term ::=  (MulFactors) Term Mulop Factor
-		|
-		  (SingleFactor) Factor
-		;
-		
-		
-Factor ::= (NumConst) NUMBER 
-		| 
-			(CharConst) CHAR 
-		|
-			(BoolConst) BOOL 
-		|
-			(Var) Designator:d 
-		|
-			(FuncCall) Designator:func LPAREN ActualPars RPAREN
-		;
-		
 ActualPars ::= (Actuals) ActualParamList
 			|
 			(NoActuals) /* epsilon */
@@ -166,22 +187,69 @@ ActualParamList ::= (ActualParamList) ActualParamList COMMA Expr
 				|
 					(ActualParam) Expr
 				;
- 
-Designator ::= (Designator) IDENT:name ;
+				
+				
+Condition ::= (MulCondTerms) Condition OR CondTerm
+			| 
+			(SingleCondTerm) CondTerm
+			;
+	
+CondTerm ::= (MulCondFacts) CondTerm AND CondFact
+			|
+			(SingleCondFact) CondFact
+			;
+		
+CondFact ::= (CondFactRel) Expr Relop Expr 
+			|
+			 (CondFact) Expr 
+			;
+				
 
-Addop ::= (PlusOp) PLUS
+Expr ::= (OpExpr) Expr Addop Term
 		|
-		  (MinusOp) MINUS
+		 (NegOpExpr) MINUS Expr Addop Term
+		|
+		 (TermExpr) Term
+		|
+		 (NegTermExpr) MINUS Term
+		;
+
+
+Term ::=  (MulFactors) Term Mulop Factor
+		|
+		  (SingleFactor) Factor
 		;
 		
-Mulop ::= (Mulop) MUL
+		
+Factor ::= (Var) Designator:d 
 		|
-		  (Divop) DIV
+			(FuncCallPars) Designator:func LPAREN ActualPars RPAREN
 		|
-		  (Modop) MOD
+			(FuncCallNoPars) Designator:func LPAREN RPAREN
+		|
+		 	(NumConst) NUMBER 
+		| 
+			(CharConst) CHAR 
+		|
+			(BoolConst) BOOL 
+		|
+			(NewType) NEW Type
+		|
+			(NewArray) NEW Type LBRACE RBRACE
+		|
+			(ExprInParens) LPAREN Expr RPAREN
 		;
+		
+
+ 
+Designator ::= (Designator) IDENT:name 
+			|	
+				(DesignatorArray)  IDENT:arr LBRACE Expr RBRACE
+			;
+
 
 Assignop ::= (Assignop) EQUAL ;
+
 
 Relop ::= (CompEqual) EQ
 		|
@@ -196,5 +264,25 @@ Relop ::= (CompEqual) EQ
 		  (LsEqual) LTEQ
 		;
 
+Addop ::= (PlusOp) PLUS
+		|
+		  (MinusOp) MINUS
+		;
 
+		
+Mulop ::= (Mulop) MUL
+		|
+		  (Divop) DIV
+		|
+		  (Modop) MOD
+		;
+
+
+
+BasicTypes ::= (Number) NUMBER
+			|
+			(Boolean) BOOL
+			| 
+			(Character) CHAR
+			;
 
