@@ -25,25 +25,13 @@
 		</java>
 	</target>
 
+	
 	<target name="parserGen" depends="delete">
 		<java jar="lib/cup_v10k.jar" fork="true">
 			<arg value="-destdir"/>
 			<arg value="src/rs/ac/bg/etf/pp1"/>
 			<arg value="-ast"/>
-			<arg value="rs.ac.bg.etf.pp1.ast"/>
-			<arg value="-parser"/>
-			<arg value="MJParser"/>
-			<arg value="-buildtree"/>
-			<arg value="spec/mjparser.cup"/>
-		</java>
-	</target>
-	
-	<target name="parserGenMy" depends="delete">
-		<java jar="lib/cup_v10k.jar" fork="true">
-			<arg value="-destdir"/>
-			<arg value="src/rs/ac/bg/etf/pp1"/>
-			<arg value="-ast"/>
-			<arg value="rs.ac.bg.etf.pp1.ast"/>
+			<arg value="src.rs.ac.bg.etf.pp1.ast"/>
 			<arg value="-parser"/>
 			<arg value="MJParser"/>
 			<arg value="-buildtree"/>
