@@ -94,7 +94,8 @@ nonterminal ConstDecl ConstDecl;
 nonterminal MethodDecl MethodDecl; 
 nonterminal Term Term;
 nonterminal Expr Expr;
-nonterminal Factor Factor; 
+nonterminal Factor Factor;
+nonterminal TermSum TermSum; 
 nonterminal Condition Condition;
 nonterminal CondTerm CondTerm;
 nonterminal CondFact CondFact;
@@ -185,6 +186,10 @@ StatementList ::= (StmtList) StatementList:S1 Statement:S2 {: RESULT=new StmtLis
 
 Statement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new DesignatorStmt(D1); RESULT.setLine(D1left); :}
 				|
+				  (IfStatement) IF LPAREN Condition:C1 RPAREN Statement:S2 {: RESULT=new IfStatement(C1, S2); RESULT.setLine(C1left); :}
+				|
+				  (IfElseStatement) IF LPAREN Condition:C1 RPAREN Statement:S2 ELSE Statement:S3 {: RESULT=new IfElseStatement(C1, S2, S3); RESULT.setLine(C1left); :}
+				|
 				  (ReturnExpr) RETURN Expr:E1 SEMI {: RESULT=new ReturnExpr(E1); RESULT.setLine(E1left); :}
 				|
 				  (ReturnNoExpr) RETURN SEMI {: RESULT=new ReturnNoExpr(); :}
@@ -199,7 +204,7 @@ Statement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new Designa
 				;
 				
 			
-DesignatorStatement ::= (DesignatorStmt) Designator:dest Assignop:A1 Expr:e {: RESULT=new DesignatorStmt(dest, A1, e); RESULT.setLine(destleft); :}
+DesignatorStatement ::= (AssignStmt) Designator:dest Assignop:A1 Expr:e {: RESULT=new AssignStmt(dest, A1, e); RESULT.setLine(destleft); :}
 				|
 					(FuncCall) Designator:fun LPAREN ActualPars:A1 RPAREN {: RESULT=new FuncCall(fun, A1); RESULT.setLine(funleft); :}
 				|
@@ -236,13 +241,15 @@ CondFact ::= (CondFactRel) Expr:E1 Relop:R2 Expr:E3 {: RESULT=new CondFactRel(E1
 			;
 				
 
-Expr ::= (OpExpr) Expr:E1 Addop:A2 Term:T3 {: RESULT=new OpExpr(E1, A2, T3); RESULT.setLine(E1left); :}
+Expr ::= (OpExpr) TermSum:T1 {: RESULT=new OpExpr(T1); RESULT.setLine(T1left); :}
 		|
-		 (NegOpExpr) MINUS Expr:E1 Addop:A2 Term:T3 {: RESULT=new NegOpExpr(E1, A2, T3); RESULT.setLine(E1left); :}
+		 (NegOpExpr) MINUS TermSum:T1 {: RESULT=new NegOpExpr(T1); RESULT.setLine(T1left); :} 
+		;
+		
+
+TermSum ::= (SumTerm) TermSum:T1 Addop:A2 Term:T3 {: RESULT=new SumTerm(T1, A2, T3); RESULT.setLine(T1left); :}
 		|
-		 (TermExpr) Term:T1 {: RESULT=new TermExpr(T1); RESULT.setLine(T1left); :}
-		|
-		 (NegTermExpr) MINUS Term:T1 {: RESULT=new NegTermExpr(T1); RESULT.setLine(T1left); :}
+			(SingleTerm) Term:T1 {: RESULT=new SingleTerm(T1); RESULT.setLine(T1left); :}
 		;
 
 

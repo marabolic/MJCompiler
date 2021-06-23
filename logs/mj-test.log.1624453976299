@@ -1,0 +1,185 @@
+INFO  15:11:46,352 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  15:11:46,400 - #2 program
+INFO  15:11:46,400 - #42 MJProgram
+INFO  15:11:46,400 - #42 int
+INFO  15:11:46,401 - #42 x
+INFO  15:11:46,402 - #17 [
+INFO  15:11:46,402 - #18 ]
+INFO  15:11:46,402 - #37 ,
+INFO  15:11:46,402 - #42 ab
+INFO  15:11:46,403 - #14 ;
+INFO  15:11:46,403 - #42 int
+INFO  15:11:46,403 - #42 y
+INFO  15:11:46,404 - #14 ;
+INFO  15:11:46,404 - #4 const
+INFO  15:11:46,404 - #42 int
+INFO  15:11:46,404 - #42 a
+INFO  15:11:46,404 - #34 =
+INFO  15:11:46,404 - #39 2
+INFO  15:11:46,404 - #37 ,
+INFO  15:11:46,405 - #42 b
+INFO  15:11:46,405 - #34 =
+INFO  15:11:46,405 - #39 3
+INFO  15:11:46,406 - #14 ;
+INFO  15:11:46,406 - #12 {
+INFO  15:11:46,407 - #42 int
+INFO  15:11:46,408 - #42 main
+INFO  15:11:46,408 - #15 (
+INFO  15:11:46,408 - #16 )
+INFO  15:11:46,409 - #12 {
+INFO  15:11:46,409 - #42 y
+INFO  15:11:46,410 - #34 =
+INFO  15:11:46,410 - #39 2
+INFO  15:11:46,411 - #14 ;
+INFO  15:11:46,411 - #42 x
+INFO  15:11:46,411 - #34 =
+INFO  15:11:46,412 - #42 y
+INFO  15:11:46,412 - #24 /
+INFO  15:11:46,412 - #39 2
+INFO  15:11:46,413 - #14 ;
+INFO  15:11:46,413 - #42 y
+INFO  15:11:46,413 - #34 =
+INFO  15:11:46,413 - #42 k
+INFO  15:11:46,413 - #15 (
+INFO  15:11:46,413 - #16 )
+INFO  15:11:46,414 - #21 +
+INFO  15:11:46,414 - #39 3
+INFO  15:11:46,416 - #14 ;
+INFO  15:11:46,417 - #5 print
+INFO  15:11:46,417 - #15 (
+INFO  15:11:46,417 - #42 y
+INFO  15:11:46,417 - #16 )
+INFO  15:11:46,417 - #14 ;
+INFO  15:11:46,417 - #7 return
+INFO  15:11:46,417 - #39 0
+INFO  15:11:46,418 - #14 ;
+INFO  15:11:46,418 - #13 }
+INFO  15:11:46,418 - #13 }
+INFO  15:11:46,421 - rs.ac.bg.etf.pp1.ast.Program@7530d0a
+INFO  15:11:46,431 - Usao u ArrayDecl ArrayDecl(
+ x
+) [ArrayDecl] na liniji 2
+INFO  15:11:46,431 - Usao u SingleVarDecl SingleVarDecl(
+  ArrayDecl(
+   x
+  ) [ArrayDecl]
+) [SingleVarDecl] na liniji 2
+INFO  15:11:46,431 - Usao u ASTVarDecl ASTVarDecl(
+ ab
+) [ASTVarDecl] na liniji 2
+INFO  15:11:46,431 - Usao u MoreVarDecls MoreVarDecls(
+  SingleVarDecl(
+    ArrayDecl(
+     x
+    ) [ArrayDecl]
+  ) [SingleVarDecl]
+  ASTVarDecl(
+   ab
+  ) [ASTVarDecl]
+) [MoreVarDecls] na liniji 2
+INFO  15:11:46,431 - Usao u ASTVarDeclList ASTVarDeclList(
+  NoSpecDecl(
+  ) [NoSpecDecl]
+  Type(
+   int
+  ) [Type]
+  MoreVarDecls(
+    SingleVarDecl(
+      ArrayDecl(
+       x
+      ) [ArrayDecl]
+    ) [SingleVarDecl]
+    ASTVarDecl(
+     ab
+    ) [ASTVarDecl]
+  ) [MoreVarDecls]
+) [ASTVarDeclList] na liniji 8
+INFO  15:11:46,432 - Usao u ASTVarDecl ASTVarDecl(
+ y
+) [ASTVarDecl] na liniji 3
+INFO  15:11:46,432 - Usao u SingleVarDecl SingleVarDecl(
+  ASTVarDecl(
+   y
+  ) [ASTVarDecl]
+) [SingleVarDecl] na liniji 3
+INFO  15:11:46,432 - Usao u ASTVarDeclList ASTVarDeclList(
+  ASTVarDeclList(
+    NoSpecDecl(
+    ) [NoSpecDecl]
+    Type(
+     int
+    ) [Type]
+    MoreVarDecls(
+      SingleVarDecl(
+        ArrayDecl(
+         x
+        ) [ArrayDecl]
+      ) [SingleVarDecl]
+      ASTVarDecl(
+       ab
+      ) [ASTVarDecl]
+    ) [MoreVarDecls]
+  ) [ASTVarDeclList]
+  Type(
+   int
+  ) [Type]
+  SingleVarDecl(
+    ASTVarDecl(
+     y
+    ) [ASTVarDecl]
+  ) [SingleVarDecl]
+) [ASTVarDeclList] na liniji 8
+INFO  15:11:46,432 - Usao u ASTConstDeclList ASTConstDeclList(
+  ASTVarDeclList(
+    ASTVarDeclList(
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      Type(
+       int
+      ) [Type]
+      MoreVarDecls(
+        SingleVarDecl(
+          ArrayDecl(
+           x
+          ) [ArrayDecl]
+        ) [SingleVarDecl]
+        ASTVarDecl(
+         ab
+        ) [ASTVarDecl]
+      ) [MoreVarDecls]
+    ) [ASTVarDeclList]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       y
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  Type(
+   int
+  ) [Type]
+  MoreConstDecls(
+    SingleConstDecl(
+      ConstDecl(
+       a
+        ASTNumber(
+         2
+        ) [ASTNumber]
+      ) [ConstDecl]
+    ) [SingleConstDecl]
+    ConstDecl(
+     b
+      ASTNumber(
+       3
+      ) [ASTNumber]
+    ) [ConstDecl]
+  ) [MoreConstDecls]
+) [ASTConstDeclList] na liniji 8
+ERROR 15:11:46,432 - Greska na liniji 8 : ime y nije deklarisano! 
+ERROR 15:11:46,433 - Greska na liniji 9 : ime x nije deklarisano! 
+ERROR 15:11:46,433 - Greska na liniji 9 : ime y nije deklarisano! 
+ERROR 15:11:46,433 - Greska na liniji 10 : ime y nije deklarisano! 
+ERROR 15:11:46,433 - Greska na liniji 10 : ime k nije deklarisano! 
+ERROR 15:11:46,433 - Greska na liniji 11 : ime y nije deklarisano! 

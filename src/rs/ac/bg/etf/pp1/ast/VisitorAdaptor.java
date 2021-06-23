@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2021 14:49:1
+// 23/5/2021 15:41:37
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -14,6 +14,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ActualParamList ActualParamList) { }
     public void visit(CondFact CondFact) { }
     public void visit(Expr Expr) { }
+    public void visit(TermSum TermSum) { }
     public void visit(FormalParamList FormalParamList) { }
     public void visit(FormPars FormPars) { }
     public void visit(Muloper Muloper) { }
@@ -58,8 +59,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Var Var) { visit(); }
     public void visit(SingleFactor SingleFactor) { visit(); }
     public void visit(MulFactors MulFactors) { visit(); }
-    public void visit(NegTermExpr NegTermExpr) { visit(); }
-    public void visit(TermExpr TermExpr) { visit(); }
+    public void visit(SingleTerm SingleTerm) { visit(); }
+    public void visit(SumTerm SumTerm) { visit(); }
     public void visit(NegOpExpr NegOpExpr) { visit(); }
     public void visit(OpExpr OpExpr) { visit(); }
     public void visit(ASTCondFact ASTCondFact) { visit(); }
@@ -75,13 +76,15 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Decrement Decrement) { visit(); }
     public void visit(Increment Increment) { visit(); }
     public void visit(FuncCall FuncCall) { visit(); }
-    public void visit(DesignatorStmt DesignatorStmt) { visit(); }
+    public void visit(AssignStmt AssignStmt) { visit(); }
     public void visit(SurroundStmt SurroundStmt) { visit(); }
     public void visit(PrintStmtNum PrintStmtNum) { visit(); }
     public void visit(PrintStmt PrintStmt) { visit(); }
     public void visit(ReadStmt ReadStmt) { visit(); }
     public void visit(ReturnNoExpr ReturnNoExpr) { visit(); }
     public void visit(ReturnExpr ReturnExpr) { visit(); }
+    public void visit(IfElseStatement IfElseStatement) { visit(); }
+    public void visit(IfStatement IfStatement) { visit(); }
     public void visit(DesignatorStmt DesignatorStmt) { visit(); }
     public void visit(NoStmt NoStmt) { visit(); }
     public void visit(StmtList StmtList) { visit(); }

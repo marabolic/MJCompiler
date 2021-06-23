@@ -1,0 +1,64 @@
+INFO  15:12:56,309 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  15:12:56,366 - #2 program
+INFO  15:12:56,367 - #42 MJProgram
+INFO  15:12:56,367 - #42 int
+INFO  15:12:56,368 - #42 x
+INFO  15:12:56,369 - #17 [
+INFO  15:12:56,369 - #18 ]
+INFO  15:12:56,370 - #37 ,
+INFO  15:12:56,370 - #42 ab
+INFO  15:12:56,370 - #14 ;
+INFO  15:12:56,371 - #42 int
+INFO  15:12:56,371 - #42 y
+INFO  15:12:56,372 - #14 ;
+INFO  15:12:56,372 - #4 const
+INFO  15:12:56,372 - #42 int
+INFO  15:12:56,372 - #42 a
+INFO  15:12:56,372 - #34 =
+INFO  15:12:56,373 - #39 2
+INFO  15:12:56,373 - #37 ,
+INFO  15:12:56,375 - #42 b
+INFO  15:12:56,375 - #34 =
+INFO  15:12:56,375 - #39 3
+INFO  15:12:56,375 - #14 ;
+INFO  15:12:56,376 - #12 {
+INFO  15:12:56,377 - #42 int
+INFO  15:12:56,379 - #42 main
+INFO  15:12:56,379 - #15 (
+INFO  15:12:56,379 - #16 )
+INFO  15:12:56,380 - #12 {
+INFO  15:12:56,381 - #42 y
+INFO  15:12:56,382 - #34 =
+INFO  15:12:56,382 - #39 2
+INFO  15:12:56,383 - #14 ;
+INFO  15:12:56,384 - #42 x
+INFO  15:12:56,385 - #34 =
+INFO  15:12:56,385 - #42 y
+INFO  15:12:56,385 - #24 /
+INFO  15:12:56,385 - #39 2
+INFO  15:12:56,387 - #14 ;
+INFO  15:12:56,387 - #42 y
+INFO  15:12:56,388 - #34 =
+INFO  15:12:56,388 - #42 k
+INFO  15:12:56,388 - #15 (
+INFO  15:12:56,388 - #16 )
+INFO  15:12:56,389 - #21 +
+INFO  15:12:56,390 - #39 3
+INFO  15:12:56,392 - #14 ;
+INFO  15:12:56,392 - #5 print
+INFO  15:12:56,393 - #15 (
+INFO  15:12:56,393 - #42 y
+INFO  15:12:56,393 - #16 )
+INFO  15:12:56,393 - #14 ;
+INFO  15:12:56,393 - #7 return
+INFO  15:12:56,393 - #39 0
+INFO  15:12:56,394 - #14 ;
+INFO  15:12:56,394 - #13 }
+INFO  15:12:56,394 - #13 }
+INFO  15:12:56,398 - rs.ac.bg.etf.pp1.ast.Program@7530d0a
+ERROR 15:12:56,408 - Greska na liniji 8 : ime y nije deklarisano! 
+ERROR 15:12:56,408 - Greska na liniji 9 : ime x nije deklarisano! 
+ERROR 15:12:56,408 - Greska na liniji 9 : ime y nije deklarisano! 
+ERROR 15:12:56,409 - Greska na liniji 10 : ime y nije deklarisano! 
+ERROR 15:12:56,409 - Greska na liniji 10 : ime k nije deklarisano! 
+ERROR 15:12:56,409 - Greska na liniji 11 : ime y nije deklarisano! 

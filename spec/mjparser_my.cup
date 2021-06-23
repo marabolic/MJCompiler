@@ -78,7 +78,7 @@ nonterminal DesignatorStatement;
 nonterminal DeclList, VarDeclList, VarDecl, ConstDeclList, ConstDecl;
 
 nonterminal MethodDecl; 
-nonterminal Term, Expr, Factor; 
+nonterminal Term, Expr, Factor, TermSum; 
 nonterminal Condition, CondTerm, CondFact;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
@@ -167,7 +167,7 @@ StatementList ::= (StmtList) StatementList Statement
 
 Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 				|
-				  (IfStatement) IF LPAREN Condition RPAREN
+				  (IfStatement) IF LPAREN Condition RPAREN Statement
 				|
 				  (IfElseStatement) IF LPAREN Condition RPAREN Statement ELSE Statement
 				|
@@ -185,7 +185,7 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 				;
 				
 			
-DesignatorStatement ::= (DesignatorStmt) Designator:dest Assignop Expr:e
+DesignatorStatement ::= (AssignStmt) Designator:dest Assignop Expr:e
 				|
 					(FuncCall) Designator:fun LPAREN ActualPars RPAREN
 				|
@@ -222,13 +222,15 @@ CondFact ::= (CondFactRel) Expr Relop Expr
 			;
 				
 
-Expr ::= (OpExpr) Expr Addop Term
+Expr ::= (OpExpr) TermSum
 		|
-		 (NegOpExpr) MINUS Expr Addop Term
+		 (NegOpExpr) MINUS TermSum 
+		;
+		
+
+TermSum ::= (SumTerm) TermSum Addop Term
 		|
-		 (TermExpr) Term
-		|
-		 (NegTermExpr) MINUS Term
+			(SingleTerm) Term
 		;
 
 

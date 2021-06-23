@@ -1,47 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2021 14:49:1
+// 23/5/2021 15:41:37
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class OpExpr extends Expr {
 
-    private Expr Expr;
-    private Addop Addop;
-    private Term Term;
+    private TermSum TermSum;
 
-    public OpExpr (Expr Expr, Addop Addop, Term Term) {
-        this.Expr=Expr;
-        if(Expr!=null) Expr.setParent(this);
-        this.Addop=Addop;
-        if(Addop!=null) Addop.setParent(this);
-        this.Term=Term;
-        if(Term!=null) Term.setParent(this);
+    public OpExpr (TermSum TermSum) {
+        this.TermSum=TermSum;
+        if(TermSum!=null) TermSum.setParent(this);
     }
 
-    public Expr getExpr() {
-        return Expr;
+    public TermSum getTermSum() {
+        return TermSum;
     }
 
-    public void setExpr(Expr Expr) {
-        this.Expr=Expr;
-    }
-
-    public Addop getAddop() {
-        return Addop;
-    }
-
-    public void setAddop(Addop Addop) {
-        this.Addop=Addop;
-    }
-
-    public Term getTerm() {
-        return Term;
-    }
-
-    public void setTerm(Term Term) {
-        this.Term=Term;
+    public void setTermSum(TermSum TermSum) {
+        this.TermSum=TermSum;
     }
 
     public void accept(Visitor visitor) {
@@ -49,22 +27,16 @@ public class OpExpr extends Expr {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Expr!=null) Expr.accept(visitor);
-        if(Addop!=null) Addop.accept(visitor);
-        if(Term!=null) Term.accept(visitor);
+        if(TermSum!=null) TermSum.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Expr!=null) Expr.traverseTopDown(visitor);
-        if(Addop!=null) Addop.traverseTopDown(visitor);
-        if(Term!=null) Term.traverseTopDown(visitor);
+        if(TermSum!=null) TermSum.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Expr!=null) Expr.traverseBottomUp(visitor);
-        if(Addop!=null) Addop.traverseBottomUp(visitor);
-        if(Term!=null) Term.traverseBottomUp(visitor);
+        if(TermSum!=null) TermSum.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -73,20 +45,8 @@ public class OpExpr extends Expr {
         buffer.append(tab);
         buffer.append("OpExpr(\n");
 
-        if(Expr!=null)
-            buffer.append(Expr.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(Addop!=null)
-            buffer.append(Addop.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(Term!=null)
-            buffer.append(Term.toString("  "+tab));
+        if(TermSum!=null)
+            buffer.append(TermSum.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

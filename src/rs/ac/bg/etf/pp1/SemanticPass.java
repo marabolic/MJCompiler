@@ -1,3 +1,4 @@
+
 package rs.ac.bg.etf.pp1;
 
 
@@ -12,7 +13,7 @@ public class SemanticPass extends VisitorAdaptor {
 
 	int varDeclCount = 0;
 	int printCallCount = 0;
-	int nVars;
+	int nVars = 0;
 	boolean errorDetected;
 	
 	
@@ -47,43 +48,39 @@ public class SemanticPass extends VisitorAdaptor {
 		//printCallCount++;
 	//}
 	
-	/*public void visit(SingleVarDecl singleVarDecl){
+	public void visit(SingleVarDecl singleVarDecl){
 		varDeclCount++;
 		report_info("Deklarisana promenljiva "+ singleVarDecl.getVarDecl(), singleVarDecl.getVarDecl());
 		//Obj varNode = Tab.insert(Obj.Var, singleVarDecl.getVarDecl(), singleVarDecl.struct);
-	}*/
+	}
 	
 	public void visit(DeclList declList) {
-		report_info("Usao u DeclList "+ declList, declList);
+		//report_info("Usao u DeclList "+ declList, declList);
 	}
 	
 	
 	public void visit(ASTVarDeclList declList) {
-		report_info("Usao u ASTVarDeclList "+ declList, declList);
+		//report_info("Usao u ASTVarDeclList "+ declList, declList);
 	}
 	
 	
 	public void visit(ASTConstDeclList declList) {
-		report_info("Usao u ASTConstDeclList "+ declList, declList);
+		//report_info("Usao u ASTConstDeclList "+ declList, declList);
 	}
 	
 	
 	public void visit(MoreVarDecls declList) {
-		report_info("Usao u MoreVarDecls "+ declList, declList);
+		//report_info("Usao u MoreVarDecls "+ declList, declList);
 	}
 	
-	
-	public void visit(SingleVarDecl declList) {
-		report_info("Usao u SingleVarDecl "+ declList, declList);
-	}
 	
 	public void visit(ASTVarDecl declList) {
-		report_info("Usao u ASTVarDecl "+ declList, declList);
+		//report_info("Usao u ASTVarDecl "+ declList, declList);
 	}
 	
 	
 	public void visit(ArrayDecl declList) {
-		report_info("Usao u ArrayDecl "+ declList, declList);
+		//report_info("Usao u ArrayDecl "+ declList, declList);
 	}
 	
 	public void visit(Type type){
@@ -111,3 +108,5 @@ public class SemanticPass extends VisitorAdaptor {
 	 
 	
 }
+
+

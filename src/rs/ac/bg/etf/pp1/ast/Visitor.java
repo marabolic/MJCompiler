@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2021 14:49:1
+// 23/5/2021 15:41:37
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -14,6 +14,7 @@ public interface Visitor {
     public void visit(ActualParamList ActualParamList);
     public void visit(CondFact CondFact);
     public void visit(Expr Expr);
+    public void visit(TermSum TermSum);
     public void visit(FormalParamList FormalParamList);
     public void visit(FormPars FormPars);
     public void visit(Muloper Muloper);
@@ -58,8 +59,8 @@ public interface Visitor {
     public void visit(Var Var);
     public void visit(SingleFactor SingleFactor);
     public void visit(MulFactors MulFactors);
-    public void visit(NegTermExpr NegTermExpr);
-    public void visit(TermExpr TermExpr);
+    public void visit(SingleTerm SingleTerm);
+    public void visit(SumTerm SumTerm);
     public void visit(NegOpExpr NegOpExpr);
     public void visit(OpExpr OpExpr);
     public void visit(ASTCondFact ASTCondFact);
@@ -75,13 +76,15 @@ public interface Visitor {
     public void visit(Decrement Decrement);
     public void visit(Increment Increment);
     public void visit(FuncCall FuncCall);
-    public void visit(DesignatorStmt DesignatorStmt);
+    public void visit(AssignStmt AssignStmt);
     public void visit(SurroundStmt SurroundStmt);
     public void visit(PrintStmtNum PrintStmtNum);
     public void visit(PrintStmt PrintStmt);
     public void visit(ReadStmt ReadStmt);
     public void visit(ReturnNoExpr ReturnNoExpr);
     public void visit(ReturnExpr ReturnExpr);
+    public void visit(IfElseStatement IfElseStatement);
+    public void visit(IfStatement IfStatement);
     public void visit(DesignatorStmt DesignatorStmt);
     public void visit(NoStmt NoStmt);
     public void visit(StmtList StmtList);

@@ -41,8 +41,9 @@ public class MJParserTest {
 			MJParser p = new MJParser(lexer);
 	        Symbol s = p.parse();  //pocetak parsiranja
 	        SyntaxNode prog = (SyntaxNode)(s.value);
-	        log.info(prog.toString());
+	        
 			Tab.init(); // Universe scope
+			log.info(prog.toString());
 			SemanticPass semanticCheck = new SemanticPass();
 			prog.traverseBottomUp(semanticCheck);
 			
