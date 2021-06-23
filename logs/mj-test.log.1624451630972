@@ -1,0 +1,26 @@
+INFO  14:32:48,718 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  14:32:48,760 - #2 program
+INFO  14:32:48,760 - #42 MJProgram
+INFO  14:32:48,760 - #42 int
+INFO  14:32:48,761 - #42 x
+INFO  14:32:48,761 - #17 [
+INFO  14:32:48,762 - #18 ]
+INFO  14:32:48,762 - #37 ,
+INFO  14:32:48,762 - #42 ab
+INFO  14:32:48,762 - #14 ;
+INFO  14:32:48,762 - #42 int
+INFO  14:32:48,762 - #42 y
+INFO  14:32:48,762 - #14 ;
+INFO  14:32:48,763 - #4 const
+ERROR 14:32:48,763 - 
+Sintaksna greska na liniji 4
+ERROR 14:32:48,763 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 4
+INFO  14:32:48,774 - Usao u ASTVarDecl ASTVarDecl(
+ y
+) [ASTVarDecl] na liniji 3
+INFO  14:32:48,774 - Usao u SingleVarDecl SingleVarDecl(
+  ASTVarDecl(
+   y
+  ) [ASTVarDecl]
+) [SingleVarDecl] na liniji 3
+INFO  14:32:48,783 - Print calls = 0

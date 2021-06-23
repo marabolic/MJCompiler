@@ -1,0 +1,36 @@
+INFO  14:40:00,244 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  14:40:00,331 - #2 program
+INFO  14:40:00,331 - #42 MJProgram
+INFO  14:40:00,332 - #42 int
+INFO  14:40:00,333 - #42 x
+INFO  14:40:00,335 - #17 [
+INFO  14:40:00,335 - #18 ]
+INFO  14:40:00,335 - #37 ,
+INFO  14:40:00,336 - #42 ab
+INFO  14:40:00,336 - #14 ;
+INFO  14:40:00,336 - #42 int
+INFO  14:40:00,336 - #42 y
+INFO  14:40:00,337 - #14 ;
+INFO  14:40:00,337 - #4 const
+INFO  14:40:00,337 - #42 int
+INFO  14:40:00,337 - #42 a
+INFO  14:40:00,337 - #34 =
+INFO  14:40:00,338 - #39 2
+INFO  14:40:00,338 - #37 ,
+INFO  14:40:00,340 - #42 b
+INFO  14:40:00,341 - #34 =
+INFO  14:40:00,342 - #39 3
+INFO  14:40:00,342 - #14 ;
+INFO  14:40:00,343 - #12 {
+INFO  14:40:00,343 - #42 int
+INFO  14:40:00,345 - #42 main
+INFO  14:40:00,345 - #15 (
+INFO  14:40:00,345 - #16 )
+INFO  14:40:00,346 - #12 {
+INFO  14:40:00,347 - #42 y
+ERROR 14:40:00,347 - 
+Sintaksna greska na liniji 10
+ERROR 14:40:00,347 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 10
+INFO  14:40:00,362 - Print calls = 0
+INFO  14:40:00,364 - NoSpecDecl(
+) [NoSpecDecl]

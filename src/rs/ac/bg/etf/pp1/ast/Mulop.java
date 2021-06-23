@@ -1,31 +1,13 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/5/2021 18:49:41
+// 23/5/2021 14:49:1
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Mulop implements SyntaxNode {
+public class Mulop extends Muloper {
 
-    private SyntaxNode parent;
-    private int line;
     public Mulop () {
-    }
-
-    public SyntaxNode getParent() {
-        return parent;
-    }
-
-    public void setParent(SyntaxNode parent) {
-        this.parent=parent;
-    }
-
-    public int getLine() {
-        return line;
-    }
-
-    public void setLine(int line) {
-        this.line=line;
     }
 
     public void accept(Visitor visitor) {

@@ -1,0 +1,34 @@
+INFO  14:34:53,287 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  14:34:53,322 - #2 program
+INFO  14:34:53,322 - #42 MJProgram
+INFO  14:34:53,323 - #42 int
+INFO  14:34:53,323 - #42 x
+INFO  14:34:53,324 - #17 [
+INFO  14:34:53,324 - #18 ]
+INFO  14:34:53,324 - #37 ,
+INFO  14:34:53,324 - #42 ab
+INFO  14:34:53,325 - #14 ;
+INFO  14:34:53,325 - #42 int
+INFO  14:34:53,325 - #42 y
+INFO  14:34:53,325 - #14 ;
+INFO  14:34:53,325 - #4 const
+INFO  14:34:53,325 - #42 int
+INFO  14:34:53,325 - #42 a
+INFO  14:34:53,325 - #34 =
+INFO  14:34:53,325 - #39 2
+INFO  14:34:53,325 - #37 ,
+INFO  14:34:53,326 - #42 b
+INFO  14:34:53,326 - #34 =
+INFO  14:34:53,327 - #39 3
+INFO  14:34:53,327 - #14 ;
+INFO  14:34:53,327 - #12 {
+INFO  14:34:53,327 - #42 int
+INFO  14:34:53,328 - #42 main
+INFO  14:34:53,329 - #15 (
+INFO  14:34:53,329 - #16 )
+INFO  14:34:53,330 - #12 {
+INFO  14:34:53,330 - #42 y
+ERROR 14:34:53,330 - 
+Sintaksna greska na liniji 10
+ERROR 14:34:53,330 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 10
+INFO  14:34:53,338 - Print calls = 0

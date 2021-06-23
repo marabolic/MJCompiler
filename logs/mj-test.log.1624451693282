@@ -1,0 +1,57 @@
+INFO  14:33:50,977 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  14:33:51,015 - #2 program
+INFO  14:33:51,016 - #42 MJProgram
+INFO  14:33:51,016 - #42 int
+INFO  14:33:51,017 - #42 x
+INFO  14:33:51,018 - #17 [
+INFO  14:33:51,018 - #18 ]
+INFO  14:33:51,018 - #37 ,
+INFO  14:33:51,019 - #42 ab
+INFO  14:33:51,019 - #14 ;
+INFO  14:33:51,019 - #42 int
+INFO  14:33:51,019 - #42 y
+INFO  14:33:51,020 - #14 ;
+INFO  14:33:51,020 - #4 const
+INFO  14:33:51,020 - #42 int
+INFO  14:33:51,020 - #42 a
+INFO  14:33:51,020 - #34 =
+INFO  14:33:51,020 - #39 2
+INFO  14:33:51,020 - #37 ,
+INFO  14:33:51,021 - #42 b
+INFO  14:33:51,022 - #34 =
+INFO  14:33:51,022 - #39 3
+INFO  14:33:51,022 - #14 ;
+INFO  14:33:51,024 - #12 {
+INFO  14:33:51,024 - #42 int
+INFO  14:33:51,026 - #42 k
+INFO  14:33:51,027 - #15 (
+INFO  14:33:51,027 - #16 )
+INFO  14:33:51,028 - #42 int
+INFO  14:33:51,028 - #42 c
+INFO  14:33:51,028 - #14 ;
+INFO  14:33:51,028 - #12 {
+INFO  14:33:51,028 - #42 c
+ERROR 14:33:51,029 - 
+Sintaksna greska na liniji 8
+ERROR 14:33:51,030 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 8
+INFO  14:33:51,042 - Usao u ASTVarDecl ASTVarDecl(
+ c
+) [ASTVarDecl] na liniji 7
+INFO  14:33:51,042 - Usao u SingleVarDecl SingleVarDecl(
+  ASTVarDecl(
+   c
+  ) [ASTVarDecl]
+) [SingleVarDecl] na liniji 7
+INFO  14:33:51,043 - Usao u ASTVarDeclList ASTVarDeclList(
+  NoSpecDecl(
+  ) [NoSpecDecl]
+  Type(
+   int
+  ) [Type]
+  SingleVarDecl(
+    ASTVarDecl(
+     c
+    ) [ASTVarDecl]
+  ) [SingleVarDecl]
+) [ASTVarDeclList] na liniji 8
+INFO  14:33:51,043 - Print calls = 0

@@ -6,6 +6,7 @@
 			<fileset dir="src/rs/ac/bg/etf/pp1">
 				<exclude name="util/Log4JUtils.java"/>
 				<exclude name="Yylex.java"/>
+				<exclude name="SemanticPass.java"/>
 			</fileset>
 		</delete>
 		<delete>

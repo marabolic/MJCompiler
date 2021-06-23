@@ -1,0 +1,15 @@
+INFO  08:30:02,873 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  08:30:02,914 - #2 program
+INFO  08:30:02,914 - #42 MJProgram
+INFO  08:30:02,914 - #42 int
+INFO  08:30:02,916 - #42 x
+INFO  08:30:02,917 - #17 [
+INFO  08:30:02,917 - #18 ]
+INFO  08:30:02,917 - #37 ,
+ERROR 08:30:02,917 - 
+Sintaksna greska na liniji 2
+ERROR 08:30:02,917 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 2
+INFO  08:30:02,929 - Deklarisana promenljiva ArrayDecl(
+ x
+) [ArrayDecl] na liniji 2
+INFO  08:30:02,929 - Print calls = 0

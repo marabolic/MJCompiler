@@ -1,15 +1,12 @@
 program MJProgram
-	int x; int y;
+	int x[], ab;
+	int y;
+	const int a = 2, b = 3;
 { 
-	
-	int k () int c; {
-		c = 1;
-		return c+2;
-	}
 	
 	int main() {
 		y = 2;
-		x = y + 2;
+		x = y / 2;
 		y = k() + 3;
 		print(y);
 		return 0;

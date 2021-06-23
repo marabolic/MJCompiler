@@ -1,0 +1,23 @@
+INFO  14:22:20,933 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  14:22:20,981 - #2 program
+INFO  14:22:20,981 - #42 MJProgram
+INFO  14:22:20,981 - #42 int
+INFO  14:22:20,983 - #42 x
+INFO  14:22:20,984 - #17 [
+INFO  14:22:20,984 - #18 ]
+INFO  14:22:20,984 - #37 ,
+ERROR 14:22:20,984 - 
+Sintaksna greska na liniji 2
+ERROR 14:22:20,984 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 2
+INFO  14:22:20,992 - Usao u ArrayDecl ArrayDecl(
+ x
+) [ArrayDecl] na liniji 2
+INFO  14:22:20,992 - Usao u SingleVarDecl SingleVarDecl(
+  Type(
+   int
+  ) [Type]
+  ArrayDecl(
+   x
+  ) [ArrayDecl]
+) [SingleVarDecl] na liniji 2
+INFO  14:22:20,992 - Print calls = 0

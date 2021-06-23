@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/5/2021 18:49:41
+// 23/5/2021 14:49:1
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Number extends BasicTypes {
+public class ASTDesignator extends Designator {
 
-    private Integer N1;
+    private String name;
 
-    public Number (Integer N1) {
-        this.N1=N1;
+    public ASTDesignator (String name) {
+        this.name=name;
     }
 
-    public Integer getN1() {
-        return N1;
+    public String getName() {
+        return name;
     }
 
-    public void setN1(Integer N1) {
-        this.N1=N1;
+    public void setName(String name) {
+        this.name=name;
     }
 
     public void accept(Visitor visitor) {
@@ -39,13 +39,13 @@ public class Number extends BasicTypes {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("Number(\n");
+        buffer.append("ASTDesignator(\n");
 
-        buffer.append(" "+tab+N1);
+        buffer.append(" "+tab+name);
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [Number]");
+        buffer.append(") [ASTDesignator]");
         return buffer.toString();
     }
 }

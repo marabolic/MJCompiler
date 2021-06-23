@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/5/2021 18:49:41
+// 23/5/2021 14:49:1
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Character extends BasicTypes {
+public class ASTVarDecl extends VarDecl {
 
-    private Character C1;
+    private String var;
 
-    public Character (Character C1) {
-        this.C1=C1;
+    public ASTVarDecl (String var) {
+        this.var=var;
     }
 
-    public Character getC1() {
-        return C1;
+    public String getVar() {
+        return var;
     }
 
-    public void setC1(Character C1) {
-        this.C1=C1;
+    public void setVar(String var) {
+        this.var=var;
     }
 
     public void accept(Visitor visitor) {
@@ -39,13 +39,13 @@ public class Character extends BasicTypes {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("Character(\n");
+        buffer.append("ASTVarDecl(\n");
 
-        buffer.append(" "+tab+C1);
+        buffer.append(" "+tab+var);
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [Character]");
+        buffer.append(") [ASTVarDecl]");
         return buffer.toString();
     }
 }
