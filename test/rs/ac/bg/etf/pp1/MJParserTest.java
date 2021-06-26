@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
 import java_cup.runtime.Symbol;
+import rs.ac.bg.etf.pp1.ast.Program;
 import rs.ac.bg.etf.pp1.ast.SyntaxNode;
 import rs.ac.bg.etf.pp1.util.Log4JUtils;
 import rs.etf.pp1.mj.runtime.Code;
@@ -40,10 +41,10 @@ public class MJParserTest {
 			Yylex lexer = new Yylex(br);
 			MJParser p = new MJParser(lexer);
 	        Symbol s = p.parse();  //pocetak parsiranja
-	        SyntaxNode prog = (SyntaxNode)(s.value);
+	        Program prog = (Program)(s.value);
 	        
 			Tab.init(); // Universe scope
-			log.info(prog.toString());
+			log.info(prog.toString(""));
 			SemanticPass semanticCheck = new SemanticPass();
 			prog.traverseBottomUp(semanticCheck);
 			

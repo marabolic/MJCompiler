@@ -75,13 +75,13 @@ nonterminal FormalParamList, FormalParamDecl, FormPars, ActualPars, ActualParamL
 nonterminal StatementList, Statement, Addop, Muloper, Assignop, Relop;
 
 nonterminal DesignatorStatement;
-nonterminal DeclList, VarDeclList, VarDecl, ConstDeclList, ConstDecl;
+nonterminal DeclList, VarDecl, ConstDeclList, ConstDecl;
 
 nonterminal MethodDecl; 
-nonterminal Term, Expr, Factor, TermSum; 
+nonterminal Term, TermSum; 
 nonterminal Condition, CondTerm, CondFact;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
 
 nonterminal BasicTypes;
@@ -93,22 +93,22 @@ Program ::= (Program) PROG ProgName:p DeclList LBRACE MethodDeclList RBRACE ;
 ProgName ::= (ProgName) IDENT:progName;
 
 
-DeclList ::= (ASTVarDeclList) DeclList Type VarDeclList SEMI
+DeclList ::= (ASTVarDeclList) DeclList Type VarDeclList:varDeclList SEMI
 	| 
 	 (ASTConstDeclList) DeclList CONST Type ConstDeclList SEMI
 	|
 	 (NoSpecDecl) /* epsilon */
 	;
 
-VarDeclList ::= (MoreVarDecls) VarDeclList COMMA VarDecl
+VarDeclList ::= (MoreVarDecls) VarDeclList COMMA VarDecl:varDecl
 	|
-	(SingleVarDecl) VarDecl
+	(SingleVarDecl) VarDecl:varDecl
 	;
 		
 		
 VarDecl ::= (ASTVarDecl) IDENT:var
 	|
-	(ArrayDecl) IDENT LBRACKET RBRACKET
+	(ArrayDecl) IDENT:var LBRACKET RBRACKET
 	;
 
 
@@ -120,7 +120,7 @@ ConstDeclList ::= (MoreConstDecls) ConstDeclList COMMA ConstDecl
 		
 
 
-ConstDecl ::= (ConstDecl) IDENT EQUAL BasicTypes;
+ConstDecl ::= (ConstDecl) IDENT:var EQUAL BasicTypes;
 
 
 

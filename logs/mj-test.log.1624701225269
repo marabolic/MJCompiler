@@ -1,0 +1,46 @@
+INFO  11:53:10,039 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  11:53:10,077 - #2 program
+INFO  11:53:10,077 - #42 MJProgram
+INFO  11:53:10,077 - #42 int
+INFO  11:53:10,078 - #42 x
+INFO  11:53:10,078 - #17 [
+INFO  11:53:10,078 - #18 ]
+INFO  11:53:10,079 - #37 ,
+INFO  11:53:10,079 - #42 ab
+INFO  11:53:10,079 - #14 ;
+INFO  11:53:10,079 - #42 int
+INFO  11:53:10,079 - #42 y
+INFO  11:53:10,079 - #14 ;
+INFO  11:53:10,079 - #4 const
+INFO  11:53:10,079 - #42 int
+INFO  11:53:10,080 - #42 a
+INFO  11:53:10,080 - #34 =
+INFO  11:53:10,080 - #39 2
+INFO  11:53:10,080 - #37 ,
+INFO  11:53:10,081 - #42 b
+INFO  11:53:10,081 - #34 =
+INFO  11:53:10,081 - #39 3
+INFO  11:53:10,081 - #14 ;
+INFO  11:53:10,089 - #12 {
+INFO  11:53:10,089 - #42 int
+INFO  11:53:10,090 - #42 main
+INFO  11:53:10,090 - #15 (
+INFO  11:53:10,090 - #16 )
+INFO  11:53:10,091 - #12 {
+INFO  11:53:10,091 - #42 y
+INFO  11:53:10,091 - #34 =
+INFO  11:53:10,091 - #39 2
+INFO  11:53:10,092 - #14 ;
+INFO  11:53:10,093 - #42 x
+INFO  11:53:10,093 - #34 =
+INFO  11:53:10,093 - #42 y
+INFO  11:53:10,093 - #24 /
+INFO  11:53:10,093 - #39 2
+INFO  11:53:10,094 - #14 ;
+INFO  11:53:10,094 - #42 ab
+INFO  11:53:10,094 - #34 =
+INFO  11:53:10,094 - #39 1
+INFO  11:53:10,094 - #42 y
+ERROR 11:53:10,094 - 
+Sintaksna greska na liniji 11
+ERROR 11:53:10,094 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 11

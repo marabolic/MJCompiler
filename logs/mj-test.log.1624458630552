@@ -1,0 +1,70 @@
+INFO  15:44:41,498 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  15:44:41,545 - #2 program
+INFO  15:44:41,545 - #42 MJProgram
+INFO  15:44:41,545 - #42 int
+INFO  15:44:41,547 - #42 x
+INFO  15:44:41,547 - #17 [
+INFO  15:44:41,548 - #18 ]
+INFO  15:44:41,548 - #37 ,
+INFO  15:44:41,548 - #42 ab
+INFO  15:44:41,548 - #14 ;
+INFO  15:44:41,548 - #42 int
+INFO  15:44:41,549 - #42 y
+INFO  15:44:41,549 - #14 ;
+INFO  15:44:41,549 - #4 const
+INFO  15:44:41,549 - #42 int
+INFO  15:44:41,550 - #42 a
+INFO  15:44:41,550 - #34 =
+INFO  15:44:41,550 - #39 2
+INFO  15:44:41,550 - #37 ,
+INFO  15:44:41,551 - #42 b
+INFO  15:44:41,551 - #34 =
+INFO  15:44:41,551 - #39 3
+INFO  15:44:41,551 - #14 ;
+INFO  15:44:41,552 - #12 {
+INFO  15:44:41,553 - #42 int
+INFO  15:44:41,553 - #42 main
+INFO  15:44:41,553 - #15 (
+INFO  15:44:41,553 - #16 )
+INFO  15:44:41,554 - #12 {
+INFO  15:44:41,554 - #42 y
+INFO  15:44:41,555 - #34 =
+INFO  15:44:41,555 - #39 2
+INFO  15:44:41,555 - #14 ;
+INFO  15:44:41,556 - #42 x
+INFO  15:44:41,556 - #34 =
+INFO  15:44:41,556 - #42 y
+INFO  15:44:41,556 - #24 /
+INFO  15:44:41,557 - #39 2
+INFO  15:44:41,558 - #14 ;
+INFO  15:44:41,558 - #42 y
+INFO  15:44:41,558 - #34 =
+INFO  15:44:41,558 - #42 k
+INFO  15:44:41,558 - #15 (
+INFO  15:44:41,559 - #16 )
+INFO  15:44:41,559 - #21 +
+INFO  15:44:41,559 - #39 3
+INFO  15:44:41,561 - #14 ;
+INFO  15:44:41,561 - #5 print
+INFO  15:44:41,562 - #15 (
+INFO  15:44:41,562 - #42 y
+INFO  15:44:41,562 - #16 )
+INFO  15:44:41,562 - #14 ;
+INFO  15:44:41,562 - #7 return
+INFO  15:44:41,563 - #39 0
+INFO  15:44:41,563 - #14 ;
+INFO  15:44:41,563 - #13 }
+INFO  15:44:41,563 - #13 }
+INFO  15:44:41,575 - rs.ac.bg.etf.pp1.ast.Program@6f539caf
+INFO  15:44:41,579 - Deklarisana promenljiva ArrayDecl(
+ x
+) [ArrayDecl] na liniji 2
+INFO  15:44:41,579 - Deklarisana promenljiva ASTVarDecl(
+ y
+) [ASTVarDecl] na liniji 3
+ERROR 15:44:41,580 - Greska na liniji 8 : ime y nije deklarisano! 
+ERROR 15:44:41,580 - Greska na liniji 9 : ime x nije deklarisano! 
+ERROR 15:44:41,580 - Greska na liniji 9 : ime y nije deklarisano! 
+ERROR 15:44:41,580 - Greska na liniji 10 : ime y nije deklarisano! 
+ERROR 15:44:41,580 - Greska na liniji 10 : ime k nije deklarisano! 
+ERROR 15:44:41,580 - Greska na liniji 11 : ime y nije deklarisano! 

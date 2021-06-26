@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2021 15:41:37
+// 26/5/2021 17:34:43
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -17,8 +17,8 @@ public interface Visitor {
     public void visit(TermSum TermSum);
     public void visit(FormalParamList FormalParamList);
     public void visit(FormPars FormPars);
-    public void visit(Muloper Muloper);
     public void visit(VarDeclList VarDeclList);
+    public void visit(Muloper Muloper);
     public void visit(VarDecl VarDecl);
     public void visit(BasicTypes BasicTypes);
     public void visit(ConstDeclList ConstDeclList);

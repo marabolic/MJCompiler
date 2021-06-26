@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2021 15:41:37
+// 26/5/2021 17:34:43
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ArrayDecl extends VarDecl {
 
-    private String I1;
+    private String var;
 
-    public ArrayDecl (String I1) {
-        this.I1=I1;
+    public ArrayDecl (String var) {
+        this.var=var;
     }
 
-    public String getI1() {
-        return I1;
+    public String getVar() {
+        return var;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setVar(String var) {
+        this.var=var;
     }
 
     public void accept(Visitor visitor) {
@@ -41,7 +41,7 @@ public class ArrayDecl extends VarDecl {
         buffer.append(tab);
         buffer.append("ArrayDecl(\n");
 
-        buffer.append(" "+tab+I1);
+        buffer.append(" "+tab+var);
         buffer.append("\n");
 
         buffer.append(tab);

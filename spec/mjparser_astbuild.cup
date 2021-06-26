@@ -86,21 +86,18 @@ nonterminal Relop Relop;
 
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal DeclList DeclList;
-nonterminal VarDeclList VarDeclList;
 nonterminal VarDecl VarDecl;
 nonterminal ConstDeclList ConstDeclList;
 nonterminal ConstDecl ConstDecl;
 
 nonterminal MethodDecl MethodDecl; 
 nonterminal Term Term;
-nonterminal Expr Expr;
-nonterminal Factor Factor;
 nonterminal TermSum TermSum; 
 nonterminal Condition Condition;
 nonterminal CondTerm CondTerm;
 nonterminal CondFact CondFact;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
 
 nonterminal BasicTypes BasicTypes;
@@ -112,22 +109,22 @@ Program ::= (Program) PROG ProgName:p DeclList:D1 LBRACE MethodDeclList:M2 RBRAC
 ProgName ::= (ProgName) IDENT:progName {: RESULT=new ProgName(progName); RESULT.setLine(progNameleft); :};
 
 
-DeclList ::= (ASTVarDeclList) DeclList:D1 Type:T2 VarDeclList:V3 SEMI {: RESULT=new ASTVarDeclList(D1, T2, V3); RESULT.setLine(D1left); :}
+DeclList ::= (ASTVarDeclList) DeclList:D1 Type:T2 VarDeclList:varDeclList SEMI {: RESULT=new ASTVarDeclList(D1, T2, varDeclList); RESULT.setLine(D1left); :}
 	| 
 	 (ASTConstDeclList) DeclList:D1 CONST Type:T2 ConstDeclList:C3 SEMI {: RESULT=new ASTConstDeclList(D1, T2, C3); RESULT.setLine(D1left); :}
 	|
 	 (NoSpecDecl) {: RESULT=new NoSpecDecl(); :} /* epsilon */
 	;
 
-VarDeclList ::= (MoreVarDecls) VarDeclList:V1 COMMA VarDecl:V2 {: RESULT=new MoreVarDecls(V1, V2); RESULT.setLine(V1left); :}
+VarDeclList ::= (MoreVarDecls) VarDeclList:V1 COMMA VarDecl:varDecl {: RESULT=new MoreVarDecls(V1, varDecl); RESULT.setLine(V1left); :}
 	|
-	(SingleVarDecl) VarDecl:V1 {: RESULT=new SingleVarDecl(V1); RESULT.setLine(V1left); :}
+	(SingleVarDecl) VarDecl:varDecl {: RESULT=new SingleVarDecl(varDecl); RESULT.setLine(varDeclleft); :}
 	;
 		
 		
 VarDecl ::= (ASTVarDecl) IDENT:var {: RESULT=new ASTVarDecl(var); RESULT.setLine(varleft); :}
 	|
-	(ArrayDecl) IDENT:I1 LBRACKET RBRACKET {: RESULT=new ArrayDecl(I1); RESULT.setLine(I1left); :}
+	(ArrayDecl) IDENT:var LBRACKET RBRACKET {: RESULT=new ArrayDecl(var); RESULT.setLine(varleft); :}
 	;
 
 
@@ -139,7 +136,7 @@ ConstDeclList ::= (MoreConstDecls) ConstDeclList:C1 COMMA ConstDecl:C2 {: RESULT
 		
 
 
-ConstDecl ::= (ConstDecl) IDENT:I1 EQUAL BasicTypes:B2 {: RESULT=new ConstDecl(I1, B2); RESULT.setLine(I1left); :};
+ConstDecl ::= (ConstDecl) IDENT:var EQUAL BasicTypes:B1 {: RESULT=new ConstDecl(var, B1); RESULT.setLine(varleft); :};
 
 
 

@@ -1,0 +1,234 @@
+INFO  14:48:36,372 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  14:48:36,418 - #2 program
+INFO  14:48:36,418 - #42 MJProgram
+INFO  14:48:36,418 - #42 int
+INFO  14:48:36,419 - #42 x
+INFO  14:48:36,419 - #17 [
+INFO  14:48:36,419 - #18 ]
+INFO  14:48:36,420 - #37 ,
+INFO  14:48:36,420 - #42 ab
+INFO  14:48:36,420 - #14 ;
+INFO  14:48:36,420 - #42 int
+INFO  14:48:36,420 - #42 y
+INFO  14:48:36,420 - #14 ;
+INFO  14:48:36,420 - #4 const
+INFO  14:48:36,420 - #42 int
+INFO  14:48:36,421 - #42 a
+INFO  14:48:36,421 - #34 =
+INFO  14:48:36,421 - #39 2
+INFO  14:48:36,421 - #37 ,
+INFO  14:48:36,422 - #42 b
+INFO  14:48:36,422 - #34 =
+INFO  14:48:36,422 - #39 3
+INFO  14:48:36,422 - #14 ;
+INFO  14:48:36,423 - #12 {
+INFO  14:48:36,423 - #42 int
+INFO  14:48:36,423 - #42 main
+INFO  14:48:36,423 - #15 (
+INFO  14:48:36,424 - #16 )
+INFO  14:48:36,424 - #12 {
+INFO  14:48:36,424 - #42 y
+INFO  14:48:36,425 - #34 =
+INFO  14:48:36,425 - #39 2
+INFO  14:48:36,425 - #14 ;
+INFO  14:48:36,425 - #42 x
+INFO  14:48:36,426 - #34 =
+INFO  14:48:36,426 - #42 y
+INFO  14:48:36,426 - #24 /
+INFO  14:48:36,426 - #39 2
+INFO  14:48:36,427 - #14 ;
+INFO  14:48:36,427 - #42 y
+INFO  14:48:36,427 - #34 =
+INFO  14:48:36,427 - #42 x
+INFO  14:48:36,427 - #21 +
+INFO  14:48:36,428 - #39 3
+INFO  14:48:36,429 - #14 ;
+INFO  14:48:36,429 - #5 print
+INFO  14:48:36,429 - #15 (
+INFO  14:48:36,429 - #42 y
+INFO  14:48:36,429 - #16 )
+INFO  14:48:36,429 - #14 ;
+INFO  14:48:36,429 - #7 return
+INFO  14:48:36,430 - #39 0
+INFO  14:48:36,430 - #14 ;
+INFO  14:48:36,430 - #13 }
+INFO  14:48:36,430 - #13 }
+INFO  14:48:36,440 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ASTConstDeclList(
+    ASTVarDeclList(
+      ASTVarDeclList(
+        NoSpecDecl(
+        ) [NoSpecDecl]
+        Type(
+         int
+        ) [Type]
+        MoreVarDecls(
+          SingleVarDecl(
+            ArrayDecl(
+             x
+            ) [ArrayDecl]
+          ) [SingleVarDecl]
+          ASTVarDecl(
+           ab
+          ) [ASTVarDecl]
+        ) [MoreVarDecls]
+      ) [ASTVarDeclList]
+      Type(
+       int
+      ) [Type]
+      SingleVarDecl(
+        ASTVarDecl(
+         y
+        ) [ASTVarDecl]
+      ) [SingleVarDecl]
+    ) [ASTVarDeclList]
+    Type(
+     int
+    ) [Type]
+    MoreConstDecls(
+      SingleConstDecl(
+        ConstDecl(
+         a
+          ASTNumber(
+           2
+          ) [ASTNumber]
+        ) [ConstDecl]
+      ) [SingleConstDecl]
+      ConstDecl(
+       b
+        ASTNumber(
+         3
+        ) [ASTNumber]
+      ) [ConstDecl]
+    ) [MoreConstDecls]
+  ) [ASTConstDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      ActualType(
+        Type(
+         int
+        ) [Type]
+      ) [ActualType]
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        StmtList(
+          StmtList(
+            StmtList(
+              StmtList(
+                NoStmt(
+                ) [NoStmt]
+                DesignatorStmt(
+                  AssignStmt(
+                    ASTDesignator(
+                     y
+                    ) [ASTDesignator]
+                    Assignop(
+                    ) [Assignop]
+                    OpExpr(
+                      SingleTerm(
+                        SingleFactor(
+                          NumConst(
+                           2
+                          ) [NumConst]
+                        ) [SingleFactor]
+                      ) [SingleTerm]
+                    ) [OpExpr]
+                  ) [AssignStmt]
+                ) [DesignatorStmt]
+              ) [StmtList]
+              DesignatorStmt(
+                AssignStmt(
+                  ASTDesignator(
+                   x
+                  ) [ASTDesignator]
+                  Assignop(
+                  ) [Assignop]
+                  OpExpr(
+                    SingleTerm(
+                      MulFactors(
+                        SingleFactor(
+                          Var(
+                            ASTDesignator(
+                             y
+                            ) [ASTDesignator]
+                          ) [Var]
+                        ) [SingleFactor]
+                        Divop(
+                        ) [Divop]
+                        NumConst(
+                         2
+                        ) [NumConst]
+                      ) [MulFactors]
+                    ) [SingleTerm]
+                  ) [OpExpr]
+                ) [AssignStmt]
+              ) [DesignatorStmt]
+            ) [StmtList]
+            DesignatorStmt(
+              AssignStmt(
+                ASTDesignator(
+                 y
+                ) [ASTDesignator]
+                Assignop(
+                ) [Assignop]
+                OpExpr(
+                  SumTerm(
+                    SingleTerm(
+                      SingleFactor(
+                        Var(
+                          ASTDesignator(
+                           x
+                          ) [ASTDesignator]
+                        ) [Var]
+                      ) [SingleFactor]
+                    ) [SingleTerm]
+                    PlusOp(
+                    ) [PlusOp]
+                    SingleFactor(
+                      NumConst(
+                       3
+                      ) [NumConst]
+                    ) [SingleFactor]
+                  ) [SumTerm]
+                ) [OpExpr]
+              ) [AssignStmt]
+            ) [DesignatorStmt]
+          ) [StmtList]
+          PrintStmt(
+            OpExpr(
+              SingleTerm(
+                SingleFactor(
+                  Var(
+                    ASTDesignator(
+                     y
+                    ) [ASTDesignator]
+                  ) [Var]
+                ) [SingleFactor]
+              ) [SingleTerm]
+            ) [OpExpr]
+          ) [PrintStmt]
+        ) [StmtList]
+        ReturnExpr(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                NumConst(
+                 0
+                ) [NumConst]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [ReturnExpr]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]

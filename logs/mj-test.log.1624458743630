@@ -1,0 +1,71 @@
+INFO  16:30:30,555 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  16:30:30,584 - #2 program
+INFO  16:30:30,584 - #42 MJProgram
+INFO  16:30:30,584 - #42 int
+INFO  16:30:30,585 - #42 x
+INFO  16:30:30,585 - #17 [
+INFO  16:30:30,585 - #18 ]
+INFO  16:30:30,585 - #37 ,
+INFO  16:30:30,585 - #42 ab
+INFO  16:30:30,585 - #14 ;
+INFO  16:30:30,586 - #42 int
+INFO  16:30:30,586 - #42 y
+INFO  16:30:30,586 - #14 ;
+INFO  16:30:30,586 - #4 const
+INFO  16:30:30,586 - #42 int
+INFO  16:30:30,586 - #42 a
+INFO  16:30:30,586 - #34 =
+INFO  16:30:30,586 - #39 2
+INFO  16:30:30,586 - #37 ,
+INFO  16:30:30,587 - #42 b
+INFO  16:30:30,587 - #34 =
+INFO  16:30:30,587 - #39 3
+INFO  16:30:30,587 - #14 ;
+INFO  16:30:30,588 - #12 {
+INFO  16:30:30,588 - #42 int
+INFO  16:30:30,588 - #42 main
+INFO  16:30:30,588 - #15 (
+INFO  16:30:30,588 - #16 )
+INFO  16:30:30,589 - #12 {
+INFO  16:30:30,589 - #42 y
+INFO  16:30:30,589 - #34 =
+INFO  16:30:30,589 - #39 2
+INFO  16:30:30,590 - #14 ;
+INFO  16:30:30,590 - #42 x
+INFO  16:30:30,590 - #34 =
+INFO  16:30:30,590 - #42 y
+INFO  16:30:30,591 - #24 /
+INFO  16:30:30,591 - #39 2
+INFO  16:30:30,591 - #14 ;
+INFO  16:30:30,592 - #42 y
+INFO  16:30:30,592 - #34 =
+INFO  16:30:30,592 - #42 k
+INFO  16:30:30,592 - #15 (
+INFO  16:30:30,592 - #16 )
+INFO  16:30:30,592 - #21 +
+INFO  16:30:30,593 - #39 3
+INFO  16:30:30,593 - #14 ;
+INFO  16:30:30,594 - #5 print
+INFO  16:30:30,594 - #15 (
+INFO  16:30:30,594 - #42 y
+INFO  16:30:30,594 - #16 )
+INFO  16:30:30,594 - #14 ;
+INFO  16:30:30,594 - #7 return
+INFO  16:30:30,594 - #39 0
+INFO  16:30:30,594 - #14 ;
+INFO  16:30:30,594 - #13 }
+INFO  16:30:30,595 - #13 }
+INFO  16:30:30,601 - rs.ac.bg.etf.pp1.ast.Program@6f539caf
+INFO  16:30:30,604 - Deklarisana promenljiva ArrayDecl(
+ x
+) [ArrayDecl] na liniji 2
+INFO  16:30:30,604 - Deklarisana promenljiva ASTVarDecl(
+ y
+) [ASTVarDecl] na liniji 3
+ERROR 16:30:30,604 - Greska na liniji 8 : ime y nije deklarisano! 
+ERROR 16:30:30,605 - Greska na liniji 9 : ime x nije deklarisano! 
+ERROR 16:30:30,605 - Greska na liniji 9 : ime y nije deklarisano! 
+ERROR 16:30:30,605 - Greska na liniji 10 : ime y nije deklarisano! 
+ERROR 16:30:30,605 - Greska na liniji 10 : ime k nije deklarisano! 
+ERROR 16:30:30,605 - Greska na liniji 11 : ime y nije deklarisano! 
+INFO  16:30:30,605 - Print calls = 0
