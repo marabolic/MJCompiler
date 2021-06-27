@@ -43,9 +43,11 @@ public class MJParserTest {
 	        Symbol s = p.parse();  //pocetak parsiranja
 	        Program prog = (Program)(s.value);
 	        
+	        
+	        
 			Tab.init(); // Universe scope
 			log.info(prog.toString(""));
-			SemanticPass semanticCheck = new SemanticPass();
+			SemanticAnalyzer semanticCheck = new SemanticAnalyzer();
 			prog.traverseBottomUp(semanticCheck);
 			
 	        log.info("Print calls = " + semanticCheck.printCallCount);

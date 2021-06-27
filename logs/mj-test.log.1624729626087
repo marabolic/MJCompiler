@@ -1,0 +1,309 @@
+INFO  19:41:44,732 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  19:41:44,803 - #2 program
+INFO  19:41:44,803 - #42 MJProgram
+INFO  19:41:44,803 - #42 int
+INFO  19:41:44,805 - #42 x
+INFO  19:41:44,806 - #17 [
+INFO  19:41:44,806 - #18 ]
+INFO  19:41:44,806 - #37 ,
+INFO  19:41:44,807 - #42 ab
+INFO  19:41:44,807 - #14 ;
+INFO  19:41:44,808 - #42 char
+INFO  19:41:44,809 - #42 y
+INFO  19:41:44,809 - #14 ;
+INFO  19:41:44,809 - #4 const
+INFO  19:41:44,809 - #42 int
+INFO  19:41:44,809 - #42 a
+INFO  19:41:44,809 - #34 =
+INFO  19:41:44,809 - #39 2
+INFO  19:41:44,809 - #37 ,
+INFO  19:41:44,810 - #42 b
+INFO  19:41:44,811 - #34 =
+INFO  19:41:44,811 - #39 3
+INFO  19:41:44,811 - #14 ;
+INFO  19:41:44,821 - #12 {
+INFO  19:41:44,821 - #42 int
+INFO  19:41:44,823 - #42 main
+INFO  19:41:44,823 - #15 (
+INFO  19:41:44,823 - #16 )
+INFO  19:41:44,824 - #12 {
+INFO  19:41:44,824 - #42 y
+INFO  19:41:44,825 - #34 =
+INFO  19:41:44,825 - #41 1
+INFO  19:41:44,826 - #14 ;
+INFO  19:41:44,827 - #42 ab
+INFO  19:41:44,827 - #34 =
+INFO  19:41:44,827 - #39 2
+INFO  19:41:44,827 - #14 ;
+INFO  19:41:44,827 - #42 x
+INFO  19:41:44,827 - #34 =
+INFO  19:41:44,827 - #42 ab
+INFO  19:41:44,827 - #24 /
+INFO  19:41:44,828 - #39 2
+INFO  19:41:44,829 - #14 ;
+INFO  19:41:44,829 - #42 y
+INFO  19:41:44,829 - #34 =
+INFO  19:41:44,829 - #42 x
+INFO  19:41:44,830 - #21 +
+INFO  19:41:44,830 - #39 3
+INFO  19:41:44,832 - #14 ;
+INFO  19:41:44,832 - #5 print
+INFO  19:41:44,832 - #15 (
+INFO  19:41:44,833 - #42 y
+INFO  19:41:44,833 - #16 )
+INFO  19:41:44,833 - #14 ;
+INFO  19:41:44,833 - #7 return
+INFO  19:41:44,834 - #39 0
+INFO  19:41:44,835 - #14 ;
+INFO  19:41:44,835 - #13 }
+INFO  19:41:44,836 - #13 }
+INFO  19:41:44,853 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ASTConstDeclList(
+    ASTVarDeclList(
+      ASTVarDeclList(
+        NoSpecDecl(
+        ) [NoSpecDecl]
+        Type(
+         int
+        ) [Type]
+        MoreVarDecls(
+          SingleVarDecl(
+            ArrayDecl(
+             x
+            ) [ArrayDecl]
+          ) [SingleVarDecl]
+          ASTVarDecl(
+           ab
+          ) [ASTVarDecl]
+        ) [MoreVarDecls]
+      ) [ASTVarDeclList]
+      Type(
+       char
+      ) [Type]
+      SingleVarDecl(
+        ASTVarDecl(
+         y
+        ) [ASTVarDecl]
+      ) [SingleVarDecl]
+    ) [ASTVarDeclList]
+    Type(
+     int
+    ) [Type]
+    MoreConstDecls(
+      SingleConstDecl(
+        ConstDecl(
+         a
+          ASTNumber(
+           2
+          ) [ASTNumber]
+        ) [ConstDecl]
+      ) [SingleConstDecl]
+      ConstDecl(
+       b
+        ASTNumber(
+         3
+        ) [ASTNumber]
+      ) [ConstDecl]
+    ) [MoreConstDecls]
+  ) [ASTConstDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      ActualType(
+        Type(
+         int
+        ) [Type]
+      ) [ActualType]
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        StmtList(
+          StmtList(
+            StmtList(
+              StmtList(
+                StmtList(
+                  NoStmt(
+                  ) [NoStmt]
+                  DesignatorStmt(
+                    AssignStmt(
+                      ASTDesignator(
+                       y
+                      ) [ASTDesignator]
+                      Assignop(
+                      ) [Assignop]
+                      OpExpr(
+                        SingleTerm(
+                          SingleFactor(
+                            CharConst(
+                             1
+                            ) [CharConst]
+                          ) [SingleFactor]
+                        ) [SingleTerm]
+                      ) [OpExpr]
+                    ) [AssignStmt]
+                  ) [DesignatorStmt]
+                ) [StmtList]
+                DesignatorStmt(
+                  AssignStmt(
+                    ASTDesignator(
+                     ab
+                    ) [ASTDesignator]
+                    Assignop(
+                    ) [Assignop]
+                    OpExpr(
+                      SingleTerm(
+                        SingleFactor(
+                          NumConst(
+                           2
+                          ) [NumConst]
+                        ) [SingleFactor]
+                      ) [SingleTerm]
+                    ) [OpExpr]
+                  ) [AssignStmt]
+                ) [DesignatorStmt]
+              ) [StmtList]
+              DesignatorStmt(
+                AssignStmt(
+                  ASTDesignator(
+                   x
+                  ) [ASTDesignator]
+                  Assignop(
+                  ) [Assignop]
+                  OpExpr(
+                    SingleTerm(
+                      MulFactors(
+                        SingleFactor(
+                          Var(
+                            ASTDesignator(
+                             ab
+                            ) [ASTDesignator]
+                          ) [Var]
+                        ) [SingleFactor]
+                        Divop(
+                        ) [Divop]
+                        NumConst(
+                         2
+                        ) [NumConst]
+                      ) [MulFactors]
+                    ) [SingleTerm]
+                  ) [OpExpr]
+                ) [AssignStmt]
+              ) [DesignatorStmt]
+            ) [StmtList]
+            DesignatorStmt(
+              AssignStmt(
+                ASTDesignator(
+                 y
+                ) [ASTDesignator]
+                Assignop(
+                ) [Assignop]
+                OpExpr(
+                  SumTerm(
+                    SingleTerm(
+                      SingleFactor(
+                        Var(
+                          ASTDesignator(
+                           x
+                          ) [ASTDesignator]
+                        ) [Var]
+                      ) [SingleFactor]
+                    ) [SingleTerm]
+                    PlusOp(
+                    ) [PlusOp]
+                    SingleFactor(
+                      NumConst(
+                       3
+                      ) [NumConst]
+                    ) [SingleFactor]
+                  ) [SumTerm]
+                ) [OpExpr]
+              ) [AssignStmt]
+            ) [DesignatorStmt]
+          ) [StmtList]
+          PrintStmt(
+            OpExpr(
+              SingleTerm(
+                SingleFactor(
+                  Var(
+                    ASTDesignator(
+                     y
+                    ) [ASTDesignator]
+                  ) [Var]
+                ) [SingleFactor]
+              ) [SingleTerm]
+            ) [OpExpr]
+          ) [PrintStmt]
+        ) [StmtList]
+        ReturnExpr(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                NumConst(
+                 0
+                ) [NumConst]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [ReturnExpr]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  19:41:44,856 - Deklarisan niz x na liniji 2
+INFO  19:41:44,857 - Deklarisana promenljiva ab na liniji 2
+INFO  19:41:44,858 - Deklarisana promenljiva y na liniji 3
+INFO  19:41:44,858 - Deklarisana konstanta a na liniji 4
+INFO  19:41:44,858 - Deklarisana konstanta b na liniji 4
+INFO  19:41:44,859 - Dodeljena vrednost OpExpr(
+  SingleTerm(
+    SingleFactor(
+      CharConst(
+       1
+      ) [CharConst]
+    ) [SingleFactor]
+  ) [SingleTerm]
+) [OpExpr] promenljivoj ASTDesignator(
+ y
+) [ASTDesignator]
+INFO  19:41:44,859 - Dodeljena vrednost OpExpr(
+  SingleTerm(
+    SingleFactor(
+      NumConst(
+       2
+      ) [NumConst]
+    ) [SingleFactor]
+  ) [SingleTerm]
+) [OpExpr] promenljivoj ASTDesignator(
+ ab
+) [ASTDesignator]
+ERROR 19:41:44,859 - Greska na liniji 10 nisu svi clanovi tipa int  na liniji 10
+INFO  19:41:44,864 - Dodeljena vrednost OpExpr(
+  SingleTerm(
+    MulFactors(
+      SingleFactor(
+        Var(
+          ASTDesignator(
+           ab
+          ) [ASTDesignator]
+        ) [Var]
+      ) [SingleFactor]
+      Divop(
+      ) [Divop]
+      NumConst(
+       2
+      ) [NumConst]
+    ) [MulFactors]
+  ) [SingleTerm]
+) [OpExpr] promenljivoj ASTDesignator(
+ x
+) [ASTDesignator]
+ERROR 19:41:44,865 - Greska na liniji 11 nisu svi clanovi tipa int  na liniji 11
+ERROR 19:41:44,865 - Greska na liniji 11 : nekompatibilni tipovi u dodeli vrednosti! 
+INFO  19:41:44,865 - Print calls = 1

@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/5/2021 17:34:43
+// 27/5/2021 12:11:34
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ASTBoolean extends BasicTypes {
 
-    private String B1;
+    private String boolConst;
 
-    public ASTBoolean (String B1) {
-        this.B1=B1;
+    public ASTBoolean (String boolConst) {
+        this.boolConst=boolConst;
     }
 
-    public String getB1() {
-        return B1;
+    public String getBoolConst() {
+        return boolConst;
     }
 
-    public void setB1(String B1) {
-        this.B1=B1;
+    public void setBoolConst(String boolConst) {
+        this.boolConst=boolConst;
     }
 
     public void accept(Visitor visitor) {
@@ -41,7 +41,7 @@ public class ASTBoolean extends BasicTypes {
         buffer.append(tab);
         buffer.append("ASTBoolean(\n");
 
-        buffer.append(" "+tab+B1);
+        buffer.append(" "+tab+boolConst);
         buffer.append("\n");
 
         buffer.append(tab);

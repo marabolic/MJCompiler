@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/5/2021 17:34:43
+// 27/5/2021 12:11:34
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ASTNumber extends BasicTypes {
 
-    private Integer N1;
+    private Integer numConst;
 
-    public ASTNumber (Integer N1) {
-        this.N1=N1;
+    public ASTNumber (Integer numConst) {
+        this.numConst=numConst;
     }
 
-    public Integer getN1() {
-        return N1;
+    public Integer getNumConst() {
+        return numConst;
     }
 
-    public void setN1(Integer N1) {
-        this.N1=N1;
+    public void setNumConst(Integer numConst) {
+        this.numConst=numConst;
     }
 
     public void accept(Visitor visitor) {
@@ -41,7 +41,7 @@ public class ASTNumber extends BasicTypes {
         buffer.append(tab);
         buffer.append("ASTNumber(\n");
 
-        buffer.append(" "+tab+N1);
+        buffer.append(" "+tab+numConst);
         buffer.append("\n");
 
         buffer.append(tab);

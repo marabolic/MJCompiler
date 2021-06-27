@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/5/2021 17:34:43
+// 27/5/2021 12:11:34
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,21 +9,22 @@ public class ConstDecl implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private String var;
+    private ConstName ConstName;
     private BasicTypes BasicTypes;
 
-    public ConstDecl (String var, BasicTypes BasicTypes) {
-        this.var=var;
+    public ConstDecl (ConstName ConstName, BasicTypes BasicTypes) {
+        this.ConstName=ConstName;
+        if(ConstName!=null) ConstName.setParent(this);
         this.BasicTypes=BasicTypes;
         if(BasicTypes!=null) BasicTypes.setParent(this);
     }
 
-    public String getVar() {
-        return var;
+    public ConstName getConstName() {
+        return ConstName;
     }
 
-    public void setVar(String var) {
-        this.var=var;
+    public void setConstName(ConstName ConstName) {
+        this.ConstName=ConstName;
     }
 
     public BasicTypes getBasicTypes() {
@@ -55,15 +56,18 @@ public class ConstDecl implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(ConstName!=null) ConstName.accept(visitor);
         if(BasicTypes!=null) BasicTypes.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(ConstName!=null) ConstName.traverseTopDown(visitor);
         if(BasicTypes!=null) BasicTypes.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(ConstName!=null) ConstName.traverseBottomUp(visitor);
         if(BasicTypes!=null) BasicTypes.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -73,7 +77,10 @@ public class ConstDecl implements SyntaxNode {
         buffer.append(tab);
         buffer.append("ConstDecl(\n");
 
-        buffer.append(" "+tab+var);
+        if(ConstName!=null)
+            buffer.append(ConstName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(BasicTypes!=null)

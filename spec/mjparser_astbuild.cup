@@ -89,15 +89,12 @@ nonterminal DeclList DeclList;
 nonterminal VarDecl VarDecl;
 nonterminal ConstDeclList ConstDeclList;
 nonterminal ConstDecl ConstDecl;
+nonterminal ConstName ConstName;
 
 nonterminal MethodDecl MethodDecl; 
-nonterminal Term Term;
-nonterminal TermSum TermSum; 
-nonterminal Condition Condition;
-nonterminal CondTerm CondTerm;
-nonterminal CondFact CondFact;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
 
 nonterminal BasicTypes BasicTypes;
@@ -136,10 +133,10 @@ ConstDeclList ::= (MoreConstDecls) ConstDeclList:C1 COMMA ConstDecl:C2 {: RESULT
 		
 
 
-ConstDecl ::= (ConstDecl) IDENT:var EQUAL BasicTypes:B1 {: RESULT=new ConstDecl(var, B1); RESULT.setLine(varleft); :};
+ConstDecl ::= (ConstDecl) ConstName:C1 EQUAL BasicTypes:B2 {: RESULT=new ConstDecl(C1, B2); RESULT.setLine(C1left); :};
 
 
-
+ConstName ::= (ConstName)  IDENT:var {: RESULT=new ConstName(var); RESULT.setLine(varleft); :};
 
 MethodDeclList ::= (ASTMethodDecList) MethodDeclList:M1 MethodDecl:M2 {: RESULT=new ASTMethodDecList(M1, M2); RESULT.setLine(M1left); :}
 				|
@@ -232,9 +229,9 @@ CondTerm ::= (MulCondFacts) CondTerm:C1 AND CondFact:C2 {: RESULT=new MulCondFac
 			(SingleCondFact) CondFact:C1 {: RESULT=new SingleCondFact(C1); RESULT.setLine(C1left); :}
 			;
 		
-CondFact ::= (CondFactRel) Expr:E1 Relop:R2 Expr:E3 {: RESULT=new CondFactRel(E1, R2, E3); RESULT.setLine(E1left); :} 
+CondFact ::= (CondFactRel) Expr:E1 Relop:R2 Expr:E3 {: RESULT=new CondFactRel(E1, R2, E3); RESULT.setLine(E1left); :}
 			|
-			 (ASTCondFact) Expr:E1 {: RESULT=new ASTCondFact(E1); RESULT.setLine(E1left); :} 
+			 (ASTCondFact) Expr:expr {: RESULT=new ASTCondFact(expr); RESULT.setLine(exprleft); :}
 			;
 				
 
@@ -266,7 +263,9 @@ Factor ::= (Var) Designator:d {: RESULT=new Var(d); RESULT.setLine(dleft); :}
 		|
 			(BoolConst) BOOL:B1 {: RESULT=new BoolConst(B1); RESULT.setLine(B1left); :} 
 		|
-			(NewArray) NEW Type:T1 LBRACE RBRACE {: RESULT=new NewArray(T1); RESULT.setLine(T1left); :}
+			(NewArray) NEW Type:T1 LBRACKET Expr:E2 RBRACKET {: RESULT=new NewArray(T1, E2); RESULT.setLine(T1left); :}
+		|
+			(NewFact) NEW Type:T1 {: RESULT=new NewFact(T1); RESULT.setLine(T1left); :}
 		|
 			(ExprInParens) LPAREN Expr:E1 RPAREN {: RESULT=new ExprInParens(E1); RESULT.setLine(E1left); :}
 		;
@@ -275,7 +274,7 @@ Factor ::= (Var) Designator:d {: RESULT=new Var(d); RESULT.setLine(dleft); :}
  
 Designator ::= (ASTDesignator) IDENT:name {: RESULT=new ASTDesignator(name); RESULT.setLine(nameleft); :} 
 			|	
-				(DesignatorArray)  IDENT:arr LBRACE Expr:E1 RBRACE {: RESULT=new DesignatorArray(arr, E1); RESULT.setLine(arrleft); :}
+			   (DesignatorArray)  IDENT:name LBRACKET Expr:E1 RBRACKET {: RESULT=new DesignatorArray(name, E1); RESULT.setLine(nameleft); :}
 			;
 
 
@@ -310,10 +309,10 @@ Muloper ::= (Mulop) MUL {: RESULT=new Mulop(); :}
 
 
 
-BasicTypes ::= (ASTNumber) NUMBER:N1 {: RESULT=new ASTNumber(N1); RESULT.setLine(N1left); :}
+BasicTypes ::= (ASTNumber) NUMBER:numConst {: RESULT=new ASTNumber(numConst); RESULT.setLine(numConstleft); :}
 			|
-			(ASTBoolean) BOOL:B1 {: RESULT=new ASTBoolean(B1); RESULT.setLine(B1left); :}
+			(ASTBoolean) BOOL:boolConst {: RESULT=new ASTBoolean(boolConst); RESULT.setLine(boolConstleft); :}
 			| 
-			(ASTCharacter) CHAR:C1 {: RESULT=new ASTCharacter(C1); RESULT.setLine(C1left); :}
+			(ASTCharacter) CHAR:charConst {: RESULT=new ASTCharacter(charConst); RESULT.setLine(charConstleft); :}
 			;
 
