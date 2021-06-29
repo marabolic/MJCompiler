@@ -1,10 +1,18 @@
 package rs.ac.bg.etf.pp1;
 
 import java_cup.runtime.Symbol;
+import rs.ac.bg.etf.pp1.CompilerError.CompilerErrorType;
+import java.util.*;
 
 %%
 
 %{
+
+	private List<CompilerError> lexErrors = new ArrayList<>();
+	
+	public List<CompilerError> getLexErrors(){
+		return lexErrors;
+	}
 
 	// ukljucivanje informacije o poziciji tokena
 	private Symbol new_symbol(int type) {
@@ -88,8 +96,8 @@ import java_cup.runtime.Symbol;
 "'"[^\x00-\x1f]"'" { return new_symbol(sym.CHAR, new Character (yytext().charAt(1))); }
 ([a-z]|[A-Z])[a-z|A-Z|0-9|_]* 	{return new_symbol (sym.IDENT, yytext()); }
 
-. { System.err.println("Leksicka greska ("+yytext()+") u liniji "+(yyline+1)); }
-
+. { System.err.println("Leksicka greska ("+yytext()+") u liniji "+(yyline+1)); 
+	lexErrors.add(new CompilerError(yyline+1, "Leksicka greska: nepoznati literal", CompilerErrorType.LEXICAL_ERROR)); }
 
 
 

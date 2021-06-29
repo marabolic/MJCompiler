@@ -5,6 +5,8 @@ package rs.ac.bg.etf.pp1;
 import java_cup.runtime.*;
 import org.apache.log4j.*;
 import rs.ac.bg.etf.pp1.ast.*;
+import rs.ac.bg.etf.pp1.CompilerError.CompilerErrorType;
+import java.util.*;
 
 parser code {:
 	
@@ -12,6 +14,11 @@ parser code {:
 	
 	Logger log = Logger.getLogger(getClass());
    
+    public List<CompilerError> synErrors = new ArrayList<>();
+   
+   	public List<CompilerError> getSynErrors(){
+    	return synErrors;
+    }
    
     // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
      
@@ -42,6 +49,8 @@ parser code {:
             msg.append (" na liniji ").append(((Symbol)info).left);
         log.info(msg.toString());
     }
+    
+    
     
 :}
 
@@ -83,7 +92,7 @@ nonterminal MethodDecl, Else;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName, DesArrayName;
 
-nonterminal BasicTypes;
+nonterminal BasicTypes, CondInParens;
 
 precedence left ELSE;
 
@@ -115,6 +124,14 @@ VarDecl ::= (ASTVarDecl) IDENT:var
 ConstDeclList ::= (MoreConstDecls) ConstDeclList COMMA ConstDecl 
 		| 
 		  (SingleConstDecl) ConstDecl
+		|
+		  (ErrorConstSemi) error SEMI:l 
+		  {: parser.report_error("Sintaksna greska. Izvrsen oporavak do ; u liniji " + lleft, null); 
+		  parser.synErrors.add(new CompilerError(eleft, "Greska u definiciji konstante. oporavak do ';'", CompilerErrorType.SYNTAX_ERROR)); :}
+		|
+		  (ErrorConstComma) error COMMA:l 
+		  {: parser.report_error("Sintaksna greska. Izvrsen oporavak do , u liniji " + lleft, null);
+		  parser.synErrors.add(new CompilerError(eleft, "Greska u definiciji konstante. oporavak do ','", CompilerErrorType.SYNTAX_ERROR));  :}
 		;
 		
 
@@ -169,9 +186,9 @@ StatementList ::= (StmtList) StatementList Statement
 
 Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 				|
-				  (IfStatement) IF LPAREN Condition RPAREN IfPrepare IfInsideStmt
+				  (IfStatement) IF CondInParens IfPrepare IfInsideStmt
 				|
-				  (IfElseStatement) IF LPAREN Condition RPAREN IfPrepare IfInsideStmt Else ElseInsideStmt
+				  (IfElseStatement) IF CondInParens IfPrepare IfInsideStmt Else ElseInsideStmt
 				|
 				  (ReturnExpr) RETURN Expr SEMI
 				|
@@ -187,6 +204,13 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 				;
 				
 				
+CondInParens ::= (CondInParens) LPAREN Condition RPAREN
+			|
+			(ErrorCond) error RPAREN:l
+			{: 	parser.report_error("Sintaksna greska. Izvrsen oporavak do ')'", null); 
+				parser.synErrors.add(new CompilerError(eleft, "Neispravan uslov. oporavak do ')'", CompilerErrorType.SYNTAX_ERROR));
+			:}				
+				
 IfPrepare ::= (IfPrepare) /* epsilon */ ;		
 				
 IfInsideStmt ::= (IfInsideStmt)	Statement;		
@@ -196,6 +220,11 @@ Else ::= (Else)	ELSE;
 ElseInsideStmt ::= (ElseInsideStmt) Statement;
 			
 DesignatorStatement ::= (AssignStmt) Designator:dest Assignop Expr:e
+				|
+			  	    (ErrorAssign) Designator Assignop:l error:e 
+			  	    {: parser.report_error("Sintaksna greska. Izvrsen oporavak do ; u liniji " + lleft", null); 
+					   parser.synErrors.add(new CompilerError(eleft, "Greska u operaciji dodele. oporavak do ';'", CompilerErrorType.SYNTAX_ERROR));
+			        :}
 				|
 					(FuncCall) Designator:fun LPAREN ActualPars RPAREN
 				|

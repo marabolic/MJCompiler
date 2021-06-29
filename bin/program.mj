@@ -45,7 +45,7 @@ program test301
 			
 		read(bodovi);
 		if(bodovi%2 == 0 && 1==2 || 2+4==6) bodovi = bodovi + 10;
-		if(false) print(bodovi + 20);
+		if(true) print(bodovi + 20);
 		else print(bodovi);
 	}
 }

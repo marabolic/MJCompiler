@@ -12,6 +12,7 @@ import rs.etf.pp1.symboltable.concepts.*;
 
 
 
+
 public class SemanticAnalyzer extends VisitorAdaptor {
 
 	int varDeclCount = 0;
