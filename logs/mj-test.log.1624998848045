@@ -1,0 +1,74 @@
+INFO  22:33:16,909 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  22:33:16,948 - #2 program
+INFO  22:33:16,948 - #42 prog
+INFO  22:33:16,948 - #42 int
+INFO  22:33:16,949 - #42 edo
+INFO  22:33:16,950 - #14 ;
+INFO  22:33:16,950 - #12 {
+INFO  22:33:16,950 - #8 void
+INFO  22:33:16,951 - #42 main
+INFO  22:33:16,952 - #15 (
+INFO  22:33:16,952 - #16 )
+INFO  22:33:16,953 - #12 {
+INFO  22:33:16,953 - #5 print
+INFO  22:33:16,953 - #15 (
+INFO  22:33:16,953 - #42 edo
+INFO  22:33:16,954 - #16 )
+INFO  22:33:16,954 - #14 ;
+INFO  22:33:16,954 - #13 }
+INFO  22:33:16,955 - #13 }
+INFO  22:33:16,961 - Program(
+  ProgName(
+   prog
+  ) [ProgName]
+  ASTVarDeclList(
+    NoSpecDecl(
+    ) [NoSpecDecl]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       edo
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   edo
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  22:33:16,967 - Deklarisana promenljiva edo na liniji 4
+INFO  22:33:16,967 - Obradjuje se funkcija main na liniji 6
+INFO  22:33:16,968 - Print pozvan  na liniji 9
+INFO  22:33:16,968 - Print calls = 1
+INFO  22:33:16,969 - Generating bytecode file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.obj
+INFO  22:33:16,982 - Parsiranje uspesno zavrseno!

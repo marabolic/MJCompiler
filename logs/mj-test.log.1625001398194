@@ -1,0 +1,26 @@
+INFO  23:16:31,250 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  23:16:31,279 - #2 program
+INFO  23:16:31,279 - #42 prog
+INFO  23:16:31,279 - #42 int
+INFO  23:16:31,280 - #42 bananas
+INFO  23:16:31,280 - #42 char
+ERROR 23:16:31,280 - 
+Sintaksna greska na liniji 3
+INFO  23:16:31,280 - #42 asdf
+INFO  23:16:31,280 - #14 ;
+INFO  23:16:31,281 - #42 int
+INFO  23:16:31,281 - #42 edo
+INFO  23:16:31,281 - #14 ;
+ERROR 23:16:31,281 - Sintaksna greska. Izvrsen oporavak do ; 3
+INFO  23:16:31,283 - #12 {
+INFO  23:16:31,283 - #8 void
+INFO  23:16:31,284 - #42 main
+INFO  23:16:31,284 - #15 (
+INFO  23:16:31,285 - #16 )
+INFO  23:16:31,285 - #12 {
+INFO  23:16:31,285 - #42 edo
+INFO  23:16:31,295 - #34 =
+INFO  23:16:31,295 - #35 ++
+ERROR 23:16:31,295 - 
+Sintaksna greska na liniji 9
+ERROR 23:16:31,295 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 9

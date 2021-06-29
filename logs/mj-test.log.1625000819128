@@ -1,0 +1,96 @@
+INFO  23:06:22,142 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  23:06:22,184 - #2 program
+INFO  23:06:22,184 - #42 prog
+INFO  23:06:22,184 - #42 int
+INFO  23:06:22,187 - #42 bananas
+INFO  23:06:22,188 - #37 ,
+INFO  23:06:22,188 - #42 asdf
+INFO  23:06:22,188 - #14 ;
+INFO  23:06:22,188 - #42 int
+INFO  23:06:22,188 - #42 edo
+INFO  23:06:22,189 - #14 ;
+INFO  23:06:22,189 - #12 {
+INFO  23:06:22,189 - #8 void
+INFO  23:06:22,199 - #42 main
+INFO  23:06:22,200 - #15 (
+INFO  23:06:22,202 - #16 )
+INFO  23:06:22,203 - #12 {
+INFO  23:06:22,204 - #5 print
+INFO  23:06:22,205 - #15 (
+INFO  23:06:22,205 - #42 edo
+INFO  23:06:22,205 - #16 )
+INFO  23:06:22,206 - #14 ;
+INFO  23:06:22,206 - #13 }
+INFO  23:06:22,207 - #13 }
+INFO  23:06:22,213 - Program(
+  ProgName(
+   prog
+  ) [ProgName]
+  ASTVarDeclList(
+    ASTVarDeclList(
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      Type(
+       int
+      ) [Type]
+      MoreVarDecls(
+        SingleVarDecl(
+          ASTVarDecl(
+           bananas
+          ) [ASTVarDecl]
+        ) [SingleVarDecl]
+        ASTVarDecl(
+         asdf
+        ) [ASTVarDecl]
+      ) [MoreVarDecls]
+    ) [ASTVarDeclList]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       edo
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   edo
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  23:06:22,218 - Deklarisana promenljiva bananas na liniji 3
+INFO  23:06:22,218 - Deklarisana promenljiva asdf na liniji 3
+INFO  23:06:22,218 - Deklarisana promenljiva edo na liniji 5
+INFO  23:06:22,218 - Obradjuje se funkcija main na liniji 7
+INFO  23:06:22,218 - Print pozvan  na liniji 10
+INFO  23:06:22,218 - Print calls = 1
+INFO  23:06:22,218 - Generating bytecode file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.obj
+INFO  23:06:22,232 - Parsiranje uspesno zavrseno!

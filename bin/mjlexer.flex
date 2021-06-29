@@ -42,6 +42,8 @@ import java.util.*;
 "\b" 	{ }
 "\t" 	{ }
 "\r\n" 	{ }
+"\r"	{ }
+"\n"	{ }
 "\f" 	{ }
 
 "program"   { return new_symbol(sym.PROG, yytext()); }

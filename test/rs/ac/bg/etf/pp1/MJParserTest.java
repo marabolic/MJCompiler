@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.util.List;
+
+import javax.swing.event.ListSelectionEvent;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -24,7 +27,13 @@ public class MJParserTest {
 	
 	public static void main(String[] args) throws Exception {
 		CompilerImpl com = new CompilerImpl();
-		com.compile("test/program.mj", "test/program.obj");
+		List<CompilerError> list = com.compile("test/program.mj", "test/program.obj");
+		
+		if (list != null) {
+			for	(int i = 0; i < list.size(); i++) {
+				System.out.println(list.get(i));
+			}
+		}
 		
 	}
 }

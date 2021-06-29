@@ -1,0 +1,101 @@
+INFO  23:26:57,699 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  23:26:57,730 - #2 program
+INFO  23:26:57,730 - #42 prog
+INFO  23:26:57,730 - #42 int
+INFO  23:26:57,731 - #42 edo
+INFO  23:26:57,732 - #14 ;
+INFO  23:26:57,732 - #12 {
+INFO  23:26:57,732 - #8 void
+INFO  23:26:57,732 - #42 main
+INFO  23:26:57,733 - #15 (
+INFO  23:26:57,733 - #16 )
+INFO  23:26:57,734 - #12 {
+INFO  23:26:57,734 - #42 edo
+INFO  23:26:57,734 - #34 =
+INFO  23:26:57,734 - #39 1
+INFO  23:26:57,735 - #14 ;
+INFO  23:26:57,735 - #5 print
+INFO  23:26:57,735 - #15 (
+INFO  23:26:57,735 - #42 edo
+INFO  23:26:57,736 - #16 )
+INFO  23:26:57,736 - #14 ;
+INFO  23:26:57,736 - #13 }
+INFO  23:26:57,736 - #13 }
+INFO  23:26:57,749 - Program(
+  ProgName(
+   prog
+  ) [ProgName]
+  ASTVarDeclList(
+    NoSpecDecl(
+    ) [NoSpecDecl]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       edo
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        StmtList(
+          NoStmt(
+          ) [NoStmt]
+          DesignatorStmt(
+            AssignStmt(
+              ASTDesignator(
+               edo
+              ) [ASTDesignator]
+              Assignop(
+              ) [Assignop]
+              ASTDesExpr(
+                OpExpr(
+                  SingleTerm(
+                    SingleFactor(
+                      NumConst(
+                       1
+                      ) [NumConst]
+                    ) [SingleFactor]
+                  ) [SingleTerm]
+                ) [OpExpr]
+              ) [ASTDesExpr]
+            ) [AssignStmt]
+          ) [DesignatorStmt]
+        ) [StmtList]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   edo
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  23:26:57,752 - Deklarisana promenljiva edo na liniji 5
+INFO  23:26:57,752 - Obradjuje se funkcija main na liniji 7
+INFO  23:26:57,752 - Dodeljena vrednost promenljivoj  na liniji 9
+INFO  23:26:57,752 - Print pozvan  na liniji 10
+INFO  23:26:57,752 - Print calls = 1
+INFO  23:26:57,753 - Generating bytecode file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.obj
+INFO  23:26:57,763 - Parsiranje uspesno zavrseno!

@@ -1,0 +1,88 @@
+INFO  23:16:16,658 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  23:16:16,693 - #2 program
+INFO  23:16:16,693 - #42 prog
+INFO  23:16:16,693 - #42 int
+INFO  23:16:16,694 - #42 bananas
+INFO  23:16:16,695 - #42 char
+ERROR 23:16:16,695 - 
+Sintaksna greska na liniji 3
+INFO  23:16:16,696 - #42 asdf
+INFO  23:16:16,696 - #14 ;
+INFO  23:16:16,696 - #42 int
+INFO  23:16:16,697 - #42 edo
+INFO  23:16:16,697 - #14 ;
+ERROR 23:16:16,697 - Sintaksna greska. Izvrsen oporavak do ; 3
+INFO  23:16:16,699 - #12 {
+INFO  23:16:16,699 - #8 void
+INFO  23:16:16,700 - #42 main
+INFO  23:16:16,700 - #15 (
+INFO  23:16:16,701 - #16 )
+INFO  23:16:16,701 - #12 {
+INFO  23:16:16,702 - #5 print
+INFO  23:16:16,711 - #15 (
+INFO  23:16:16,711 - #42 edo
+INFO  23:16:16,711 - #16 )
+INFO  23:16:16,711 - #14 ;
+INFO  23:16:16,711 - #13 }
+INFO  23:16:16,712 - #13 }
+INFO  23:16:16,720 - Program(
+  ProgName(
+   prog
+  ) [ProgName]
+  ASTVarDeclList(
+    ASTVarDeclList(
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      Type(
+       int
+      ) [Type]
+      ErrorVarSemi(
+      ) [ErrorVarSemi]
+    ) [ASTVarDeclList]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       edo
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   edo
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  23:16:16,723 - Deklarisana promenljiva edo na liniji 5
+INFO  23:16:16,723 - Obradjuje se funkcija main na liniji 7
+INFO  23:16:16,723 - Print pozvan  na liniji 10
+INFO  23:16:16,723 - Print calls = 1
+ERROR 23:16:16,724 - Parsiranje NIJE uspesno zavrseno!

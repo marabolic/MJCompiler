@@ -9,6 +9,9 @@
 				<exclude name="MyStatic.java"/>
 				<exclude name="CodeGenerator.java"/>
 				<exclude name="CounterVisitor.java"/>
+				<exclude name="Compiler.java"/>
+				<exclude name="CompilerError.java"/>
+				<exclude name="CompilerImpl.java"/>
 			</fileset>
 		</delete>
 		<delete>

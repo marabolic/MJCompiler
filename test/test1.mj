@@ -24,7 +24,7 @@ program MJProgram
 		ab = 2;
 		x = ab / 2 + 4;
 		ab = ab + 3;
-		print(y);
+		print(ab);
 		return 0;
 	}
 }

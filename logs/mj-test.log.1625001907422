@@ -1,0 +1,40 @@
+INFO  23:24:25,929 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  23:24:25,960 - #2 program
+INFO  23:24:25,960 - #42 prog
+INFO  23:24:25,960 - #42 int
+INFO  23:24:25,961 - #42 bananas
+INFO  23:24:25,962 - #42 char
+ERROR 23:24:25,962 - 
+Sintaksna greska na liniji 3
+INFO  23:24:25,962 - #42 asdf
+INFO  23:24:25,962 - #14 ;
+INFO  23:24:25,962 - #4 const
+INFO  23:24:25,963 - #42 char
+INFO  23:24:25,963 - #42 o
+ERROR 23:24:25,963 - Sintaksna greska. Izvrsen oporavak do ; 3
+INFO  23:24:25,965 - #34 =
+INFO  23:24:25,965 - #41 o
+INFO  23:24:25,965 - #14 ;
+INFO  23:24:25,966 - #42 int
+INFO  23:24:25,966 - #42 edo
+INFO  23:24:25,966 - #14 ;
+INFO  23:24:25,966 - #12 {
+INFO  23:24:25,976 - #8 void
+INFO  23:24:25,977 - #42 main
+INFO  23:24:25,977 - #15 (
+INFO  23:24:25,978 - #16 )
+INFO  23:24:25,978 - #12 {
+INFO  23:24:25,978 - #42 edo
+INFO  23:24:25,979 - #34 =
+INFO  23:24:25,979 - #39 1
+INFO  23:24:25,979 - #14 ;
+INFO  23:24:25,980 - #5 print
+ERROR 23:24:25,980 - 
+Sintaksna greska na liniji 10
+INFO  23:24:25,980 - #15 (
+INFO  23:24:25,980 - #42 edo
+INFO  23:24:25,980 - #16 )
+INFO  23:24:25,980 - #14 ;
+INFO  23:24:25,980 - #13 }
+INFO  23:24:25,980 - #13 }
+ERROR 23:24:25,980 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 12

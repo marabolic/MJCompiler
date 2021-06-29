@@ -1,0 +1,110 @@
+INFO  23:22:49,182 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  23:22:49,211 - #2 program
+INFO  23:22:49,211 - #42 prog
+INFO  23:22:49,211 - #42 int
+INFO  23:22:49,212 - #42 bananas
+INFO  23:22:49,213 - #42 char
+ERROR 23:22:49,213 - 
+Sintaksna greska na liniji 3
+INFO  23:22:49,213 - #42 asdf
+INFO  23:22:49,213 - #14 ;
+INFO  23:22:49,214 - #4 const
+INFO  23:22:49,214 - #42 char
+INFO  23:22:49,214 - #42 o
+ERROR 23:22:49,214 - Sintaksna greska. Izvrsen oporavak do ; 3
+INFO  23:22:49,216 - #34 =
+INFO  23:22:49,216 - #41 o
+INFO  23:22:49,216 - #14 ;
+INFO  23:22:49,217 - #42 int
+INFO  23:22:49,217 - #42 edo
+INFO  23:22:49,217 - #14 ;
+INFO  23:22:49,218 - #12 {
+INFO  23:22:49,227 - #8 void
+INFO  23:22:49,230 - #42 main
+INFO  23:22:49,231 - #15 (
+INFO  23:22:49,233 - #16 )
+INFO  23:22:49,234 - #12 {
+INFO  23:22:49,234 - #5 print
+INFO  23:22:49,235 - #15 (
+INFO  23:22:49,235 - #42 edo
+INFO  23:22:49,235 - #16 )
+INFO  23:22:49,236 - #14 ;
+INFO  23:22:49,236 - #13 }
+INFO  23:22:49,237 - #13 }
+INFO  23:22:49,245 - Program(
+  ProgName(
+   prog
+  ) [ProgName]
+  ASTVarDeclList(
+    ASTConstDeclList(
+      ASTVarDeclList(
+        NoSpecDecl(
+        ) [NoSpecDecl]
+        Type(
+         int
+        ) [Type]
+        ErrorVarSemi(
+        ) [ErrorVarSemi]
+      ) [ASTVarDeclList]
+      Type(
+       char
+      ) [Type]
+      SingleConstDecl(
+        ConstDecl(
+          ConstName(
+           o
+          ) [ConstName]
+          ASTCharacter(
+           o
+          ) [ASTCharacter]
+        ) [ConstDecl]
+      ) [SingleConstDecl]
+    ) [ASTConstDeclList]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       edo
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   edo
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  23:22:49,249 - Deklarisana konstanta o na liniji 4
+INFO  23:22:49,249 - Deklarisana promenljiva edo na liniji 5
+INFO  23:22:49,249 - Obradjuje se funkcija main na liniji 7
+INFO  23:22:49,249 - Print pozvan  na liniji 10
+INFO  23:22:49,249 - Print calls = 1
+ERROR 23:22:49,250 - Parsiranje NIJE uspesno zavrseno!

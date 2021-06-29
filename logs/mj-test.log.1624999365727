@@ -1,0 +1,27 @@
+INFO  22:42:00,393 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  22:42:00,426 - #2 program
+INFO  22:42:00,426 - #42 prog
+INFO  22:42:00,426 - #42 int
+INFO  22:42:00,427 - #42 edo
+INFO  22:42:00,427 - #14 ;
+INFO  22:42:00,428 - #12 {
+INFO  22:42:00,428 - #8 void
+INFO  22:42:00,428 - #42 main
+INFO  22:42:00,429 - #15 (
+INFO  22:42:00,430 - #16 )
+INFO  22:42:00,431 - #12 {
+INFO  22:42:00,431 - #42 edo
+INFO  22:42:00,431 - #34 =
+INFO  22:42:00,431 - #39 5
+INFO  22:42:00,432 - #35 ++
+ERROR 22:42:00,432 - 
+Sintaksna greska na liniji 9
+INFO  22:42:00,432 - #14 ;
+INFO  22:42:00,433 - #5 print
+INFO  22:42:00,433 - #15 (
+INFO  22:42:00,434 - #42 edo
+INFO  22:42:00,434 - #16 )
+INFO  22:42:00,434 - #14 ;
+INFO  22:42:00,434 - #13 }
+INFO  22:42:00,434 - #13 }
+ERROR 22:42:00,435 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 12

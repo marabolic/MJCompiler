@@ -1,0 +1,97 @@
+INFO  23:15:41,778 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  23:15:41,808 - #2 program
+INFO  23:15:41,808 - #42 prog
+INFO  23:15:41,808 - #42 int
+INFO  23:15:41,808 - #42 bananas
+INFO  23:15:41,809 - #37 ,
+INFO  23:15:41,809 - #42 char
+INFO  23:15:41,809 - #42 asdf
+ERROR 23:15:41,809 - 
+Sintaksna greska na liniji 3
+INFO  23:15:41,810 - #14 ;
+INFO  23:15:41,810 - #42 int
+INFO  23:15:41,810 - #42 edo
+INFO  23:15:41,810 - #14 ;
+ERROR 23:15:41,810 - Sintaksna greska. Izvrsen oporavak do ; 3
+INFO  23:15:41,811 - #12 {
+INFO  23:15:41,812 - #8 void
+INFO  23:15:41,812 - #42 main
+INFO  23:15:41,813 - #15 (
+INFO  23:15:41,813 - #16 )
+INFO  23:15:41,814 - #12 {
+INFO  23:15:41,814 - #5 print
+INFO  23:15:41,815 - #15 (
+INFO  23:15:41,815 - #42 edo
+INFO  23:15:41,815 - #16 )
+INFO  23:15:41,816 - #14 ;
+INFO  23:15:41,816 - #13 }
+INFO  23:15:41,816 - #13 }
+INFO  23:15:41,821 - Program(
+  ProgName(
+   prog
+  ) [ProgName]
+  ASTVarDeclList(
+    ASTVarDeclList(
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      Type(
+       int
+      ) [Type]
+      MoreVarDecls(
+        ASTVarDeclComma(
+          ASTVarDecl(
+           bananas
+          ) [ASTVarDecl]
+        ) [ASTVarDeclComma]
+        ErrorVarSemi(
+        ) [ErrorVarSemi]
+      ) [MoreVarDecls]
+    ) [ASTVarDeclList]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       edo
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   edo
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  23:15:41,823 - Deklarisana promenljiva bananas na liniji 3
+INFO  23:15:41,823 - Deklarisana promenljiva edo na liniji 5
+INFO  23:15:41,823 - Obradjuje se funkcija main na liniji 7
+INFO  23:15:41,823 - Print pozvan  na liniji 10
+INFO  23:15:41,823 - Print calls = 1
+ERROR 23:15:41,823 - Parsiranje NIJE uspesno zavrseno!

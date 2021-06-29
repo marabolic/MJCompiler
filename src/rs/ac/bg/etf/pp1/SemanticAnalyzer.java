@@ -2,9 +2,12 @@
 package rs.ac.bg.etf.pp1;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
-
+import rs.ac.bg.etf.pp1.CompilerError.CompilerErrorType;
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.*;
@@ -26,7 +29,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 
 	Logger log = Logger.getLogger(getClass());
-	
+	public List<CompilerError> errorList = new ArrayList<CompilerError>();
 	
 	//report functions
 	
@@ -37,6 +40,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		if (line != 0)
 			msg.append (" na liniji ").append(line);
 		log.error(msg.toString());
+		errorList.add(new CompilerError(line, message, CompilerErrorType.SEMANTIC_ERROR));
 	}
 
 	public void report_info(String message, SyntaxNode info) {
@@ -114,7 +118,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	// IF STATEMENTS
 	
 	public void visit(IfStatement ifStatement) {
-		if (ifStatement.getCondition().struct==MyStatic.boolType) {
+		if (ifStatement.getCondInParens().getCondition().struct==MyStatic.boolType) {
 			report_info("Condition je tipa bool", null);
 		}
 		else {
@@ -124,7 +128,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	
 	public void visit(IfElseStatement ifElseStatement) {
-		if (ifElseStatement.getCondition().struct==MyStatic.boolType) {
+		if (ifElseStatement.getCondInParens().getCondition().struct==MyStatic.boolType) {
 			report_info("Condition je tipa bool", null);
 		}
 		else {
@@ -231,17 +235,28 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		
 		if (assignObj.getKind() == Obj.Var) {
 			//report_info("Dodeljena vrednost " + assignStmt.getExpr() +  " promenljivoj " + assignStmt.getDesignator(), null);
-			report_info("Dodeljena vrednost promenljivoj ", assignStmt);
-
-		}
-		else if(assignObj.getKind() == Obj.Elem ){
-			//report_info("Napravljen niz " + assignStmt.getDesignator(), null);
-			report_info("Dodeljena vrednost elementu niza ", assignStmt);
-			}
+			if(assignObj.getType() == ((ASTDesExpr)assignStmt.getDesExpr()).getExpr().struct)
+				report_info("Dodeljena vrednost promenljivoj ", assignStmt);
 			else {
 				report_error("Greska na liniji " + assignStmt.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", assignStmt);
 			}
+			
+		}
+		else if(assignObj.getKind() == Obj.Elem ){
+			//report_info("Napravljen niz " + assignStmt.getDesignator(), null);
+			
+			if(assignObj.getType() == ((ASTDesExpr)assignStmt.getDesExpr()).getExpr().struct)
+				report_info("Dodeljena vrednost elementu niza ", assignStmt);
+			else {
+				report_error("Greska na liniji " + assignStmt.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", assignStmt);
+			}
+			}
+			else {
+				report_error("Greska na liniji " + assignStmt.getLine() + " : " + " identifikator moze biti samo promenljiva ili element niza! ", assignStmt);
+			}
 	}
+	
+
 	
 	public void visit(Increment increment) {
 		Obj obj = increment.getDesignator().obj;
@@ -364,7 +379,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		Obj obj = Tab.find(constName);
 		if (obj != Tab.noObj)
 			report_error("Konstanta " + constName  +" je vec deklarisana", astBoolean);
-		if (!currType.equals(MyStatic.boolType))
+		if (!currType.struct.equals(MyStatic.boolType))
 			report_error("Konstanta " + constName  +" nije dobrog tipa", astBoolean);
 		
 		Obj varNode = Tab.insert(Obj.Con, constName, currType.struct);
@@ -376,7 +391,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		Obj obj = Tab.find(constName);
 		if (obj != Tab.noObj)
 			report_error("Konstanta " + constName  +" je vec deklarisana", astCharacter);
-		if (!currType.equals(Tab.charType))
+		if (!currType.struct.equals(Tab.charType))
 			report_error("Konstanta " + constName  +" nije dobrog tipa", astCharacter);
 		
 		Obj varNode = Tab.insert(Obj.Con, constName, currType.struct);

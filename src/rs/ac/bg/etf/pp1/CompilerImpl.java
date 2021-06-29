@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -17,13 +18,17 @@ import rs.etf.pp1.symboltable.Tab;
 
 public class CompilerImpl implements Compiler{
 	
+	
+	
 	public CompilerImpl() {
 		
 	}
 
 	@Override
 	public List<CompilerError> compile(String sourceFilePath, String outputFilePath) {
-		Logger log = Logger.getLogger(MJParserTest.class);
+		Logger log = Logger.getLogger(CompilerImpl.class);
+		List<CompilerError> errorList = new ArrayList<CompilerError>();
+		
 		if (sourceFilePath == null || outputFilePath == null) {
 			log.error("Not enough arguments supplied! Usage: MJParser <source-file> <obj-file> ");
 			return null;
@@ -39,6 +44,9 @@ public class CompilerImpl implements Compiler{
 			Yylex lexer = new Yylex(br);
 			MJParser p = new MJParser(lexer);
 	        Symbol s = p.parse();  //pocetak parsiranja
+			errorList.addAll(lexer.getLexErrors());
+			errorList.addAll(p.getSynErrors());
+			
 	        Program prog = (Program)(s.value);
 	        
 	        
@@ -47,6 +55,8 @@ public class CompilerImpl implements Compiler{
 			log.info(prog.toString(""));
 			SemanticAnalyzer semanticCheck = new SemanticAnalyzer();
 			prog.traverseBottomUp(semanticCheck);
+			
+			errorList.addAll(semanticCheck.errorList);
 			
 	        log.info("Print calls = " + semanticCheck.printCallCount);
 	        Tab.dump();
@@ -68,10 +78,17 @@ public class CompilerImpl implements Compiler{
 	        	Code.write(new FileOutputStream(objFile));
 	        	log.info("Parsiranje uspesno zavrseno!");
 	        	
+	        	
 	        }
 	        else {
 	        	log.error("Parsiranje NIJE uspesno zavrseno!");
 	        }
+	        
+	        
+	        if(errorList.isEmpty())
+	        	return null;
+	        else
+	        	return errorList;
 	        
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

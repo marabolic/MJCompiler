@@ -1,53 +1,25 @@
-// Test301
 
-program test301
 
-	const int nula = 0;
-	const int jedan = 1;
-	const int pet = 5;
-
+program MJProgram
+	int x[], ab;
+	char y;
 	int niz[];
-	char nizch[];
-	int banana;
-	char edo;
+
+{ 
 	
-{
-	void main()	
-		int bodovi;
-	{
-		bodovi = 0;
-		bodovi++;
-		bodovi = bodovi + jedan;
-		bodovi = bodovi * pet;
-		bodovi--;
-		print(bodovi); 
-			
+	int main() int bodovi; {
+		bodovi = '0';
+
+		bodovi = bodovi + '2';
+
+		y++;
 		
-		niz = new int[3];
-		niz[nula] = jedan;
-		niz[1] = 2;
-		niz[niz[jedan]] = niz[niz[0]] * 3;
-		bodovi = niz[2]/niz[0];
-		print(bodovi); 
-		print(niz[2]);
+		niz = new int[y];
 		
+		niz1 = new int[3];
 		
-		nizch = new char[3];
-		nizch[0] = 'a';
-		nizch[jedan] = 'b';
-		nizch[pet - 3] = 'c';
-		print(nizch[1]);
-		print(nizch[jedan * 2]);
-			
-		
-		bodovi = bodovi + (pet * jedan - 1) * bodovi - (3 % 2 + 3 * 2 - 3); 
-		print(bodovi, 2);
-			
-		read(bodovi);
-		if(bodovi%2 == 0 && 1==2 || 2+4==6) bodovi = bodovi + 10;
-		if(true) print(bodovi + 20);
-		else print(bodovi);
+	
+		print(ab);
+		return 0;
 	}
 }
-
-

@@ -1,0 +1,110 @@
+INFO  23:27:39,645 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  23:27:39,672 - #2 program
+INFO  23:27:39,672 - #42 prog
+INFO  23:27:39,672 - #42 int
+INFO  23:27:39,673 - #42 bananas
+INFO  23:27:39,673 - #42 char
+ERROR 23:27:39,673 - 
+Sintaksna greska na liniji 3
+INFO  23:27:39,674 - #42 asdf
+INFO  23:27:39,674 - #14 ;
+INFO  23:27:39,674 - #42 int
+INFO  23:27:39,674 - #42 edo
+INFO  23:27:39,674 - #14 ;
+ERROR 23:27:39,675 - Sintaksna greska. Izvrsen oporavak do ; 3
+INFO  23:27:39,676 - #12 {
+INFO  23:27:39,676 - #8 void
+INFO  23:27:39,676 - #42 main
+INFO  23:27:39,677 - #15 (
+INFO  23:27:39,677 - #16 )
+INFO  23:27:39,678 - #12 {
+INFO  23:27:39,678 - #42 edo
+INFO  23:27:39,687 - #34 =
+INFO  23:27:39,687 - #39 1
+INFO  23:27:39,688 - #42 a
+ERROR 23:27:39,688 - 
+Sintaksna greska na liniji 8
+INFO  23:27:39,688 - #14 ;
+INFO  23:27:39,688 - #5 print
+INFO  23:27:39,688 - #15 (
+INFO  23:27:39,688 - #42 edo
+ERROR 23:27:39,688 - Sintaksna greska. Izvrsen oporavak do ; u liniji 8
+INFO  23:27:39,689 - #16 )
+INFO  23:27:39,689 - #14 ;
+INFO  23:27:39,689 - #13 }
+INFO  23:27:39,689 - #13 }
+INFO  23:27:39,694 - Program(
+  ProgName(
+   prog
+  ) [ProgName]
+  ASTVarDeclList(
+    ASTVarDeclList(
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      Type(
+       int
+      ) [Type]
+      ErrorVarSemi(
+      ) [ErrorVarSemi]
+    ) [ASTVarDeclList]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       edo
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        StmtList(
+          NoStmt(
+          ) [NoStmt]
+          DesignatorStmt(
+            AssignStmt(
+              ASTDesignator(
+               edo
+              ) [ASTDesignator]
+              Assignop(
+              ) [Assignop]
+              ErrorAssign(
+              ) [ErrorAssign]
+            ) [AssignStmt]
+          ) [DesignatorStmt]
+        ) [StmtList]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   edo
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  23:27:39,697 - Deklarisana promenljiva edo na liniji 4
+INFO  23:27:39,697 - Obradjuje se funkcija main na liniji 6
+INFO  23:27:39,697 - Dodeljena vrednost promenljivoj  na liniji 8
+INFO  23:27:39,698 - Print pozvan  na liniji 9
+INFO  23:27:39,698 - Print calls = 1
+ERROR 23:27:39,698 - Parsiranje NIJE uspesno zavrseno!

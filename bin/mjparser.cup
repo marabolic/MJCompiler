@@ -86,7 +86,7 @@ nonterminal StatementList, Statement, Addop, Muloper, Assignop, Relop, Minus;
 nonterminal DesignatorStatement, IfInsideStmt, ElseInsideStmt, IfPrepare, IfElseInsideStmt;
 nonterminal DeclList, VarDecl, ConstDeclList, ConstDecl, ConstName;
 
-nonterminal MethodDecl, Else; 
+nonterminal MethodDecl, Else, DesExpr, VarDeclComma; 
 
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition;
@@ -101,17 +101,29 @@ Program ::= (Program) PROG ProgName:p DeclList LBRACE MethodDeclList RBRACE ;
 ProgName ::= (ProgName) IDENT:progName;
 
 
-DeclList ::= (ASTVarDeclList) DeclList Type VarDeclList:varDeclList SEMI
+DeclList ::= (ASTVarDeclList) DeclList Type VarDeclList:varDeclList
 	| 
 	 (ASTConstDeclList) DeclList CONST Type ConstDeclList SEMI
 	|
 	 (NoSpecDecl) /* epsilon */
 	;
 
-VarDeclList ::= (MoreVarDecls) VarDeclList COMMA VarDecl:varDecl
+VarDeclList ::= (MoreVarDecls) VarDeclComma VarDeclList
 	|
-	(SingleVarDecl) VarDecl:varDecl
+	  (SingleVarDecl) VarDecl:varDecl SEMI
+	|
+	  (ErrorVarSemi) error:e SEMI 
+	  {: parser.report_error("Sintaksna greska. Izvrsen oporavak do ; " + eleft, null); 
+	  parser.synErrors.add(new CompilerError(eleft, "Greska u definiciji globalne promenljive. oporavak do ';'", CompilerErrorType.SYNTAX_ERROR)); :}
 	;
+		
+VarDeclComma ::= (ASTVarDeclComma) VarDecl:varDecl COMMA
+		|
+		  (ErrorVarComma) error:e COMMA
+		  {: parser.report_error("Sintaksna greska. Izvrsen oporavak do , u liniji " + eleft, null);
+		  parser.synErrors.add(new CompilerError(eleft, "Greska u definiciji globalne promenljive. oporavak do ','", CompilerErrorType.SYNTAX_ERROR));  :}
+		;		
+		
 		
 		
 VarDecl ::= (ASTVarDecl) IDENT:var
@@ -124,14 +136,6 @@ VarDecl ::= (ASTVarDecl) IDENT:var
 ConstDeclList ::= (MoreConstDecls) ConstDeclList COMMA ConstDecl 
 		| 
 		  (SingleConstDecl) ConstDecl
-		|
-		  (ErrorConstSemi) error SEMI:l 
-		  {: parser.report_error("Sintaksna greska. Izvrsen oporavak do ; u liniji " + lleft, null); 
-		  parser.synErrors.add(new CompilerError(eleft, "Greska u definiciji konstante. oporavak do ';'", CompilerErrorType.SYNTAX_ERROR)); :}
-		|
-		  (ErrorConstComma) error COMMA:l 
-		  {: parser.report_error("Sintaksna greska. Izvrsen oporavak do , u liniji " + lleft, null);
-		  parser.synErrors.add(new CompilerError(eleft, "Greska u definiciji konstante. oporavak do ','", CompilerErrorType.SYNTAX_ERROR));  :}
 		;
 		
 
@@ -204,12 +208,7 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 				;
 				
 				
-CondInParens ::= (CondInParens) LPAREN Condition RPAREN
-			|
-			(ErrorCond) error RPAREN:l
-			{: 	parser.report_error("Sintaksna greska. Izvrsen oporavak do ')'", null); 
-				parser.synErrors.add(new CompilerError(eleft, "Neispravan uslov. oporavak do ')'", CompilerErrorType.SYNTAX_ERROR));
-			:}				
+CondInParens ::= (CondInParens) LPAREN Condition RPAREN;			
 				
 IfPrepare ::= (IfPrepare) /* epsilon */ ;		
 				
@@ -219,12 +218,7 @@ Else ::= (Else)	ELSE;
 
 ElseInsideStmt ::= (ElseInsideStmt) Statement;
 			
-DesignatorStatement ::= (AssignStmt) Designator:dest Assignop Expr:e
-				|
-			  	    (ErrorAssign) Designator Assignop:l error:e 
-			  	    {: parser.report_error("Sintaksna greska. Izvrsen oporavak do ; u liniji " + lleft", null); 
-					   parser.synErrors.add(new CompilerError(eleft, "Greska u operaciji dodele. oporavak do ';'", CompilerErrorType.SYNTAX_ERROR));
-			        :}
+DesignatorStatement ::= (AssignStmt) Designator:dest Assignop DesExpr:e
 				|
 					(FuncCall) Designator:fun LPAREN ActualPars RPAREN
 				|
@@ -233,6 +227,14 @@ DesignatorStatement ::= (AssignStmt) Designator:dest Assignop Expr:e
 					(Decrement) Designator DEC
 				;
 
+
+DesExpr ::= (ASTDesExpr) Expr 
+					|
+			  	    (ErrorAssign) error:e 
+			  	    {: parser.report_error("Sintaksna greska. Izvrsen oporavak do ; u liniji " + eleft, null); 
+					   parser.synErrors.add(new CompilerError(eleft, "Greska u operaciji dodele. oporavak do ';'", CompilerErrorType.SYNTAX_ERROR));
+			        :}
+			        ;
 
 ActualPars ::= (Actuals) ActualParamList
 				|
