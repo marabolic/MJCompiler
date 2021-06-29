@@ -72,7 +72,7 @@ terminal SWITCH, CASE, BREAK, CONTINUE, CLASS, EXTENDS;
 
 nonterminal MethodDeclList;
 nonterminal FormalParamList, FormalParamDecl, FormPars, ActualPars, ActualParamList, RetType; 
-nonterminal StatementList, Statement, Addop, Muloper, Assignop, Relop;
+nonterminal StatementList, Statement, Addop, Muloper, Assignop, Relop, Minus;
 
 nonterminal DesignatorStatement;
 nonterminal DeclList, VarDecl, ConstDeclList, ConstDecl, ConstName;
@@ -81,7 +81,7 @@ nonterminal MethodDecl;
 
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName;
 
 nonterminal BasicTypes;
 
@@ -129,7 +129,10 @@ MethodDeclList ::= (ASTMethodDecList) MethodDeclList MethodDecl
 					(NoMethodDecl)	/* epsilon */
 				;
 			
-MethodDecl ::= (MethodDecl)	RetType:retType IDENT:methName LPAREN FormPars RPAREN DeclList LBRACE StatementList RBRACE ;
+MethodDecl ::= (MethodDecl)	MethodTypeName LPAREN FormPars RPAREN DeclList LBRACE StatementList RBRACE ;
+
+
+MethodTypeName ::= (MethodTypeName) RetType:retType IDENT:methName;
 
 
 RetType ::= (ActualType) Type 
@@ -178,7 +181,7 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 				| 
 				  (PrintStmt) PRINT LPAREN Expr RPAREN SEMI
 				|
-				  (PrintStmtNum) PRINT LPAREN Expr COMMA NUMBER RPAREN SEMI
+				  (PrintStmtNum) PRINT LPAREN Expr COMMA NUMBER:width RPAREN SEMI
 				|
 				  (SurroundStmt) LBRACE StatementList RBRACE
 				;
@@ -223,8 +226,11 @@ CondFact ::= (CondFactRel) Expr Relop Expr
 
 Expr ::= (OpExpr) TermSum
 		|
-		 (NegOpExpr) MINUS TermSum 
+		 (NegOpExpr) Minus TermSum 
 		;
+		
+
+Minus ::= (Minus) MINUS;		
 		
 
 TermSum ::= (SumTerm) TermSum Addop Term
@@ -250,8 +256,6 @@ Factor ::= (Var) Designator:d
 			(BoolConst) BOOL 
 		|
 			(NewArray) NEW Type LBRACKET Expr RBRACKET
-		|
-			(NewFact) NEW Type
 		|
 			(ExprInParens) LPAREN Expr RPAREN
 		;

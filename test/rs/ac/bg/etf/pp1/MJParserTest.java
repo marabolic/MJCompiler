@@ -54,10 +54,10 @@ public class MJParserTest {
 	        Tab.dump();
 	        
 	        
-	        /*
+	        
 
 	        if (!p.errorDetected && semanticCheck.passed()) {
-	        	File objFile = new File(args[1]);
+	        	File objFile = new File("test/program.obj");
 	        	log.info("Generating bytecode file: " + objFile.getAbsolutePath());
 	        	if (objFile.exists())
 	        		objFile.delete();
@@ -74,7 +74,7 @@ public class MJParserTest {
 	        else {
 	        	log.error("Parsiranje NIJE uspesno zavrseno!");
 	        }
-	        */
+	        
 		}
 	}
 }

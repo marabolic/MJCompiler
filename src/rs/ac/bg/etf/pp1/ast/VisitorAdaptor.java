@@ -1,38 +1,38 @@
 // generated with ast extension for cup
 // version 0.8
-// 27/5/2021 12:11:34
+// 29/5/2021 9:50:0
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public abstract class VisitorAdaptor implements Visitor { 
 
-    public void visit(Designator Designator) { }
-    public void visit(RetType RetType) { }
-    public void visit(Factor Factor) { }
-    public void visit(DesignatorStatement DesignatorStatement) { }
-    public void visit(ActualParamList ActualParamList) { }
-    public void visit(CondFact CondFact) { }
-    public void visit(Expr Expr) { }
-    public void visit(TermSum TermSum) { }
-    public void visit(FormalParamList FormalParamList) { }
-    public void visit(FormPars FormPars) { }
-    public void visit(VarDeclList VarDeclList) { }
-    public void visit(Muloper Muloper) { }
-    public void visit(VarDecl VarDecl) { }
-    public void visit(BasicTypes BasicTypes) { }
-    public void visit(ConstDeclList ConstDeclList) { }
-    public void visit(Addop Addop) { }
-    public void visit(FormalParamDecl FormalParamDecl) { }
-    public void visit(MethodDeclList MethodDeclList) { }
-    public void visit(DeclList DeclList) { }
-    public void visit(Statement Statement) { }
     public void visit(Relop Relop) { }
-    public void visit(Condition Condition) { }
-    public void visit(CondTerm CondTerm) { }
-    public void visit(Term Term) { }
+    public void visit(FormalParamDecl FormalParamDecl) { }
     public void visit(StatementList StatementList) { }
+    public void visit(Addop Addop) { }
+    public void visit(Factor Factor) { }
+    public void visit(CondTerm CondTerm) { }
+    public void visit(DeclList DeclList) { }
+    public void visit(Designator Designator) { }
+    public void visit(Term Term) { }
+    public void visit(RetType RetType) { }
+    public void visit(Condition Condition) { }
+    public void visit(Muloper Muloper) { }
+    public void visit(ConstDeclList ConstDeclList) { }
+    public void visit(ActualParamList ActualParamList) { }
+    public void visit(VarDeclList VarDeclList) { }
+    public void visit(FormalParamList FormalParamList) { }
+    public void visit(Expr Expr) { }
+    public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(ActualPars ActualPars) { }
+    public void visit(Statement Statement) { }
+    public void visit(VarDecl VarDecl) { }
+    public void visit(CondFact CondFact) { }
+    public void visit(MethodDeclList MethodDeclList) { }
+    public void visit(BasicTypes BasicTypes) { }
+    public void visit(TermSum TermSum) { }
+    public void visit(FormPars FormPars) { }
     public void visit(ASTCharacter ASTCharacter) { visit(); }
     public void visit(ASTBoolean ASTBoolean) { visit(); }
     public void visit(ASTNumber ASTNumber) { visit(); }
@@ -51,7 +51,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorArray DesignatorArray) { visit(); }
     public void visit(ASTDesignator ASTDesignator) { visit(); }
     public void visit(ExprInParens ExprInParens) { visit(); }
-    public void visit(NewFact NewFact) { visit(); }
     public void visit(NewArray NewArray) { visit(); }
     public void visit(BoolConst BoolConst) { visit(); }
     public void visit(CharConst CharConst) { visit(); }
@@ -62,6 +61,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MulFactors MulFactors) { visit(); }
     public void visit(SingleTerm SingleTerm) { visit(); }
     public void visit(SumTerm SumTerm) { visit(); }
+    public void visit(Minus Minus) { visit(); }
     public void visit(NegOpExpr NegOpExpr) { visit(); }
     public void visit(OpExpr OpExpr) { visit(); }
     public void visit(ASTCondFact ASTCondFact) { visit(); }
@@ -98,6 +98,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FormParams FormParams) { visit(); }
     public void visit(NoType NoType) { visit(); }
     public void visit(ActualType ActualType) { visit(); }
+    public void visit(MethodTypeName MethodTypeName) { visit(); }
     public void visit(MethodDecl MethodDecl) { visit(); }
     public void visit(NoMethodDecl NoMethodDecl) { visit(); }
     public void visit(ASTMethodDecList ASTMethodDecList) { visit(); }

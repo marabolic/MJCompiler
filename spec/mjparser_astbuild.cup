@@ -83,6 +83,7 @@ nonterminal Addop Addop;
 nonterminal Muloper Muloper;
 nonterminal Assignop Assignop;
 nonterminal Relop Relop;
+nonterminal Minus Minus;
 
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal DeclList DeclList;
@@ -95,7 +96,7 @@ nonterminal MethodDecl MethodDecl;
 
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName;
 
 nonterminal BasicTypes BasicTypes;
 
@@ -143,8 +144,10 @@ MethodDeclList ::= (ASTMethodDecList) MethodDeclList:M1 MethodDecl:M2 {: RESULT=
 					(NoMethodDecl) {: RESULT=new NoMethodDecl(); :}	/* epsilon */
 				;
 			
-MethodDecl ::= (MethodDecl)	RetType:retType IDENT:methName LPAREN FormPars:F1 RPAREN DeclList:D2 LBRACE StatementList:S3 RBRACE {: RESULT=new MethodDecl(retType, methName, F1, D2, S3); RESULT.setLine(retTypeleft); :} ;
+MethodDecl ::= (MethodDecl)	MethodTypeName:M1 LPAREN FormPars:F2 RPAREN DeclList:D3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodDecl(M1, F2, D3, S4); RESULT.setLine(M1left); :} ;
 
+
+MethodTypeName ::= (MethodTypeName) RetType:retType IDENT:methName {: RESULT=new MethodTypeName(retType, methName); RESULT.setLine(retTypeleft); :};
 
 RetType ::= (ActualType) Type:T1 {: RESULT=new ActualType(T1); RESULT.setLine(T1left); :} 
 			|
@@ -192,7 +195,7 @@ Statement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new Designa
 				| 
 				  (PrintStmt) PRINT LPAREN Expr:E1 RPAREN SEMI {: RESULT=new PrintStmt(E1); RESULT.setLine(E1left); :}
 				|
-				  (PrintStmtNum) PRINT LPAREN Expr:E1 COMMA NUMBER:N2 RPAREN SEMI {: RESULT=new PrintStmtNum(E1, N2); RESULT.setLine(E1left); :}
+				  (PrintStmtNum) PRINT LPAREN Expr:E1 COMMA NUMBER:width RPAREN SEMI {: RESULT=new PrintStmtNum(E1, width); RESULT.setLine(E1left); :}
 				|
 				  (SurroundStmt) LBRACE StatementList:S1 RBRACE {: RESULT=new SurroundStmt(S1); RESULT.setLine(S1left); :}
 				;
@@ -237,8 +240,11 @@ CondFact ::= (CondFactRel) Expr:E1 Relop:R2 Expr:E3 {: RESULT=new CondFactRel(E1
 
 Expr ::= (OpExpr) TermSum:T1 {: RESULT=new OpExpr(T1); RESULT.setLine(T1left); :}
 		|
-		 (NegOpExpr) MINUS TermSum:T1 {: RESULT=new NegOpExpr(T1); RESULT.setLine(T1left); :} 
+		 (NegOpExpr) Minus:M1 TermSum:T2 {: RESULT=new NegOpExpr(M1, T2); RESULT.setLine(M1left); :} 
 		;
+		
+
+Minus ::= (Minus) MINUS {: RESULT=new Minus(); :};		
 		
 
 TermSum ::= (SumTerm) TermSum:T1 Addop:A2 Term:T3 {: RESULT=new SumTerm(T1, A2, T3); RESULT.setLine(T1left); :}
@@ -264,8 +270,6 @@ Factor ::= (Var) Designator:d {: RESULT=new Var(d); RESULT.setLine(dleft); :}
 			(BoolConst) BOOL:B1 {: RESULT=new BoolConst(B1); RESULT.setLine(B1left); :} 
 		|
 			(NewArray) NEW Type:T1 LBRACKET Expr:E2 RBRACKET {: RESULT=new NewArray(T1, E2); RESULT.setLine(T1left); :}
-		|
-			(NewFact) NEW Type:T1 {: RESULT=new NewFact(T1); RESULT.setLine(T1left); :}
 		|
 			(ExprInParens) LPAREN Expr:E1 RPAREN {: RESULT=new ExprInParens(E1); RESULT.setLine(E1left); :}
 		;

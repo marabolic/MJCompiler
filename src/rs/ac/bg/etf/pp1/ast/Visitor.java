@@ -1,38 +1,38 @@
 // generated with ast extension for cup
 // version 0.8
-// 27/5/2021 12:11:34
+// 29/5/2021 9:50:0
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public interface Visitor { 
 
-    public void visit(Designator Designator);
-    public void visit(RetType RetType);
-    public void visit(Factor Factor);
-    public void visit(DesignatorStatement DesignatorStatement);
-    public void visit(ActualParamList ActualParamList);
-    public void visit(CondFact CondFact);
-    public void visit(Expr Expr);
-    public void visit(TermSum TermSum);
-    public void visit(FormalParamList FormalParamList);
-    public void visit(FormPars FormPars);
-    public void visit(VarDeclList VarDeclList);
-    public void visit(Muloper Muloper);
-    public void visit(VarDecl VarDecl);
-    public void visit(BasicTypes BasicTypes);
-    public void visit(ConstDeclList ConstDeclList);
-    public void visit(Addop Addop);
-    public void visit(FormalParamDecl FormalParamDecl);
-    public void visit(MethodDeclList MethodDeclList);
-    public void visit(DeclList DeclList);
-    public void visit(Statement Statement);
     public void visit(Relop Relop);
-    public void visit(Condition Condition);
-    public void visit(CondTerm CondTerm);
-    public void visit(Term Term);
+    public void visit(FormalParamDecl FormalParamDecl);
     public void visit(StatementList StatementList);
+    public void visit(Addop Addop);
+    public void visit(Factor Factor);
+    public void visit(CondTerm CondTerm);
+    public void visit(DeclList DeclList);
+    public void visit(Designator Designator);
+    public void visit(Term Term);
+    public void visit(RetType RetType);
+    public void visit(Condition Condition);
+    public void visit(Muloper Muloper);
+    public void visit(ConstDeclList ConstDeclList);
+    public void visit(ActualParamList ActualParamList);
+    public void visit(VarDeclList VarDeclList);
+    public void visit(FormalParamList FormalParamList);
+    public void visit(Expr Expr);
+    public void visit(DesignatorStatement DesignatorStatement);
     public void visit(ActualPars ActualPars);
+    public void visit(Statement Statement);
+    public void visit(VarDecl VarDecl);
+    public void visit(CondFact CondFact);
+    public void visit(MethodDeclList MethodDeclList);
+    public void visit(BasicTypes BasicTypes);
+    public void visit(TermSum TermSum);
+    public void visit(FormPars FormPars);
     public void visit(ASTCharacter ASTCharacter);
     public void visit(ASTBoolean ASTBoolean);
     public void visit(ASTNumber ASTNumber);
@@ -51,7 +51,6 @@ public interface Visitor {
     public void visit(DesignatorArray DesignatorArray);
     public void visit(ASTDesignator ASTDesignator);
     public void visit(ExprInParens ExprInParens);
-    public void visit(NewFact NewFact);
     public void visit(NewArray NewArray);
     public void visit(BoolConst BoolConst);
     public void visit(CharConst CharConst);
@@ -62,6 +61,7 @@ public interface Visitor {
     public void visit(MulFactors MulFactors);
     public void visit(SingleTerm SingleTerm);
     public void visit(SumTerm SumTerm);
+    public void visit(Minus Minus);
     public void visit(NegOpExpr NegOpExpr);
     public void visit(OpExpr OpExpr);
     public void visit(ASTCondFact ASTCondFact);
@@ -98,6 +98,7 @@ public interface Visitor {
     public void visit(FormParams FormParams);
     public void visit(NoType NoType);
     public void visit(ActualType ActualType);
+    public void visit(MethodTypeName MethodTypeName);
     public void visit(MethodDecl MethodDecl);
     public void visit(NoMethodDecl NoMethodDecl);
     public void visit(ASTMethodDecList ASTMethodDecList);
