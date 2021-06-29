@@ -58,5 +58,24 @@
 		</javac>
 
 	</target>
+	
+	<target name="disasm">
+		<java classname="rs.etf.pp1.mj.runtime.disasm">
+			<arg value="test/program.obj"/>
+			<classpath>
+				<pathelement location="lib/mj-runtime.jar"/>
+			</classpath>
+		</java>
+	</target>
+
+	<target name="runObj" depends="disasm" >
+		<java classname="rs.etf.pp1.mj.runtime.Run">
+			<arg value="${debug}"/>
+			<arg value="test/program.obj"/>
+			<classpath>
+				<pathelement location="lib/mj-runtime.jar"/>
+			</classpath>
+		</java>
+	</target>	
 
 </project>

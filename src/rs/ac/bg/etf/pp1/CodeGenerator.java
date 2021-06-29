@@ -1,16 +1,20 @@
 package rs.ac.bg.etf.pp1;
 
 import rs.ac.bg.etf.pp1.ast.*;
-import rs.ac.bg.etf.pp1.CounterVisitor;
+
+import java.util.Stack;
+
 import rs.ac.bg.etf.pp1.CounterVisitor.FormParamCounter;
 import rs.ac.bg.etf.pp1.CounterVisitor.VarCounter;
 import rs.etf.pp1.symboltable.*;
 import rs.etf.pp1.symboltable.concepts.*;
 import rs.etf.pp1.mj.runtime.Code;
 
+
 public class CodeGenerator extends VisitorAdaptor{
 	
 	private int mainPc;
+	Stack<Integer> savedPC = new Stack<>();
 	
 	private boolean minusSet = false;
 	
@@ -26,13 +30,13 @@ public class CodeGenerator extends VisitorAdaptor{
 		
 	}
 	
-public void visit(MethodTypeName methodTypeName){
+	public void visit(MethodTypeName methodTypeName){
 		
 		if("main".equalsIgnoreCase(methodTypeName.getMethName())){
 			mainPc = Code.pc;
 		}
 		methodTypeName.obj.setAdr(Code.pc);
-		// Collect arguments and local variables
+
 		SyntaxNode methodNode = methodTypeName.getParent();
 	
 		VarCounter varCnt = new VarCounter();
@@ -41,13 +45,21 @@ public void visit(MethodTypeName methodTypeName){
 		FormParamCounter fpCnt = new FormParamCounter();
 		methodNode.traverseTopDown(fpCnt);
 		
-		// Generate the entry
+
+
 		Code.put(Code.enter);
 		Code.put(fpCnt.getCount());
 		Code.put(fpCnt.getCount() + varCnt.getCount());
 	
 	}
 	
+	public void visit(MethodDecl methodDecl) {
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
+	
+	// STATEMENTS
 	
 	public void visit(PrintStmt printStmt){
 		if((printStmt.getExpr().struct == Tab.charType)){
@@ -56,7 +68,6 @@ public void visit(MethodTypeName methodTypeName){
 		}else{
 			Code.loadConst(5);
 			Code.put(Code.print);
-			
 		}
 	}
 	
@@ -81,34 +92,61 @@ public void visit(MethodTypeName methodTypeName){
 		Code.store(readStmt.getDesignator().obj);
 	}
 	
-	public void visit(ASTDesignator des) {
+	
+	public void visit(Increment inc) {
 		
-		if (des.getParent() instanceof Factor || des.getParent() instanceof Increment || des.getParent() instanceof Decrement  ) {
-			Code.load(des.obj);
-		}
-		if (des.getParent() instanceof DesignatorStatement){
-			
-		}
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.store(inc.getDesignator().obj);
+	}
+	
+	public void visit(Decrement dec) {
+		Code.loadConst(1);
+		Code.put(Code.sub);
+		Code.store(dec.getDesignator().obj);
+	}
+	
+	public void visit(IfStatement ifStatement) {
+		Code.fixup(savedPC.pop());
+	}
+	
+	public void visit(IfElseStatement ifElseStatement) {
+		
 	}
 	
 	
-	public void visit(DesignatorArray des) {
-		if (des.getParent() instanceof Factor || des.getParent() instanceof Increment || des.getParent() instanceof Decrement  ) {
-			Code.load(des.obj);
-		}
-		if (des.getParent() instanceof DesignatorStatement){
-			
-		}
+	public void visit(IfInsideStmt ifStatement) {
+		
 	}
+	
+	public void visit(Else elseS) {
+		Code.putJump(0);
+		int temp = Code.pc - 2;
+		Code.fixup(savedPC.pop());
+		savedPC.push(temp);
+	}
+	
+	public void visit(ElseInsideStmt ifElseStatement) {
+		Code.fixup(savedPC.pop());
+	}
+	
 	
 	
 	
 	// CONDITIONS
 	
+	public void visit(IfPrepare ifprep) {
+		Code.loadConst(0);
+		Code.putFalseJump(Code.gt, 0);
+		savedPC.push(Code.pc - 2);
+		
+	}
+	
 	public void visit(MulCondTerms cond) {
 		Code.put(Code.add);
+		
 	}
-
+	
 	public void visit(SingleCondTerm cond) {
 		
 	}
@@ -117,36 +155,30 @@ public void visit(MethodTypeName methodTypeName){
 		Code.put(Code.mul); 
 	}
 	
-	public void visit (SingleCondFact cond) {
-		
-	}
-	
 	public void visit (CondFactRel cond) {
 		if (cond.getRelop() instanceof CompEqual) {
-			Code.put(Code.eq);
+			Code.putFalseJump(Code.eq, Code.pc+7);
 		}
 		if (cond.getRelop() instanceof NotEqual) {
-			Code.put(Code.ne);
+			Code.putFalseJump(Code.ne, Code.pc+7);
 		}
 		if (cond.getRelop() instanceof GreaterThan) {
-			Code.put(Code.gt);
+			Code.putFalseJump(Code.gt, Code.pc+7);
 		}
 		if (cond.getRelop() instanceof GtEqual) {
-			Code.put(Code.ge);
+			Code.putFalseJump(Code.ge, Code.pc+7);
 		}
 		if (cond.getRelop() instanceof LessThan) {
-			Code.put(Code.lt);
+			Code.putFalseJump(Code.lt, Code.pc+7);
 		}
 		if (cond.getRelop() instanceof LsEqual) {
-			Code.put(Code.le);
+			Code.putFalseJump(Code.le, Code.pc+7);
 		}
-		
+		Code.loadConst(1);
+		Code.putJump(Code.pc+4);
+		Code.loadConst(0);
 	}
-	
-	public void visit (ASTCondFact cond) {
-		
-	}
-	
+
 	
 	
 	
@@ -222,6 +254,38 @@ public void visit(MethodTypeName methodTypeName){
 		}
 	}
 	
+	
+	
+	// DESIGNATOR
+	
+	public void visit(ASTDesignator des) {
+		
+		if (des.getParent() instanceof Factor || des.getParent() instanceof Increment || des.getParent() instanceof Decrement  ) {
+			Code.load(des.obj);
+		}
+		if (des.getParent() instanceof DesignatorStatement){
+			
+		}
+	}
+	
+	
+	public void visit(DesignatorArray des) {
+		if (des.getParent() instanceof Factor) {
+			Code.load(des.obj);
+		}
+		
+		
+		if (des.getParent() instanceof Increment || des.getParent() instanceof Decrement ) {
+			Code.put(Code.dup2);
+			Code.load(des.obj);
+		}
+		
+	}
+	
+	public void visit(DesArrayName des) {
+		//System.out.println("Adresa: " + des.obj.getAdr() + " level: " + des.obj.getLevel() + " kind: " + des.obj.getKind() + " name: " + des.getName());
+		Code.load(des.obj);
+	}
 	
 	// OTHER
 

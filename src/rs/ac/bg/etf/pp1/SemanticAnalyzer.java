@@ -4,9 +4,9 @@ package rs.ac.bg.etf.pp1;
 
 import org.apache.log4j.Logger;
 
-import com.sun.accessibility.internal.resources.accessibility;
 
 import rs.ac.bg.etf.pp1.ast.*;
+import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.*;
 import rs.etf.pp1.symboltable.concepts.*;
 
@@ -21,6 +21,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	String constName = null;
 	Obj currentMethod = null;
 	Type currType;
+	boolean mainExists = false;
 	
 
 	Logger log = Logger.getLogger(getClass());
@@ -54,6 +55,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	nVars = Tab.currentScope.getnVars();
     	Tab.chainLocalSymbols(program.getProgName().obj);
     	Tab.closeScope();
+    	
+    	if (!mainExists)
+    		report_error("Greska: Main funkcija mora da postojie", null);
     }
 	
 	public void visit(ProgName progName) {
@@ -81,6 +85,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	// METHOD DECLARATION
 	
 	public void visit(MethodTypeName methodTypeName){
+		if("main".equalsIgnoreCase(methodTypeName.getMethName())){
+			mainExists = true;
+		}
+		
 		if (methodTypeName.getRetType() instanceof ActualType) {
 			ActualType type = (ActualType) methodTypeName.getRetType();
 			currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethName(), type.getType().struct);
@@ -95,8 +103,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		report_info("Obradjuje se funkcija " + methodTypeName.getMethName(), methodTypeName);
 	}
 	 
-	public void visit() {
-		
+	public void visit(MethodDecl methodDecl) {
+		Tab.chainLocalSymbols(currentMethod);
+		Tab.closeScope();
 	}
 	
 	
@@ -415,15 +424,16 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 	 
 	 public void visit(DesignatorArray designator){
-    	Obj obj = Tab.find(designator.getName());
+		String name = designator.getDesArrayName().getName();
+    	Obj obj = Tab.find(name);
     	
     	if(obj == Tab.noObj){
-			report_error("Greska na liniji " + designator.getLine()+ " : ime "+designator.getName()+" nije deklarisano! ", null);
+			report_error("Greska na liniji " + designator.getLine()+ " : ime "+name+" nije deklarisano! ", null);
 			designator.obj = Tab.noObj;
     	}
     	else {
     		if (obj.getType().getKind() != Struct.Array) {
-				report_error("Greska na liniji " + designator.getLine() + " Designator " + designator.getName() + " nije niz ", designator);
+				report_error("Greska na liniji " + designator.getLine() + " Designator " + name + " nije niz ", designator);
 				designator.obj = Tab.noObj;
     		}
 	    	else {
@@ -438,6 +448,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
 	 }
 	 
+	 public void visit(DesArrayName desArrayName) {
+		 desArrayName.obj = Tab.find(desArrayName.getName());
+	 }
 	 
 	 
 	 public boolean passed(){

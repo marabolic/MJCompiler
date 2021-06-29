@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 29/5/2021 9:50:0
+// 29/5/2021 16:38:50
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -24,6 +24,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(VarDeclList VarDeclList) { }
     public void visit(FormalParamList FormalParamList) { }
     public void visit(Expr Expr) { }
+    public void visit(IfElseInsideStmt IfElseInsideStmt) { }
     public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(ActualPars ActualPars) { }
     public void visit(Statement Statement) { }
@@ -48,6 +49,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(NotEqual NotEqual) { visit(); }
     public void visit(CompEqual CompEqual) { visit(); }
     public void visit(Assignop Assignop) { visit(); }
+    public void visit(DesArrayName DesArrayName) { visit(); }
     public void visit(DesignatorArray DesignatorArray) { visit(); }
     public void visit(ASTDesignator ASTDesignator) { visit(); }
     public void visit(ExprInParens ExprInParens) { visit(); }
@@ -78,6 +80,10 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Increment Increment) { visit(); }
     public void visit(FuncCall FuncCall) { visit(); }
     public void visit(AssignStmt AssignStmt) { visit(); }
+    public void visit(ElseInsideStmt ElseInsideStmt) { visit(); }
+    public void visit(Else Else) { visit(); }
+    public void visit(IfInsideStmt IfInsideStmt) { visit(); }
+    public void visit(IfPrepare IfPrepare) { visit(); }
     public void visit(SurroundStmt SurroundStmt) { visit(); }
     public void visit(PrintStmtNum PrintStmtNum) { visit(); }
     public void visit(PrintStmt PrintStmt) { visit(); }

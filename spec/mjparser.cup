@@ -74,14 +74,14 @@ nonterminal MethodDeclList;
 nonterminal FormalParamList, FormalParamDecl, FormPars, ActualPars, ActualParamList, RetType; 
 nonterminal StatementList, Statement, Addop, Muloper, Assignop, Relop, Minus;
 
-nonterminal DesignatorStatement;
+nonterminal DesignatorStatement, IfInsideStmt, ElseInsideStmt, IfPrepare, IfElseInsideStmt;
 nonterminal DeclList, VarDecl, ConstDeclList, ConstDecl, ConstName;
 
-nonterminal MethodDecl; 
+nonterminal MethodDecl, Else; 
 
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName, DesArrayName;
 
 nonterminal BasicTypes;
 
@@ -169,9 +169,9 @@ StatementList ::= (StmtList) StatementList Statement
 
 Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 				|
-				  (IfStatement) IF LPAREN Condition RPAREN Statement
+				  (IfStatement) IF LPAREN Condition RPAREN IfPrepare IfInsideStmt
 				|
-				  (IfElseStatement) IF LPAREN Condition RPAREN Statement ELSE Statement
+				  (IfElseStatement) IF LPAREN Condition RPAREN IfPrepare IfInsideStmt Else ElseInsideStmt
 				|
 				  (ReturnExpr) RETURN Expr SEMI
 				|
@@ -186,6 +186,14 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 				  (SurroundStmt) LBRACE StatementList RBRACE
 				;
 				
+				
+IfPrepare ::= (IfPrepare) /* epsilon */ ;		
+				
+IfInsideStmt ::= (IfInsideStmt)	Statement;		
+
+Else ::= (Else)	ELSE;	
+
+ElseInsideStmt ::= (ElseInsideStmt) Statement;
 			
 DesignatorStatement ::= (AssignStmt) Designator:dest Assignop Expr:e
 				|
@@ -206,6 +214,7 @@ ActualParamList ::= (ActualParList) ActualParamList COMMA Expr
 				|
 					(ActualParam) Expr
 				;
+				
 				
 				
 Condition ::= (MulCondTerms) Condition OR CondTerm
@@ -264,9 +273,11 @@ Factor ::= (Var) Designator:d
  
 Designator ::= (ASTDesignator) IDENT:name 
 			|	
-			   (DesignatorArray)  IDENT:name LBRACKET Expr RBRACKET
+			   (DesignatorArray) DesArrayName LBRACKET Expr RBRACKET
 			;
 
+
+DesArrayName ::= (DesArrayName) IDENT:name;
 
 Assignop ::= (Assignop) EQUAL ;
 

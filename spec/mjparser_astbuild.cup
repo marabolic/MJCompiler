@@ -86,17 +86,22 @@ nonterminal Relop Relop;
 nonterminal Minus Minus;
 
 nonterminal DesignatorStatement DesignatorStatement;
+nonterminal IfInsideStmt IfInsideStmt;
+nonterminal ElseInsideStmt ElseInsideStmt;
+nonterminal IfPrepare IfPrepare;
+nonterminal IfElseInsideStmt IfElseInsideStmt;
 nonterminal DeclList DeclList;
 nonterminal VarDecl VarDecl;
 nonterminal ConstDeclList ConstDeclList;
 nonterminal ConstDecl ConstDecl;
 nonterminal ConstName ConstName;
 
-nonterminal MethodDecl MethodDecl; 
+nonterminal MethodDecl MethodDecl;
+nonterminal Else Else; 
 
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName, DesArrayName;
 
 nonterminal BasicTypes BasicTypes;
 
@@ -149,6 +154,7 @@ MethodDecl ::= (MethodDecl)	MethodTypeName:M1 LPAREN FormPars:F2 RPAREN DeclList
 
 MethodTypeName ::= (MethodTypeName) RetType:retType IDENT:methName {: RESULT=new MethodTypeName(retType, methName); RESULT.setLine(retTypeleft); :};
 
+
 RetType ::= (ActualType) Type:T1 {: RESULT=new ActualType(T1); RESULT.setLine(T1left); :} 
 			|
 			(NoType) VOID {: RESULT=new NoType(); :}
@@ -183,9 +189,9 @@ StatementList ::= (StmtList) StatementList:S1 Statement:S2 {: RESULT=new StmtLis
 
 Statement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new DesignatorStmt(D1); RESULT.setLine(D1left); :}
 				|
-				  (IfStatement) IF LPAREN Condition:C1 RPAREN Statement:S2 {: RESULT=new IfStatement(C1, S2); RESULT.setLine(C1left); :}
+				  (IfStatement) IF LPAREN Condition:C1 RPAREN IfPrepare:I2 IfInsideStmt:I3 {: RESULT=new IfStatement(C1, I2, I3); RESULT.setLine(C1left); :}
 				|
-				  (IfElseStatement) IF LPAREN Condition:C1 RPAREN Statement:S2 ELSE Statement:S3 {: RESULT=new IfElseStatement(C1, S2, S3); RESULT.setLine(C1left); :}
+				  (IfElseStatement) IF LPAREN Condition:C1 RPAREN IfPrepare:I2 IfInsideStmt:I3 Else:E4 ElseInsideStmt:E5 {: RESULT=new IfElseStatement(C1, I2, I3, E4, E5); RESULT.setLine(C1left); :}
 				|
 				  (ReturnExpr) RETURN Expr:E1 SEMI {: RESULT=new ReturnExpr(E1); RESULT.setLine(E1left); :}
 				|
@@ -200,6 +206,14 @@ Statement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new Designa
 				  (SurroundStmt) LBRACE StatementList:S1 RBRACE {: RESULT=new SurroundStmt(S1); RESULT.setLine(S1left); :}
 				;
 				
+				
+IfPrepare ::= (IfPrepare) {: RESULT=new IfPrepare(); :} /* epsilon */ ;		
+				
+IfInsideStmt ::= (IfInsideStmt)	Statement:S1 {: RESULT=new IfInsideStmt(S1); RESULT.setLine(S1left); :};		
+
+Else ::= (Else)	ELSE {: RESULT=new Else(); :};	
+
+ElseInsideStmt ::= (ElseInsideStmt) Statement:S1 {: RESULT=new ElseInsideStmt(S1); RESULT.setLine(S1left); :};
 			
 DesignatorStatement ::= (AssignStmt) Designator:dest Assignop:A1 Expr:e {: RESULT=new AssignStmt(dest, A1, e); RESULT.setLine(destleft); :}
 				|
@@ -220,6 +234,7 @@ ActualParamList ::= (ActualParList) ActualParamList:A1 COMMA Expr:E2 {: RESULT=n
 				|
 					(ActualParam) Expr:E1 {: RESULT=new ActualParam(E1); RESULT.setLine(E1left); :}
 				;
+				
 				
 				
 Condition ::= (MulCondTerms) Condition:C1 OR CondTerm:C2 {: RESULT=new MulCondTerms(C1, C2); RESULT.setLine(C1left); :}
@@ -278,9 +293,11 @@ Factor ::= (Var) Designator:d {: RESULT=new Var(d); RESULT.setLine(dleft); :}
  
 Designator ::= (ASTDesignator) IDENT:name {: RESULT=new ASTDesignator(name); RESULT.setLine(nameleft); :} 
 			|	
-			   (DesignatorArray)  IDENT:name LBRACKET Expr:E1 RBRACKET {: RESULT=new DesignatorArray(name, E1); RESULT.setLine(nameleft); :}
+			   (DesignatorArray) DesArrayName:D1 LBRACKET Expr:E2 RBRACKET {: RESULT=new DesignatorArray(D1, E2); RESULT.setLine(D1left); :}
 			;
 
+
+DesArrayName ::= (DesArrayName) IDENT:name {: RESULT=new DesArrayName(name); RESULT.setLine(nameleft); :};
 
 Assignop ::= (Assignop) EQUAL {: RESULT=new Assignop(); :} ;
 

@@ -1,27 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 29/5/2021 9:50:0
+// 29/5/2021 16:38:50
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class DesignatorArray extends Designator {
 
-    private String name;
+    private DesArrayName DesArrayName;
     private Expr Expr;
 
-    public DesignatorArray (String name, Expr Expr) {
-        this.name=name;
+    public DesignatorArray (DesArrayName DesArrayName, Expr Expr) {
+        this.DesArrayName=DesArrayName;
+        if(DesArrayName!=null) DesArrayName.setParent(this);
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
 
-    public String getName() {
-        return name;
+    public DesArrayName getDesArrayName() {
+        return DesArrayName;
     }
 
-    public void setName(String name) {
-        this.name=name;
+    public void setDesArrayName(DesArrayName DesArrayName) {
+        this.DesArrayName=DesArrayName;
     }
 
     public Expr getExpr() {
@@ -37,15 +38,18 @@ public class DesignatorArray extends Designator {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(DesArrayName!=null) DesArrayName.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(DesArrayName!=null) DesArrayName.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(DesArrayName!=null) DesArrayName.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -55,7 +59,10 @@ public class DesignatorArray extends Designator {
         buffer.append(tab);
         buffer.append("DesignatorArray(\n");
 
-        buffer.append(" "+tab+name);
+        if(DesArrayName!=null)
+            buffer.append(DesArrayName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(Expr!=null)

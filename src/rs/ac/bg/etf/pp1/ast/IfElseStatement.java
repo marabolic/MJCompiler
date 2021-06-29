@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 29/5/2021 9:50:0
+// 29/5/2021 16:38:50
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,16 +8,22 @@ package rs.ac.bg.etf.pp1.ast;
 public class IfElseStatement extends Statement {
 
     private Condition Condition;
-    private Statement Statement;
-    private Statement Statement1;
+    private IfPrepare IfPrepare;
+    private IfInsideStmt IfInsideStmt;
+    private Else Else;
+    private ElseInsideStmt ElseInsideStmt;
 
-    public IfElseStatement (Condition Condition, Statement Statement, Statement Statement1) {
+    public IfElseStatement (Condition Condition, IfPrepare IfPrepare, IfInsideStmt IfInsideStmt, Else Else, ElseInsideStmt ElseInsideStmt) {
         this.Condition=Condition;
         if(Condition!=null) Condition.setParent(this);
-        this.Statement=Statement;
-        if(Statement!=null) Statement.setParent(this);
-        this.Statement1=Statement1;
-        if(Statement1!=null) Statement1.setParent(this);
+        this.IfPrepare=IfPrepare;
+        if(IfPrepare!=null) IfPrepare.setParent(this);
+        this.IfInsideStmt=IfInsideStmt;
+        if(IfInsideStmt!=null) IfInsideStmt.setParent(this);
+        this.Else=Else;
+        if(Else!=null) Else.setParent(this);
+        this.ElseInsideStmt=ElseInsideStmt;
+        if(ElseInsideStmt!=null) ElseInsideStmt.setParent(this);
     }
 
     public Condition getCondition() {
@@ -28,20 +34,36 @@ public class IfElseStatement extends Statement {
         this.Condition=Condition;
     }
 
-    public Statement getStatement() {
-        return Statement;
+    public IfPrepare getIfPrepare() {
+        return IfPrepare;
     }
 
-    public void setStatement(Statement Statement) {
-        this.Statement=Statement;
+    public void setIfPrepare(IfPrepare IfPrepare) {
+        this.IfPrepare=IfPrepare;
     }
 
-    public Statement getStatement1() {
-        return Statement1;
+    public IfInsideStmt getIfInsideStmt() {
+        return IfInsideStmt;
     }
 
-    public void setStatement1(Statement Statement1) {
-        this.Statement1=Statement1;
+    public void setIfInsideStmt(IfInsideStmt IfInsideStmt) {
+        this.IfInsideStmt=IfInsideStmt;
+    }
+
+    public Else getElse() {
+        return Else;
+    }
+
+    public void setElse(Else Else) {
+        this.Else=Else;
+    }
+
+    public ElseInsideStmt getElseInsideStmt() {
+        return ElseInsideStmt;
+    }
+
+    public void setElseInsideStmt(ElseInsideStmt ElseInsideStmt) {
+        this.ElseInsideStmt=ElseInsideStmt;
     }
 
     public void accept(Visitor visitor) {
@@ -50,21 +72,27 @@ public class IfElseStatement extends Statement {
 
     public void childrenAccept(Visitor visitor) {
         if(Condition!=null) Condition.accept(visitor);
-        if(Statement!=null) Statement.accept(visitor);
-        if(Statement1!=null) Statement1.accept(visitor);
+        if(IfPrepare!=null) IfPrepare.accept(visitor);
+        if(IfInsideStmt!=null) IfInsideStmt.accept(visitor);
+        if(Else!=null) Else.accept(visitor);
+        if(ElseInsideStmt!=null) ElseInsideStmt.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Condition!=null) Condition.traverseTopDown(visitor);
-        if(Statement!=null) Statement.traverseTopDown(visitor);
-        if(Statement1!=null) Statement1.traverseTopDown(visitor);
+        if(IfPrepare!=null) IfPrepare.traverseTopDown(visitor);
+        if(IfInsideStmt!=null) IfInsideStmt.traverseTopDown(visitor);
+        if(Else!=null) Else.traverseTopDown(visitor);
+        if(ElseInsideStmt!=null) ElseInsideStmt.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Condition!=null) Condition.traverseBottomUp(visitor);
-        if(Statement!=null) Statement.traverseBottomUp(visitor);
-        if(Statement1!=null) Statement1.traverseBottomUp(visitor);
+        if(IfPrepare!=null) IfPrepare.traverseBottomUp(visitor);
+        if(IfInsideStmt!=null) IfInsideStmt.traverseBottomUp(visitor);
+        if(Else!=null) Else.traverseBottomUp(visitor);
+        if(ElseInsideStmt!=null) ElseInsideStmt.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -79,14 +107,26 @@ public class IfElseStatement extends Statement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Statement!=null)
-            buffer.append(Statement.toString("  "+tab));
+        if(IfPrepare!=null)
+            buffer.append(IfPrepare.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Statement1!=null)
-            buffer.append(Statement1.toString("  "+tab));
+        if(IfInsideStmt!=null)
+            buffer.append(IfInsideStmt.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(Else!=null)
+            buffer.append(Else.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(ElseInsideStmt!=null)
+            buffer.append(ElseInsideStmt.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

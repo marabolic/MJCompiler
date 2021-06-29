@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 29/5/2021 9:50:0
+// 29/5/2021 16:38:50
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,16 @@ package rs.ac.bg.etf.pp1.ast;
 public class IfStatement extends Statement {
 
     private Condition Condition;
-    private Statement Statement;
+    private IfPrepare IfPrepare;
+    private IfInsideStmt IfInsideStmt;
 
-    public IfStatement (Condition Condition, Statement Statement) {
+    public IfStatement (Condition Condition, IfPrepare IfPrepare, IfInsideStmt IfInsideStmt) {
         this.Condition=Condition;
         if(Condition!=null) Condition.setParent(this);
-        this.Statement=Statement;
-        if(Statement!=null) Statement.setParent(this);
+        this.IfPrepare=IfPrepare;
+        if(IfPrepare!=null) IfPrepare.setParent(this);
+        this.IfInsideStmt=IfInsideStmt;
+        if(IfInsideStmt!=null) IfInsideStmt.setParent(this);
     }
 
     public Condition getCondition() {
@@ -25,12 +28,20 @@ public class IfStatement extends Statement {
         this.Condition=Condition;
     }
 
-    public Statement getStatement() {
-        return Statement;
+    public IfPrepare getIfPrepare() {
+        return IfPrepare;
     }
 
-    public void setStatement(Statement Statement) {
-        this.Statement=Statement;
+    public void setIfPrepare(IfPrepare IfPrepare) {
+        this.IfPrepare=IfPrepare;
+    }
+
+    public IfInsideStmt getIfInsideStmt() {
+        return IfInsideStmt;
+    }
+
+    public void setIfInsideStmt(IfInsideStmt IfInsideStmt) {
+        this.IfInsideStmt=IfInsideStmt;
     }
 
     public void accept(Visitor visitor) {
@@ -39,18 +50,21 @@ public class IfStatement extends Statement {
 
     public void childrenAccept(Visitor visitor) {
         if(Condition!=null) Condition.accept(visitor);
-        if(Statement!=null) Statement.accept(visitor);
+        if(IfPrepare!=null) IfPrepare.accept(visitor);
+        if(IfInsideStmt!=null) IfInsideStmt.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Condition!=null) Condition.traverseTopDown(visitor);
-        if(Statement!=null) Statement.traverseTopDown(visitor);
+        if(IfPrepare!=null) IfPrepare.traverseTopDown(visitor);
+        if(IfInsideStmt!=null) IfInsideStmt.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Condition!=null) Condition.traverseBottomUp(visitor);
-        if(Statement!=null) Statement.traverseBottomUp(visitor);
+        if(IfPrepare!=null) IfPrepare.traverseBottomUp(visitor);
+        if(IfInsideStmt!=null) IfInsideStmt.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -65,8 +79,14 @@ public class IfStatement extends Statement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Statement!=null)
-            buffer.append(Statement.toString("  "+tab));
+        if(IfPrepare!=null)
+            buffer.append(IfPrepare.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(IfInsideStmt!=null)
+            buffer.append(IfInsideStmt.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
