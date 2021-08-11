@@ -108,10 +108,13 @@ nonterminal ConstName ConstName;
 nonterminal MethodDecl MethodDecl;
 nonterminal Else Else;
 nonterminal DesExpr DesExpr;
-nonterminal VarDeclComma VarDeclComma; 
+nonterminal VarDeclComma VarDeclComma;
+nonterminal CaseList CaseList;
+nonterminal DoStart DoStart;
+nonterminal WhileEnd WhileEnd; 
 
 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition, FuncCall;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName, DesArrayName;
 
 nonterminal BasicTypes BasicTypes;
@@ -196,9 +199,9 @@ FormalParamList ::= (FormalParamDecls) FormalParamList:F1 COMMA FormalParamDecl:
 					(SingleFormalParamDecl) FormalParamDecl:F1 {: RESULT=new SingleFormalParamDecl(F1); RESULT.setLine(F1left); :}
 				;
 
-FormalParamDecl ::= (ASTFormalParamDecl) Type:T1 IDENT:I2 {: RESULT=new ASTFormalParamDecl(T1, I2); RESULT.setLine(T1left); :}
+FormalParamDecl ::= (ASTFormalParamDecl) Type:T1 IDENT:var {: RESULT=new ASTFormalParamDecl(T1, var); RESULT.setLine(T1left); :}
 				|
-					(ArrParamDecl) Type:T1 IDENT:I2 LBRACKET RBRACKET {: RESULT=new ArrParamDecl(T1, I2); RESULT.setLine(T1left); :}
+					(ArrParamDecl) Type:T1 IDENT:var LBRACKET RBRACKET {: RESULT=new ArrParamDecl(T1, var); RESULT.setLine(T1left); :}
 				;
 
 
@@ -217,6 +220,12 @@ Statement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new Designa
 				|
 				  (IfElseStatement) IF CondInParens:C1 IfPrepare:I2 IfInsideStmt:I3 Else:E4 ElseInsideStmt:E5 {: RESULT=new IfElseStatement(C1, I2, I3, E4, E5); RESULT.setLine(C1left); :}
 				|
+				  (DoWhile) DO DoStart:D1 Statement:S2 WHILE LPAREN Condition:C3 RPAREN WhileEnd:W4 SEMI {: RESULT=new DoWhile(D1, S2, C3, W4); RESULT.setLine(D1left); :}
+				|
+				  (BreakStmt) BREAK SEMI {: RESULT=new BreakStmt(); :}
+				|
+				  (ContinueStmt) CONTINUE SEMI {: RESULT=new ContinueStmt(); :}
+				|
 				  (ReturnExpr) RETURN Expr:E1 SEMI {: RESULT=new ReturnExpr(E1); RESULT.setLine(E1left); :}
 				|
 				  (ReturnNoExpr) RETURN SEMI {: RESULT=new ReturnNoExpr(); :}
@@ -230,6 +239,11 @@ Statement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new Designa
 				  (SurroundStmt) LBRACE StatementList:S1 RBRACE {: RESULT=new SurroundStmt(S1); RESULT.setLine(S1left); :}
 				;
 				
+		
+				
+WhileEnd ::= (WhileEnd) {: RESULT=new WhileEnd(); :} /* epsilon */;				
+
+DoStart ::= (DoStart) {: RESULT=new DoStart(); :} /* epsilon */;
 				
 CondInParens ::= (CondInParens) LPAREN Condition:C1 RPAREN {: RESULT=new CondInParens(C1); RESULT.setLine(C1left); :};			
 				
@@ -243,7 +257,7 @@ ElseInsideStmt ::= (ElseInsideStmt) Statement:S1 {: RESULT=new ElseInsideStmt(S1
 			
 DesignatorStatement ::= (AssignStmt) Designator:dest Assignop:A1 DesExpr:e {: RESULT=new AssignStmt(dest, A1, e); RESULT.setLine(destleft); :}
 				|
-					(FuncCall) Designator:fun LPAREN ActualPars:A1 RPAREN {: RESULT=new FuncCall(fun, A1); RESULT.setLine(funleft); :}
+					(FuncCallDes) FuncCall:F1 {: RESULT=new FuncCallDes(F1); RESULT.setLine(F1left); :}
 				|
 					(Increment) Designator:D1 INC {: RESULT=new Increment(D1); RESULT.setLine(D1left); :}
 				|
@@ -310,7 +324,7 @@ Term ::=  (MulFactors) Term:T1 Muloper:M2 Factor:F3 {: RESULT=new MulFactors(T1,
 		
 Factor ::= (Var) Designator:d {: RESULT=new Var(d); RESULT.setLine(dleft); :} 
 		|
-			(FuncCallPars) Designator:func LPAREN ActualPars:A1 RPAREN {: RESULT=new FuncCallPars(func, A1); RESULT.setLine(funcleft); :}
+			(FuncCallFactor) FuncCall:funcCall {: RESULT=new FuncCallFactor(funcCall); RESULT.setLine(funcCallleft); :}
 		|
 		 	(NumConst) NUMBER:N1 {: RESULT=new NumConst(N1); RESULT.setLine(N1left); :} 
 		| 
@@ -324,8 +338,10 @@ Factor ::= (Var) Designator:d {: RESULT=new Var(d); RESULT.setLine(dleft); :}
 		;
 		
 
+FuncCall ::= (FuncCall) Designator:func LPAREN ActualPars:A1 RPAREN {: RESULT=new FuncCall(func, A1); RESULT.setLine(funcleft); :};
+
  
-Designator ::= (ASTDesignator) IDENT:name {: RESULT=new ASTDesignator(name); RESULT.setLine(nameleft); :} 
+Designator ::= (ASTDesignator) IDENT:name {: RESULT=new ASTDesignator(name); RESULT.setLine(nameleft); :}
 			|	
 			   (DesignatorArray) DesArrayName:D1 LBRACKET Expr:E2 RBRACKET {: RESULT=new DesignatorArray(D1, E2); RESULT.setLine(D1left); :}
 			;

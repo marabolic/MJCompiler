@@ -1,0 +1,248 @@
+INFO  08:14:41,699 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\testMethod.mj
+INFO  08:14:41,798 - #2 program
+INFO  08:14:41,798 - #42 test302
+INFO  08:14:41,798 - #4 const
+INFO  08:14:41,801 - #42 int
+INFO  08:14:41,801 - #42 jedan
+INFO  08:14:41,802 - #34 =
+INFO  08:14:41,804 - #39 1
+INFO  08:14:41,804 - #14 ;
+INFO  08:14:41,806 - #42 int
+INFO  08:14:41,806 - #42 i
+INFO  08:14:41,806 - #14 ;
+INFO  08:14:41,806 - #12 {
+INFO  08:14:41,806 - #42 int
+INFO  08:14:41,808 - #42 sum
+INFO  08:14:41,808 - #15 (
+INFO  08:14:41,809 - #42 int
+INFO  08:14:41,809 - #42 z
+INFO  08:14:41,810 - #37 ,
+INFO  08:14:41,810 - #42 int
+INFO  08:14:41,810 - #42 d
+INFO  08:14:41,810 - #16 )
+INFO  08:14:41,811 - #12 {
+INFO  08:14:41,812 - #7 return
+INFO  08:14:41,813 - #42 z
+INFO  08:14:41,813 - #21 +
+INFO  08:14:41,814 - #42 d
+INFO  08:14:41,817 - #14 ;
+INFO  08:14:41,817 - #13 }
+INFO  08:14:41,818 - #8 void
+INFO  08:14:41,819 - #42 main
+INFO  08:14:41,821 - #15 (
+INFO  08:14:41,821 - #16 )
+INFO  08:14:41,822 - #12 {
+INFO  08:14:41,822 - #42 i
+INFO  08:14:41,822 - #34 =
+INFO  08:14:41,822 - #42 sum
+INFO  08:14:41,823 - #15 (
+INFO  08:14:41,823 - #42 jedan
+INFO  08:14:41,823 - #37 ,
+INFO  08:14:41,824 - #39 3
+INFO  08:14:41,824 - #16 )
+INFO  08:14:41,824 - #21 +
+INFO  08:14:41,826 - #39 1
+INFO  08:14:41,826 - #14 ;
+INFO  08:14:41,827 - #5 print
+INFO  08:14:41,827 - #15 (
+INFO  08:14:41,827 - #42 i
+INFO  08:14:41,828 - #16 )
+INFO  08:14:41,828 - #14 ;
+INFO  08:14:41,828 - #13 }
+INFO  08:14:41,828 - #13 }
+INFO  08:14:41,843 - Program(
+  ProgName(
+   test302
+  ) [ProgName]
+  ASTVarDeclList(
+    ASTConstDeclList(
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      Type(
+       int
+      ) [Type]
+      SingleConstDecl(
+        ConstDecl(
+          ConstName(
+           jedan
+          ) [ConstName]
+          ASTNumber(
+           1
+          ) [ASTNumber]
+        ) [ConstDecl]
+      ) [SingleConstDecl]
+    ) [ASTConstDeclList]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       i
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    ASTMethodDecList(
+      NoMethodDecl(
+      ) [NoMethodDecl]
+      MethodDecl(
+        MethodTypeName(
+          ActualType(
+            Type(
+             int
+            ) [Type]
+          ) [ActualType]
+         sum
+        ) [MethodTypeName]
+        FormParams(
+          FormalParamDecls(
+            SingleFormalParamDecl(
+              ASTFormalParamDecl(
+                Type(
+                 int
+                ) [Type]
+               z
+              ) [ASTFormalParamDecl]
+            ) [SingleFormalParamDecl]
+            ASTFormalParamDecl(
+              Type(
+               int
+              ) [Type]
+             d
+            ) [ASTFormalParamDecl]
+          ) [FormalParamDecls]
+        ) [FormParams]
+        NoSpecDecl(
+        ) [NoSpecDecl]
+        StmtList(
+          NoStmt(
+          ) [NoStmt]
+          ReturnExpr(
+            OpExpr(
+              SumTerm(
+                SingleTerm(
+                  SingleFactor(
+                    Var(
+                      ASTDesignator(
+                       z
+                      ) [ASTDesignator]
+                    ) [Var]
+                  ) [SingleFactor]
+                ) [SingleTerm]
+                PlusOp(
+                ) [PlusOp]
+                SingleFactor(
+                  Var(
+                    ASTDesignator(
+                     d
+                    ) [ASTDesignator]
+                  ) [Var]
+                ) [SingleFactor]
+              ) [SumTerm]
+            ) [OpExpr]
+          ) [ReturnExpr]
+        ) [StmtList]
+      ) [MethodDecl]
+    ) [ASTMethodDecList]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        StmtList(
+          NoStmt(
+          ) [NoStmt]
+          DesignatorStmt(
+            AssignStmt(
+              ASTDesignator(
+               i
+              ) [ASTDesignator]
+              Assignop(
+              ) [Assignop]
+              ASTDesExpr(
+                OpExpr(
+                  SumTerm(
+                    SingleTerm(
+                      SingleFactor(
+                        FuncCallFactor(
+                          FuncCall(
+                            ASTDesignator(
+                             sum
+                            ) [ASTDesignator]
+                            Actuals(
+                              ActualParList(
+                                ActualParam(
+                                  OpExpr(
+                                    SingleTerm(
+                                      SingleFactor(
+                                        Var(
+                                          ASTDesignator(
+                                           jedan
+                                          ) [ASTDesignator]
+                                        ) [Var]
+                                      ) [SingleFactor]
+                                    ) [SingleTerm]
+                                  ) [OpExpr]
+                                ) [ActualParam]
+                                OpExpr(
+                                  SingleTerm(
+                                    SingleFactor(
+                                      NumConst(
+                                       3
+                                      ) [NumConst]
+                                    ) [SingleFactor]
+                                  ) [SingleTerm]
+                                ) [OpExpr]
+                              ) [ActualParList]
+                            ) [Actuals]
+                          ) [FuncCall]
+                        ) [FuncCallFactor]
+                      ) [SingleFactor]
+                    ) [SingleTerm]
+                    PlusOp(
+                    ) [PlusOp]
+                    SingleFactor(
+                      NumConst(
+                       1
+                      ) [NumConst]
+                    ) [SingleFactor]
+                  ) [SumTerm]
+                ) [OpExpr]
+              ) [ASTDesExpr]
+            ) [AssignStmt]
+          ) [DesignatorStmt]
+        ) [StmtList]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   i
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  08:14:41,850 - Deklarisana konstanta jedan vrednost 1 na liniji 5
+INFO  08:14:41,850 - Deklarisana promenljiva i na liniji 7
+INFO  08:14:41,850 - Obradjuje se funkcija sum na liniji 12
+INFO  08:14:41,850 - Deklarisan argument z na liniji 12
+INFO  08:14:41,850 - Deklarisan argument d na liniji 12
+INFO  08:14:41,851 - Obradjuje se funkcija main na liniji 18
+INFO  08:14:41,851 - Dodeljena vrednost promenljivoj  na liniji 21
+INFO  08:14:41,851 - Print pozvan  na liniji 23
+INFO  08:14:41,851 - Print calls = 1
+INFO  08:14:41,852 - Generating bytecode file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.obj
+INFO  08:14:41,871 - Parsiranje uspesno zavrseno!

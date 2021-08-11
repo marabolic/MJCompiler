@@ -86,10 +86,10 @@ nonterminal StatementList, Statement, Addop, Muloper, Assignop, Relop, Minus;
 nonterminal DesignatorStatement, IfInsideStmt, ElseInsideStmt, IfPrepare, IfElseInsideStmt;
 nonterminal DeclList, VarDecl, ConstDeclList, ConstDecl, ConstName;
 
-nonterminal MethodDecl, Else, DesExpr, VarDeclComma; 
+nonterminal MethodDecl, Else, DesExpr, VarDeclComma, CaseList, DoStart, WhileEnd; 
 
 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition, FuncCall;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName, DesArrayName;
 
 nonterminal BasicTypes, CondInParens;
@@ -173,9 +173,9 @@ FormalParamList ::= (FormalParamDecls) FormalParamList COMMA FormalParamDecl
 					(SingleFormalParamDecl) FormalParamDecl
 				;
 
-FormalParamDecl ::= (ASTFormalParamDecl) Type IDENT
+FormalParamDecl ::= (ASTFormalParamDecl) Type IDENT:var
 				|
-					(ArrParamDecl) Type IDENT LBRACKET RBRACKET
+					(ArrParamDecl) Type IDENT:var LBRACKET RBRACKET
 				;
 
 
@@ -194,6 +194,12 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 				|
 				  (IfElseStatement) IF CondInParens IfPrepare IfInsideStmt Else ElseInsideStmt
 				|
+				  (DoWhile) DO DoStart Statement WHILE LPAREN Condition RPAREN WhileEnd SEMI
+				|
+				  (BreakStmt) BREAK SEMI
+				|
+				  (ContinueStmt) CONTINUE SEMI
+				|
 				  (ReturnExpr) RETURN Expr SEMI
 				|
 				  (ReturnNoExpr) RETURN SEMI
@@ -207,6 +213,11 @@ Statement ::= (DesignatorStmt) DesignatorStatement SEMI
 				  (SurroundStmt) LBRACE StatementList RBRACE
 				;
 				
+		
+				
+WhileEnd ::= (WhileEnd) /* epsilon */;				
+
+DoStart ::= (DoStart) /* epsilon */;
 				
 CondInParens ::= (CondInParens) LPAREN Condition RPAREN;			
 				
@@ -220,7 +231,7 @@ ElseInsideStmt ::= (ElseInsideStmt) Statement;
 			
 DesignatorStatement ::= (AssignStmt) Designator:dest Assignop DesExpr:e
 				|
-					(FuncCall) Designator:fun LPAREN ActualPars RPAREN
+					(FuncCallDes) FuncCall
 				|
 					(Increment) Designator INC
 				|
@@ -287,7 +298,7 @@ Term ::=  (MulFactors) Term Muloper Factor
 		
 Factor ::= (Var) Designator:d 
 		|
-			(FuncCallPars) Designator:func LPAREN ActualPars RPAREN
+			(FuncCallFactor) FuncCall:funcCall
 		|
 		 	(NumConst) NUMBER 
 		| 
@@ -301,8 +312,10 @@ Factor ::= (Var) Designator:d
 		;
 		
 
+FuncCall ::= (FuncCall) Designator:func LPAREN ActualPars RPAREN;
+
  
-Designator ::= (ASTDesignator) IDENT:name 
+Designator ::= (ASTDesignator) IDENT:name
 			|	
 			   (DesignatorArray) DesArrayName LBRACKET Expr RBRACKET
 			;

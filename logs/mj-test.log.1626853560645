@@ -1,0 +1,318 @@
+INFO  23:41:30,025 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.mj
+INFO  23:41:30,056 - #2 program
+INFO  23:41:30,056 - #42 MJProgram
+INFO  23:41:30,057 - #42 int
+INFO  23:41:30,057 - #42 x
+INFO  23:41:30,058 - #17 [
+INFO  23:41:30,058 - #18 ]
+INFO  23:41:30,058 - #37 ,
+INFO  23:41:30,058 - #42 ab
+INFO  23:41:30,058 - #14 ;
+INFO  23:41:30,058 - #42 char
+INFO  23:41:30,059 - #42 y
+INFO  23:41:30,059 - #14 ;
+INFO  23:41:30,059 - #42 int
+INFO  23:41:30,059 - #42 niz
+INFO  23:41:30,059 - #17 [
+INFO  23:41:30,059 - #18 ]
+INFO  23:41:30,059 - #14 ;
+INFO  23:41:30,059 - #12 {
+INFO  23:41:30,059 - #42 int
+INFO  23:41:30,060 - #42 main
+INFO  23:41:30,060 - #15 (
+INFO  23:41:30,061 - #16 )
+INFO  23:41:30,070 - #42 int
+INFO  23:41:30,070 - #42 bodovi
+INFO  23:41:30,070 - #14 ;
+INFO  23:41:30,070 - #12 {
+INFO  23:41:30,070 - #42 bodovi
+INFO  23:41:30,071 - #34 =
+INFO  23:41:30,071 - #41 0
+INFO  23:41:30,071 - #14 ;
+INFO  23:41:30,072 - #42 bodovi
+INFO  23:41:30,072 - #34 =
+INFO  23:41:30,072 - #42 bodovi
+INFO  23:41:30,072 - #21 +
+INFO  23:41:30,072 - #41 2
+INFO  23:41:30,073 - #14 ;
+INFO  23:41:30,073 - #42 y
+INFO  23:41:30,073 - #35 ++
+INFO  23:41:30,073 - #14 ;
+INFO  23:41:30,073 - #42 niz
+INFO  23:41:30,073 - #34 =
+INFO  23:41:30,074 - #9 new
+INFO  23:41:30,074 - #42 int
+INFO  23:41:30,074 - #17 [
+INFO  23:41:30,074 - #42 y
+INFO  23:41:30,074 - #18 ]
+INFO  23:41:30,074 - #14 ;
+INFO  23:41:30,074 - #42 niz1
+INFO  23:41:30,075 - #34 =
+INFO  23:41:30,075 - #9 new
+INFO  23:41:30,075 - #42 int
+INFO  23:41:30,075 - #17 [
+INFO  23:41:30,075 - #39 3
+INFO  23:41:30,075 - #18 ]
+INFO  23:41:30,075 - #14 ;
+INFO  23:41:30,076 - #5 print
+INFO  23:41:30,076 - #15 (
+INFO  23:41:30,076 - #42 ab
+INFO  23:41:30,076 - #16 )
+INFO  23:41:30,076 - #14 ;
+INFO  23:41:30,076 - #7 return
+INFO  23:41:30,076 - #39 0
+INFO  23:41:30,076 - #14 ;
+INFO  23:41:30,077 - #13 }
+INFO  23:41:30,077 - #13 }
+INFO  23:41:30,084 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  ASTVarDeclList(
+    ASTVarDeclList(
+      ASTVarDeclList(
+        NoSpecDecl(
+        ) [NoSpecDecl]
+        Type(
+         int
+        ) [Type]
+        MoreVarDecls(
+          ASTVarDeclComma(
+            ArrayDecl(
+             x
+            ) [ArrayDecl]
+          ) [ASTVarDeclComma]
+          SingleVarDecl(
+            ASTVarDecl(
+             ab
+            ) [ASTVarDecl]
+          ) [SingleVarDecl]
+        ) [MoreVarDecls]
+      ) [ASTVarDeclList]
+      Type(
+       char
+      ) [Type]
+      SingleVarDecl(
+        ASTVarDecl(
+         y
+        ) [ASTVarDecl]
+      ) [SingleVarDecl]
+    ) [ASTVarDeclList]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ArrayDecl(
+       niz
+      ) [ArrayDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        ActualType(
+          Type(
+           int
+          ) [Type]
+        ) [ActualType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      ASTVarDeclList(
+        NoSpecDecl(
+        ) [NoSpecDecl]
+        Type(
+         int
+        ) [Type]
+        SingleVarDecl(
+          ASTVarDecl(
+           bodovi
+          ) [ASTVarDecl]
+        ) [SingleVarDecl]
+      ) [ASTVarDeclList]
+      StmtList(
+        StmtList(
+          StmtList(
+            StmtList(
+              StmtList(
+                StmtList(
+                  StmtList(
+                    NoStmt(
+                    ) [NoStmt]
+                    DesignatorStmt(
+                      AssignStmt(
+                        ASTDesignator(
+                         bodovi
+                        ) [ASTDesignator]
+                        Assignop(
+                        ) [Assignop]
+                        ASTDesExpr(
+                          OpExpr(
+                            SingleTerm(
+                              SingleFactor(
+                                CharConst(
+                                 0
+                                ) [CharConst]
+                              ) [SingleFactor]
+                            ) [SingleTerm]
+                          ) [OpExpr]
+                        ) [ASTDesExpr]
+                      ) [AssignStmt]
+                    ) [DesignatorStmt]
+                  ) [StmtList]
+                  DesignatorStmt(
+                    AssignStmt(
+                      ASTDesignator(
+                       bodovi
+                      ) [ASTDesignator]
+                      Assignop(
+                      ) [Assignop]
+                      ASTDesExpr(
+                        OpExpr(
+                          SumTerm(
+                            SingleTerm(
+                              SingleFactor(
+                                Var(
+                                  ASTDesignator(
+                                   bodovi
+                                  ) [ASTDesignator]
+                                ) [Var]
+                              ) [SingleFactor]
+                            ) [SingleTerm]
+                            PlusOp(
+                            ) [PlusOp]
+                            SingleFactor(
+                              CharConst(
+                               2
+                              ) [CharConst]
+                            ) [SingleFactor]
+                          ) [SumTerm]
+                        ) [OpExpr]
+                      ) [ASTDesExpr]
+                    ) [AssignStmt]
+                  ) [DesignatorStmt]
+                ) [StmtList]
+                DesignatorStmt(
+                  Increment(
+                    ASTDesignator(
+                     y
+                    ) [ASTDesignator]
+                  ) [Increment]
+                ) [DesignatorStmt]
+              ) [StmtList]
+              DesignatorStmt(
+                AssignStmt(
+                  ASTDesignator(
+                   niz
+                  ) [ASTDesignator]
+                  Assignop(
+                  ) [Assignop]
+                  ASTDesExpr(
+                    OpExpr(
+                      SingleTerm(
+                        SingleFactor(
+                          NewArray(
+                            Type(
+                             int
+                            ) [Type]
+                            OpExpr(
+                              SingleTerm(
+                                SingleFactor(
+                                  Var(
+                                    ASTDesignator(
+                                     y
+                                    ) [ASTDesignator]
+                                  ) [Var]
+                                ) [SingleFactor]
+                              ) [SingleTerm]
+                            ) [OpExpr]
+                          ) [NewArray]
+                        ) [SingleFactor]
+                      ) [SingleTerm]
+                    ) [OpExpr]
+                  ) [ASTDesExpr]
+                ) [AssignStmt]
+              ) [DesignatorStmt]
+            ) [StmtList]
+            DesignatorStmt(
+              AssignStmt(
+                ASTDesignator(
+                 niz1
+                ) [ASTDesignator]
+                Assignop(
+                ) [Assignop]
+                ASTDesExpr(
+                  OpExpr(
+                    SingleTerm(
+                      SingleFactor(
+                        NewArray(
+                          Type(
+                           int
+                          ) [Type]
+                          OpExpr(
+                            SingleTerm(
+                              SingleFactor(
+                                NumConst(
+                                 3
+                                ) [NumConst]
+                              ) [SingleFactor]
+                            ) [SingleTerm]
+                          ) [OpExpr]
+                        ) [NewArray]
+                      ) [SingleFactor]
+                    ) [SingleTerm]
+                  ) [OpExpr]
+                ) [ASTDesExpr]
+              ) [AssignStmt]
+            ) [DesignatorStmt]
+          ) [StmtList]
+          PrintStmt(
+            OpExpr(
+              SingleTerm(
+                SingleFactor(
+                  Var(
+                    ASTDesignator(
+                     ab
+                    ) [ASTDesignator]
+                  ) [Var]
+                ) [SingleFactor]
+              ) [SingleTerm]
+            ) [OpExpr]
+          ) [PrintStmt]
+        ) [StmtList]
+        ReturnExpr(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                NumConst(
+                 0
+                ) [NumConst]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [ReturnExpr]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  23:41:30,086 - Deklarisan niz x na liniji 4
+INFO  23:41:30,089 - Deklarisana promenljiva ab na liniji 4
+INFO  23:41:30,089 - Deklarisana promenljiva y na liniji 5
+INFO  23:41:30,089 - Deklarisan niz niz na liniji 6
+INFO  23:41:30,089 - Obradjuje se funkcija main na liniji 10
+INFO  23:41:30,089 - Deklarisana promenljiva bodovi na liniji 10
+ERROR 23:41:30,089 - Greska na liniji 11 : nekompatibilni tipovi u dodeli vrednosti!  na liniji 11
+ERROR 23:41:30,090 - Greska na liniji 13 nisu svi clanovi SumTerm tipa int  na liniji 13
+ERROR 23:41:30,090 - Greska na liniji 13 : nekompatibilni tipovi u dodeli vrednosti!  na liniji 13
+ERROR 23:41:30,090 - Greska na liniji 15 promenljiva nije tipa int  na liniji 15
+ERROR 23:41:30,090 - Greska na liniji 17 Expr nije tipa int  na liniji 17
+ERROR 23:41:30,090 - Greska na liniji 17 : nekompatibilni tipovi u dodeli vrednosti!  na liniji 17
+ERROR 23:41:30,090 - Greska na liniji 19 : ime niz1 nije deklarisano! 
+INFO  23:41:30,090 - Novi niz  na liniji 19
+ERROR 23:41:30,090 - Greska na liniji 19 : nekompatibilni tipovi u dodeli vrednosti!  na liniji 19
+INFO  23:41:30,090 - Print pozvan  na liniji 22
+INFO  23:41:30,091 - Print calls = 1
+ERROR 23:41:30,091 - Parsiranje NIJE uspesno zavrseno!

@@ -81,6 +81,7 @@ import java.util.*;
 "++" 		{ return new_symbol(sym.INC, yytext()); }
 "--" 		{ return new_symbol(sym.DEC, yytext()); }
 ";" 		{ return new_symbol(sym.SEMI, yytext()); }
+":" 		{ return new_symbol(sym.COLON, yytext()); }
 "," 		{ return new_symbol(sym.COMMA, yytext()); }
 "(" 		{ return new_symbol(sym.LPAREN, yytext()); }
 ")" 		{ return new_symbol(sym.RPAREN, yytext()); }

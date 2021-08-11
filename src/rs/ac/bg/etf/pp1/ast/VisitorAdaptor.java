@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 29/5/2021 23:26:31
+// 11/7/2021 10:43:7
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -20,6 +20,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(RetType RetType) { }
     public void visit(Condition Condition) { }
     public void visit(Muloper Muloper) { }
+    public void visit(CaseList CaseList) { }
     public void visit(ConstDeclList ConstDeclList) { }
     public void visit(DesExpr DesExpr) { }
     public void visit(ActualParamList ActualParamList) { }
@@ -54,12 +55,13 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesArrayName DesArrayName) { visit(); }
     public void visit(DesignatorArray DesignatorArray) { visit(); }
     public void visit(ASTDesignator ASTDesignator) { visit(); }
+    public void visit(FuncCall FuncCall) { visit(); }
     public void visit(ExprInParens ExprInParens) { visit(); }
     public void visit(NewArray NewArray) { visit(); }
     public void visit(BoolConst BoolConst) { visit(); }
     public void visit(CharConst CharConst) { visit(); }
     public void visit(NumConst NumConst) { visit(); }
-    public void visit(FuncCallPars FuncCallPars) { visit(); }
+    public void visit(FuncCallFactor FuncCallFactor) { visit(); }
     public void visit(Var Var) { visit(); }
     public void visit(SingleFactor SingleFactor) { visit(); }
     public void visit(MulFactors MulFactors) { visit(); }
@@ -82,19 +84,24 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ASTDesExpr ASTDesExpr) { visit(); }
     public void visit(Decrement Decrement) { visit(); }
     public void visit(Increment Increment) { visit(); }
-    public void visit(FuncCall FuncCall) { visit(); }
+    public void visit(FuncCallDes FuncCallDes) { visit(); }
     public void visit(AssignStmt AssignStmt) { visit(); }
     public void visit(ElseInsideStmt ElseInsideStmt) { visit(); }
     public void visit(Else Else) { visit(); }
     public void visit(IfInsideStmt IfInsideStmt) { visit(); }
     public void visit(IfPrepare IfPrepare) { visit(); }
     public void visit(CondInParens CondInParens) { visit(); }
+    public void visit(DoStart DoStart) { visit(); }
+    public void visit(WhileEnd WhileEnd) { visit(); }
     public void visit(SurroundStmt SurroundStmt) { visit(); }
     public void visit(PrintStmtNum PrintStmtNum) { visit(); }
     public void visit(PrintStmt PrintStmt) { visit(); }
     public void visit(ReadStmt ReadStmt) { visit(); }
     public void visit(ReturnNoExpr ReturnNoExpr) { visit(); }
     public void visit(ReturnExpr ReturnExpr) { visit(); }
+    public void visit(ContinueStmt ContinueStmt) { visit(); }
+    public void visit(BreakStmt BreakStmt) { visit(); }
+    public void visit(DoWhile DoWhile) { visit(); }
     public void visit(IfElseStatement IfElseStatement) { visit(); }
     public void visit(IfStatement IfStatement) { visit(); }
     public void visit(DesignatorStmt DesignatorStmt) { visit(); }

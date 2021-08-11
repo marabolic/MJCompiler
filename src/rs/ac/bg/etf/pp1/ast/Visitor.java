@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 29/5/2021 23:26:31
+// 11/7/2021 10:43:7
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -20,6 +20,7 @@ public interface Visitor {
     public void visit(RetType RetType);
     public void visit(Condition Condition);
     public void visit(Muloper Muloper);
+    public void visit(CaseList CaseList);
     public void visit(ConstDeclList ConstDeclList);
     public void visit(DesExpr DesExpr);
     public void visit(ActualParamList ActualParamList);
@@ -54,12 +55,13 @@ public interface Visitor {
     public void visit(DesArrayName DesArrayName);
     public void visit(DesignatorArray DesignatorArray);
     public void visit(ASTDesignator ASTDesignator);
+    public void visit(FuncCall FuncCall);
     public void visit(ExprInParens ExprInParens);
     public void visit(NewArray NewArray);
     public void visit(BoolConst BoolConst);
     public void visit(CharConst CharConst);
     public void visit(NumConst NumConst);
-    public void visit(FuncCallPars FuncCallPars);
+    public void visit(FuncCallFactor FuncCallFactor);
     public void visit(Var Var);
     public void visit(SingleFactor SingleFactor);
     public void visit(MulFactors MulFactors);
@@ -82,19 +84,24 @@ public interface Visitor {
     public void visit(ASTDesExpr ASTDesExpr);
     public void visit(Decrement Decrement);
     public void visit(Increment Increment);
-    public void visit(FuncCall FuncCall);
+    public void visit(FuncCallDes FuncCallDes);
     public void visit(AssignStmt AssignStmt);
     public void visit(ElseInsideStmt ElseInsideStmt);
     public void visit(Else Else);
     public void visit(IfInsideStmt IfInsideStmt);
     public void visit(IfPrepare IfPrepare);
     public void visit(CondInParens CondInParens);
+    public void visit(DoStart DoStart);
+    public void visit(WhileEnd WhileEnd);
     public void visit(SurroundStmt SurroundStmt);
     public void visit(PrintStmtNum PrintStmtNum);
     public void visit(PrintStmt PrintStmt);
     public void visit(ReadStmt ReadStmt);
     public void visit(ReturnNoExpr ReturnNoExpr);
     public void visit(ReturnExpr ReturnExpr);
+    public void visit(ContinueStmt ContinueStmt);
+    public void visit(BreakStmt BreakStmt);
+    public void visit(DoWhile DoWhile);
     public void visit(IfElseStatement IfElseStatement);
     public void visit(IfStatement IfStatement);
     public void visit(DesignatorStmt DesignatorStmt);

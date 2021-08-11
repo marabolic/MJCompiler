@@ -4,6 +4,7 @@ import rs.ac.bg.etf.pp1.ast.*;
 
 import java.util.Stack;
 
+import jdk.nashorn.internal.ir.WhileNode;
 import rs.ac.bg.etf.pp1.CounterVisitor.FormParamCounter;
 import rs.ac.bg.etf.pp1.CounterVisitor.VarCounter;
 import rs.etf.pp1.symboltable.*;
@@ -17,6 +18,7 @@ public class CodeGenerator extends VisitorAdaptor{
 	Stack<Integer> savedPC = new Stack<>();
 	
 	private boolean minusSet = false;
+	private int beginDoWhile;
 	
 	public int getMainPc(){
 		return mainPc;
@@ -59,7 +61,31 @@ public class CodeGenerator extends VisitorAdaptor{
 	}
 	
 	
+	//METH PARAMS
+	
+	public void visit(FuncCall funcCall) {
+		int adr = funcCall.getDesignator().obj.getAdr() - Code.pc;
+		Code.put(Code.call);
+		Code.put2(adr);
+		
+	}
+	
+	public void visit(ActualParam actualParam) {
+		
+	}
+	
+	
+	
+	
 	// STATEMENTS
+	
+	public void visit(DoStart doStart) {
+		beginDoWhile = Code.pc;
+	}
+	
+	public void visit(WhileEnd whileEnd) {
+		
+	}
 	
 	public void visit(PrintStmt printStmt){
 		if((printStmt.getExpr().struct == Tab.charType)){
@@ -131,16 +157,14 @@ public class CodeGenerator extends VisitorAdaptor{
 	}
 	
 	
-	
-	
-	// CONDITIONS
-	
 	public void visit(IfPrepare ifprep) {
 		Code.loadConst(0);
 		Code.putFalseJump(Code.gt, 0);
 		savedPC.push(Code.pc - 2);
 		
 	}
+	
+	// CONDITIONS
 	
 	public void visit(MulCondTerms cond) {
 		Code.put(Code.add);

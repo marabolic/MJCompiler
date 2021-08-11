@@ -51,7 +51,7 @@ public class CompilerImpl implements Compiler{
 	        
 	        
 	        
-			Tab.init(); // Universe scope
+			MyStatic.init(); // Universe scope
 			log.info(prog.toString(""));
 			SemanticAnalyzer semanticCheck = new SemanticAnalyzer();
 			prog.traverseBottomUp(semanticCheck);

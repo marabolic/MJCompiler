@@ -1,0 +1,158 @@
+INFO  08:12:57,550 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\testMethod.mj
+INFO  08:12:57,633 - #2 program
+INFO  08:12:57,633 - #42 test302
+INFO  08:12:57,633 - #42 int
+INFO  08:12:57,636 - #42 i
+INFO  08:12:57,636 - #14 ;
+INFO  08:12:57,637 - #12 {
+INFO  08:12:57,637 - #42 int
+INFO  08:12:57,639 - #42 sum
+INFO  08:12:57,639 - #15 (
+INFO  08:12:57,639 - #42 int
+INFO  08:12:57,639 - #42 z
+INFO  08:12:57,639 - #37 ,
+INFO  08:12:57,640 - #42 int
+INFO  08:12:57,640 - #42 d
+INFO  08:12:57,640 - #16 )
+INFO  08:12:57,640 - #12 {
+INFO  08:12:57,640 - #7 return
+INFO  08:12:57,641 - #42 z
+INFO  08:12:57,641 - #21 +
+INFO  08:12:57,643 - #42 d
+INFO  08:12:57,644 - #14 ;
+INFO  08:12:57,645 - #13 }
+INFO  08:12:57,645 - #8 void
+INFO  08:12:57,647 - #42 main
+INFO  08:12:57,647 - #15 (
+INFO  08:12:57,647 - #16 )
+INFO  08:12:57,648 - #12 {
+INFO  08:12:57,648 - #42 i
+INFO  08:12:57,649 - #34 =
+INFO  08:12:57,649 - #42 sum
+INFO  08:12:57,650 - #15 (
+INFO  08:12:57,650 - #39 2
+INFO  08:12:57,650 - #37 ,
+INFO  08:12:57,650 - #39 3
+INFO  08:12:57,650 - #16 )
+INFO  08:12:57,650 - #5 print
+ERROR 08:12:57,650 - 
+Sintaksna greska na liniji 21
+INFO  08:12:57,650 - #15 (
+INFO  08:12:57,651 - #42 i
+INFO  08:12:57,651 - #16 )
+INFO  08:12:57,651 - #14 ;
+INFO  08:12:57,652 - #13 }
+INFO  08:12:57,652 - #13 }
+ERROR 08:12:57,652 - Sintaksna greska. Izvrsen oporavak do ; u liniji 19
+INFO  08:12:57,663 - Program(
+  ProgName(
+   test302
+  ) [ProgName]
+  ASTVarDeclList(
+    NoSpecDecl(
+    ) [NoSpecDecl]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       i
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    ASTMethodDecList(
+      NoMethodDecl(
+      ) [NoMethodDecl]
+      MethodDecl(
+        MethodTypeName(
+          ActualType(
+            Type(
+             int
+            ) [Type]
+          ) [ActualType]
+         sum
+        ) [MethodTypeName]
+        FormParams(
+          FormalParamDecls(
+            SingleFormalParamDecl(
+              ASTFormalParamDecl(
+                Type(
+                 int
+                ) [Type]
+               z
+              ) [ASTFormalParamDecl]
+            ) [SingleFormalParamDecl]
+            ASTFormalParamDecl(
+              Type(
+               int
+              ) [Type]
+             d
+            ) [ASTFormalParamDecl]
+          ) [FormalParamDecls]
+        ) [FormParams]
+        NoSpecDecl(
+        ) [NoSpecDecl]
+        StmtList(
+          NoStmt(
+          ) [NoStmt]
+          ReturnExpr(
+            OpExpr(
+              SumTerm(
+                SingleTerm(
+                  SingleFactor(
+                    Var(
+                      ASTDesignator(
+                       z
+                      ) [ASTDesignator]
+                    ) [Var]
+                  ) [SingleFactor]
+                ) [SingleTerm]
+                PlusOp(
+                ) [PlusOp]
+                SingleFactor(
+                  Var(
+                    ASTDesignator(
+                     d
+                    ) [ASTDesignator]
+                  ) [Var]
+                ) [SingleFactor]
+              ) [SumTerm]
+            ) [OpExpr]
+          ) [ReturnExpr]
+        ) [StmtList]
+      ) [MethodDecl]
+    ) [ASTMethodDecList]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        DesignatorStmt(
+          AssignStmt(
+            ASTDesignator(
+             i
+            ) [ASTDesignator]
+            Assignop(
+            ) [Assignop]
+            ErrorAssign(
+            ) [ErrorAssign]
+          ) [AssignStmt]
+        ) [DesignatorStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  08:12:57,669 - Deklarisana promenljiva i na liniji 5
+INFO  08:12:57,669 - Obradjuje se funkcija sum na liniji 10
+INFO  08:12:57,669 - Deklarisan argument z na liniji 10
+INFO  08:12:57,669 - Deklarisan argument d na liniji 10
+INFO  08:12:57,669 - Obradjuje se funkcija main na liniji 16

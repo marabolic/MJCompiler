@@ -8,8 +8,6 @@ program test301
 
 	int niz[];
 	char nizch[];
-	int edooo;
-	char edo;
 	
 {
 	void main()	
@@ -41,11 +39,11 @@ program test301
 			
 		
 		bodovi = bodovi + (pet * jedan - 1) * bodovi - (3 % 2 + 3 * 2 - 3); 
-		print(bodovi, 2);
+		print(bodovi);
 			
-		bodovi=5;
-		if(bodovi%2 == 0 && 1==2 || 2+4==6) bodovi = bodovi + 10;
-		if(true) print(bodovi + 20);
+		read(bodovi);
+		if(bodovi%2 == 0) bodovi = bodovi + 10;
+		if(false) print(bodovi + 20);
 		else print(bodovi);
 	}
 }

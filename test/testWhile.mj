@@ -1,0 +1,28 @@
+//Test 302
+
+program test302
+
+const int jedan = 1;
+
+int i;
+bool ibool;
+
+
+{
+	
+	void main()
+	{	
+		ibool = false;
+		i = 0;
+		do{
+			if(i == 2) ibool = true;
+			i++;
+		}while(i < 5);
+		
+		
+		print(i);
+		print(eol);
+		print(ibool);
+	}
+}
+

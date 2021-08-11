@@ -1,0 +1,213 @@
+INFO  08:13:09,598 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\testMethod.mj
+INFO  08:13:09,676 - #2 program
+INFO  08:13:09,676 - #42 test302
+INFO  08:13:09,676 - #42 int
+INFO  08:13:09,677 - #42 i
+INFO  08:13:09,679 - #14 ;
+INFO  08:13:09,679 - #12 {
+INFO  08:13:09,679 - #42 int
+INFO  08:13:09,680 - #42 sum
+INFO  08:13:09,681 - #15 (
+INFO  08:13:09,683 - #42 int
+INFO  08:13:09,683 - #42 z
+INFO  08:13:09,683 - #37 ,
+INFO  08:13:09,684 - #42 int
+INFO  08:13:09,684 - #42 d
+INFO  08:13:09,684 - #16 )
+INFO  08:13:09,684 - #12 {
+INFO  08:13:09,684 - #7 return
+INFO  08:13:09,685 - #42 z
+INFO  08:13:09,685 - #21 +
+INFO  08:13:09,686 - #42 d
+INFO  08:13:09,688 - #14 ;
+INFO  08:13:09,689 - #13 }
+INFO  08:13:09,690 - #8 void
+INFO  08:13:09,692 - #42 main
+INFO  08:13:09,693 - #15 (
+INFO  08:13:09,693 - #16 )
+INFO  08:13:09,694 - #12 {
+INFO  08:13:09,694 - #42 i
+INFO  08:13:09,694 - #34 =
+INFO  08:13:09,695 - #42 sum
+INFO  08:13:09,696 - #15 (
+INFO  08:13:09,696 - #39 2
+INFO  08:13:09,696 - #37 ,
+INFO  08:13:09,696 - #39 3
+INFO  08:13:09,697 - #16 )
+INFO  08:13:09,697 - #14 ;
+INFO  08:13:09,699 - #5 print
+INFO  08:13:09,699 - #15 (
+INFO  08:13:09,700 - #42 i
+INFO  08:13:09,700 - #16 )
+INFO  08:13:09,700 - #14 ;
+INFO  08:13:09,700 - #13 }
+INFO  08:13:09,700 - #13 }
+INFO  08:13:09,710 - Program(
+  ProgName(
+   test302
+  ) [ProgName]
+  ASTVarDeclList(
+    NoSpecDecl(
+    ) [NoSpecDecl]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       i
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    ASTMethodDecList(
+      NoMethodDecl(
+      ) [NoMethodDecl]
+      MethodDecl(
+        MethodTypeName(
+          ActualType(
+            Type(
+             int
+            ) [Type]
+          ) [ActualType]
+         sum
+        ) [MethodTypeName]
+        FormParams(
+          FormalParamDecls(
+            SingleFormalParamDecl(
+              ASTFormalParamDecl(
+                Type(
+                 int
+                ) [Type]
+               z
+              ) [ASTFormalParamDecl]
+            ) [SingleFormalParamDecl]
+            ASTFormalParamDecl(
+              Type(
+               int
+              ) [Type]
+             d
+            ) [ASTFormalParamDecl]
+          ) [FormalParamDecls]
+        ) [FormParams]
+        NoSpecDecl(
+        ) [NoSpecDecl]
+        StmtList(
+          NoStmt(
+          ) [NoStmt]
+          ReturnExpr(
+            OpExpr(
+              SumTerm(
+                SingleTerm(
+                  SingleFactor(
+                    Var(
+                      ASTDesignator(
+                       z
+                      ) [ASTDesignator]
+                    ) [Var]
+                  ) [SingleFactor]
+                ) [SingleTerm]
+                PlusOp(
+                ) [PlusOp]
+                SingleFactor(
+                  Var(
+                    ASTDesignator(
+                     d
+                    ) [ASTDesignator]
+                  ) [Var]
+                ) [SingleFactor]
+              ) [SumTerm]
+            ) [OpExpr]
+          ) [ReturnExpr]
+        ) [StmtList]
+      ) [MethodDecl]
+    ) [ASTMethodDecList]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        StmtList(
+          NoStmt(
+          ) [NoStmt]
+          DesignatorStmt(
+            AssignStmt(
+              ASTDesignator(
+               i
+              ) [ASTDesignator]
+              Assignop(
+              ) [Assignop]
+              ASTDesExpr(
+                OpExpr(
+                  SingleTerm(
+                    SingleFactor(
+                      FuncCallFactor(
+                        FuncCall(
+                          ASTDesignator(
+                           sum
+                          ) [ASTDesignator]
+                          Actuals(
+                            ActualParList(
+                              ActualParam(
+                                OpExpr(
+                                  SingleTerm(
+                                    SingleFactor(
+                                      NumConst(
+                                       2
+                                      ) [NumConst]
+                                    ) [SingleFactor]
+                                  ) [SingleTerm]
+                                ) [OpExpr]
+                              ) [ActualParam]
+                              OpExpr(
+                                SingleTerm(
+                                  SingleFactor(
+                                    NumConst(
+                                     3
+                                    ) [NumConst]
+                                  ) [SingleFactor]
+                                ) [SingleTerm]
+                              ) [OpExpr]
+                            ) [ActualParList]
+                          ) [Actuals]
+                        ) [FuncCall]
+                      ) [FuncCallFactor]
+                    ) [SingleFactor]
+                  ) [SingleTerm]
+                ) [OpExpr]
+              ) [ASTDesExpr]
+            ) [AssignStmt]
+          ) [DesignatorStmt]
+        ) [StmtList]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   i
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  08:13:09,718 - Deklarisana promenljiva i na liniji 5
+INFO  08:13:09,718 - Obradjuje se funkcija sum na liniji 10
+INFO  08:13:09,718 - Deklarisan argument z na liniji 10
+INFO  08:13:09,718 - Deklarisan argument d na liniji 10
+INFO  08:13:09,719 - Obradjuje se funkcija main na liniji 16
+INFO  08:13:09,719 - Dodeljena vrednost promenljivoj  na liniji 19
+INFO  08:13:09,719 - Print pozvan  na liniji 21
+INFO  08:13:09,719 - Print calls = 1
+INFO  08:13:09,720 - Generating bytecode file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.obj
+INFO  08:13:09,738 - Parsiranje uspesno zavrseno!

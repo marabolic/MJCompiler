@@ -18,7 +18,7 @@ import rs.ac.bg.etf.pp1.util.Log4JUtils;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
 
-public class MJParserTest {
+public class MainTest {
 
 	static {
 		DOMConfigurator.configure(Log4JUtils.instance().findLoggerConfigFile());
@@ -27,7 +27,7 @@ public class MJParserTest {
 	
 	public static void main(String[] args) throws Exception {
 		CompilerImpl com = new CompilerImpl();
-		List<CompilerError> list = com.compile("test/program.mj", "test/program.obj");
+		List<CompilerError> list = com.compile("test/testWhile.mj", "test/program.obj");
 		
 		if (list != null) {
 			for	(int i = 0; i < list.size(); i++) {

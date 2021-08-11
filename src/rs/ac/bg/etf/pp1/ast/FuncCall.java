@@ -1,11 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 29/5/2021 23:26:31
+// 11/7/2021 10:43:7
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class FuncCall extends DesignatorStatement {
+public class FuncCall implements SyntaxNode {
+
+    private SyntaxNode parent;
+    private int line;
+    public rs.etf.pp1.symboltable.concepts.Struct struct = null;
 
     private Designator Designator;
     private ActualPars ActualPars;
@@ -31,6 +35,22 @@ public class FuncCall extends DesignatorStatement {
 
     public void setActualPars(ActualPars ActualPars) {
         this.ActualPars=ActualPars;
+    }
+
+    public SyntaxNode getParent() {
+        return parent;
+    }
+
+    public void setParent(SyntaxNode parent) {
+        this.parent=parent;
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public void setLine(int line) {
+        this.line=line;
     }
 
     public void accept(Visitor visitor) {
