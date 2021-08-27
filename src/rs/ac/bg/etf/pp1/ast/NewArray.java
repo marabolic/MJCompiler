@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/7/2021 10:43:7
+// 26/7/2021 15:31:41
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,11 +8,14 @@ package rs.ac.bg.etf.pp1.ast;
 public class NewArray extends Factor {
 
     private Type Type;
+    private ArrSize ArrSize;
     private Expr Expr;
 
-    public NewArray (Type Type, Expr Expr) {
+    public NewArray (Type Type, ArrSize ArrSize, Expr Expr) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
+        this.ArrSize=ArrSize;
+        if(ArrSize!=null) ArrSize.setParent(this);
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
@@ -23,6 +26,14 @@ public class NewArray extends Factor {
 
     public void setType(Type Type) {
         this.Type=Type;
+    }
+
+    public ArrSize getArrSize() {
+        return ArrSize;
+    }
+
+    public void setArrSize(ArrSize ArrSize) {
+        this.ArrSize=ArrSize;
     }
 
     public Expr getExpr() {
@@ -39,17 +50,20 @@ public class NewArray extends Factor {
 
     public void childrenAccept(Visitor visitor) {
         if(Type!=null) Type.accept(visitor);
+        if(ArrSize!=null) ArrSize.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Type!=null) Type.traverseTopDown(visitor);
+        if(ArrSize!=null) ArrSize.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Type!=null) Type.traverseBottomUp(visitor);
+        if(ArrSize!=null) ArrSize.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -61,6 +75,12 @@ public class NewArray extends Factor {
 
         if(Type!=null)
             buffer.append(Type.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(ArrSize!=null)
+            buffer.append(ArrSize.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

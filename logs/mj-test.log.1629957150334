@@ -1,0 +1,279 @@
+INFO  15:50:04,493 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\testBreak.mj
+INFO  15:50:04,549 - #2 program
+INFO  15:50:04,550 - #42 test302
+INFO  15:50:04,550 - #4 const
+INFO  15:50:04,551 - #42 int
+INFO  15:50:04,552 - #42 jedan
+INFO  15:50:04,552 - #34 =
+INFO  15:50:04,553 - #39 1
+INFO  15:50:04,554 - #14 ;
+INFO  15:50:04,555 - #42 int
+INFO  15:50:04,555 - #42 i
+INFO  15:50:04,555 - #14 ;
+INFO  15:50:04,555 - #12 {
+INFO  15:50:04,556 - #8 void
+INFO  15:50:04,556 - #42 main
+INFO  15:50:04,557 - #15 (
+INFO  15:50:04,558 - #16 )
+INFO  15:50:04,559 - #12 {
+INFO  15:50:04,559 - #42 i
+INFO  15:50:04,560 - #34 =
+INFO  15:50:04,561 - #39 0
+INFO  15:50:04,562 - #14 ;
+INFO  15:50:04,563 - #10 do
+INFO  15:50:04,572 - #12 {
+INFO  15:50:04,573 - #42 i
+INFO  15:50:04,574 - #35 ++
+INFO  15:50:04,574 - #14 ;
+INFO  15:50:04,574 - #43 if
+INFO  15:50:04,574 - #15 (
+INFO  15:50:04,574 - #42 i
+INFO  15:50:04,574 - #26 ==
+INFO  15:50:04,574 - #39 2
+INFO  15:50:04,576 - #16 )
+INFO  15:50:04,577 - #47 break
+INFO  15:50:04,578 - #14 ;
+INFO  15:50:04,578 - #5 print
+INFO  15:50:04,580 - #15 (
+INFO  15:50:04,580 - #42 i
+INFO  15:50:04,580 - #16 )
+INFO  15:50:04,580 - #14 ;
+INFO  15:50:04,581 - #13 }
+INFO  15:50:04,581 - #11 while
+INFO  15:50:04,581 - #15 (
+INFO  15:50:04,581 - #42 i
+INFO  15:50:04,581 - #30 <
+INFO  15:50:04,581 - #39 5
+INFO  15:50:04,582 - #16 )
+INFO  15:50:04,582 - #14 ;
+INFO  15:50:04,583 - #5 print
+INFO  15:50:04,583 - #15 (
+INFO  15:50:04,584 - #42 eol
+INFO  15:50:04,584 - #16 )
+INFO  15:50:04,584 - #14 ;
+INFO  15:50:04,584 - #5 print
+INFO  15:50:04,584 - #15 (
+INFO  15:50:04,584 - #42 i
+INFO  15:50:04,584 - #16 )
+INFO  15:50:04,584 - #14 ;
+INFO  15:50:04,584 - #13 }
+INFO  15:50:04,584 - #13 }
+INFO  15:50:04,595 - Program(
+  ProgName(
+   test302
+  ) [ProgName]
+  ASTVarDeclList(
+    ASTConstDeclList(
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      Type(
+       int
+      ) [Type]
+      SingleConstDecl(
+        ConstDecl(
+          ConstName(
+           jedan
+          ) [ConstName]
+          ASTNumber(
+           1
+          ) [ASTNumber]
+        ) [ConstDecl]
+      ) [SingleConstDecl]
+    ) [ASTConstDeclList]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       i
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        StmtList(
+          StmtList(
+            StmtList(
+              NoStmt(
+              ) [NoStmt]
+              DesignatorStmt(
+                AssignStmt(
+                  ASTDesignator(
+                   i
+                  ) [ASTDesignator]
+                  Assignop(
+                  ) [Assignop]
+                  ASTDesExpr(
+                    OpExpr(
+                      SingleTerm(
+                        SingleFactor(
+                          NumConst(
+                           0
+                          ) [NumConst]
+                        ) [SingleFactor]
+                      ) [SingleTerm]
+                    ) [OpExpr]
+                  ) [ASTDesExpr]
+                ) [AssignStmt]
+              ) [DesignatorStmt]
+            ) [StmtList]
+            DoWhile(
+              DoStart(
+              ) [DoStart]
+              SurroundStmt(
+                StmtList(
+                  StmtList(
+                    StmtList(
+                      NoStmt(
+                      ) [NoStmt]
+                      DesignatorStmt(
+                        Increment(
+                          ASTDesignator(
+                           i
+                          ) [ASTDesignator]
+                        ) [Increment]
+                      ) [DesignatorStmt]
+                    ) [StmtList]
+                    IfStatement(
+                      CondInParens(
+                        SingleCondTerm(
+                          SingleCondFact(
+                            CondFactRel(
+                              OpExpr(
+                                SingleTerm(
+                                  SingleFactor(
+                                    Var(
+                                      ASTDesignator(
+                                       i
+                                      ) [ASTDesignator]
+                                    ) [Var]
+                                  ) [SingleFactor]
+                                ) [SingleTerm]
+                              ) [OpExpr]
+                              CompEqual(
+                              ) [CompEqual]
+                              OpExpr(
+                                SingleTerm(
+                                  SingleFactor(
+                                    NumConst(
+                                     2
+                                    ) [NumConst]
+                                  ) [SingleFactor]
+                                ) [SingleTerm]
+                              ) [OpExpr]
+                            ) [CondFactRel]
+                          ) [SingleCondFact]
+                        ) [SingleCondTerm]
+                      ) [CondInParens]
+                      IfPrepare(
+                      ) [IfPrepare]
+                      IfInsideStmt(
+                        BreakStmt(
+                        ) [BreakStmt]
+                      ) [IfInsideStmt]
+                    ) [IfStatement]
+                  ) [StmtList]
+                  PrintStmt(
+                    OpExpr(
+                      SingleTerm(
+                        SingleFactor(
+                          Var(
+                            ASTDesignator(
+                             i
+                            ) [ASTDesignator]
+                          ) [Var]
+                        ) [SingleFactor]
+                      ) [SingleTerm]
+                    ) [OpExpr]
+                  ) [PrintStmt]
+                ) [StmtList]
+              ) [SurroundStmt]
+              SingleCondTerm(
+                SingleCondFact(
+                  CondFactRel(
+                    OpExpr(
+                      SingleTerm(
+                        SingleFactor(
+                          Var(
+                            ASTDesignator(
+                             i
+                            ) [ASTDesignator]
+                          ) [Var]
+                        ) [SingleFactor]
+                      ) [SingleTerm]
+                    ) [OpExpr]
+                    LessThan(
+                    ) [LessThan]
+                    OpExpr(
+                      SingleTerm(
+                        SingleFactor(
+                          NumConst(
+                           5
+                          ) [NumConst]
+                        ) [SingleFactor]
+                      ) [SingleTerm]
+                    ) [OpExpr]
+                  ) [CondFactRel]
+                ) [SingleCondFact]
+              ) [SingleCondTerm]
+              WhileEnd(
+              ) [WhileEnd]
+            ) [DoWhile]
+          ) [StmtList]
+          PrintStmt(
+            OpExpr(
+              SingleTerm(
+                SingleFactor(
+                  Var(
+                    ASTDesignator(
+                     eol
+                    ) [ASTDesignator]
+                  ) [Var]
+                ) [SingleFactor]
+              ) [SingleTerm]
+            ) [OpExpr]
+          ) [PrintStmt]
+        ) [StmtList]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   i
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  15:50:04,599 - Deklarisana konstanta jedan vrednost 1 na liniji 5
+INFO  15:50:04,600 - Deklarisana promenljiva i na liniji 7
+INFO  15:50:04,600 - Obradjuje se funkcija main na liniji 12
+INFO  15:50:04,600 - Dodeljena vrednost promenljivoj  na liniji 14
+INFO  15:50:04,601 - Inkrementirana vrednost promenljive  na liniji 16
+INFO  15:50:04,601 - CondFactRel je tipa bool na liniji 17
+INFO  15:50:04,601 - Condition je tipa bool
+INFO  15:50:04,607 - Print pozvan  na liniji 18
+INFO  15:50:04,607 - CondFactRel je tipa bool na liniji 19
+INFO  15:50:04,607 - Print pozvan  na liniji 21
+INFO  15:50:04,607 - Print pozvan  na liniji 22
+INFO  15:50:04,608 - Print calls = 3
+INFO  15:50:04,608 - Generating bytecode file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.obj
+INFO  15:50:04,627 - Parsiranje uspesno zavrseno!

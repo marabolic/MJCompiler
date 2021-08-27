@@ -11,18 +11,22 @@ public class MyStatic {
 		Tab.init();
 		Scope universe=Tab.currentScope;
 		universe.addToLocals(new Obj(Obj.Type, "bool", boolType));
+		
+		Obj obj=universe.findSymbol("chr");
+		Obj par=obj.getLocalSymbols().iterator().next();
+		par.setFpPos(1);
+		
+		obj=universe.findSymbol("ord");
+		par=obj.getLocalSymbols().iterator().next();
+		par.setFpPos(1);	
+		
+		obj=universe.findSymbol("len");
+		par=obj.getLocalSymbols().iterator().next();
+		par.setFpPos(1);			
+		
 	}
 	
-	public static Obj find(String name) {
-		Obj resultObj = null;
-		for (Scope s = Tab.currentScope; s != null; s = s.getOuter()) {
-			if (s.getLocals() != null) {
-				resultObj = s.getLocals().searchKey(name);
-				if (resultObj != null) break;
-			}
-		}
-		return (resultObj != null) ? resultObj : Tab.noObj;
-	}
+	
 	
 	
 }

@@ -1,0 +1,33 @@
+program test302
+
+const int jedan = 1;
+
+int i;
+bool ibool;
+
+int niz[];
+int niz1[];
+int niz2;
+
+{
+	
+	
+	void main()
+	{
+		
+		niz = new int[3];
+		niz[0] = 1;
+		niz[1] = 2;
+		niz[2] = 3;
+		
+		niz1 = niz * 2;
+		print(niz1[0]);
+		print(niz1[1]);
+		print(niz1[2]);
+		print(eol);
+		
+		niz2 = niz * niz1;
+		print(niz2);
+		print(eol);
+	}
+}

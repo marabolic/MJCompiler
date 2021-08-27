@@ -1,0 +1,170 @@
+INFO  16:58:30,188 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\testBool.mj
+INFO  16:58:30,217 - #2 program
+INFO  16:58:30,217 - #42 test302
+INFO  16:58:30,217 - #42 bool
+INFO  16:58:30,218 - #42 ibool
+INFO  16:58:30,219 - #14 ;
+INFO  16:58:30,219 - #12 {
+INFO  16:58:30,220 - #8 void
+INFO  16:58:30,220 - #42 main
+INFO  16:58:30,221 - #15 (
+INFO  16:58:30,222 - #16 )
+INFO  16:58:30,222 - #12 {
+INFO  16:58:30,222 - #42 ibool
+INFO  16:58:30,222 - #34 =
+INFO  16:58:30,223 - #40 false
+INFO  16:58:30,223 - #14 ;
+INFO  16:58:30,224 - #5 print
+INFO  16:58:30,224 - #15 (
+INFO  16:58:30,224 - #42 ibool
+INFO  16:58:30,224 - #16 )
+INFO  16:58:30,224 - #14 ;
+INFO  16:58:30,224 - #5 print
+INFO  16:58:30,225 - #15 (
+INFO  16:58:30,225 - #42 eol
+INFO  16:58:30,225 - #16 )
+INFO  16:58:30,225 - #14 ;
+INFO  16:58:30,225 - #42 ibool
+INFO  16:58:30,225 - #34 =
+INFO  16:58:30,225 - #40 true
+INFO  16:58:30,225 - #14 ;
+INFO  16:58:30,225 - #5 print
+INFO  16:58:30,225 - #15 (
+INFO  16:58:30,225 - #42 ibool
+INFO  16:58:30,225 - #16 )
+INFO  16:58:30,225 - #14 ;
+INFO  16:58:30,225 - #13 }
+INFO  16:58:30,225 - #13 }
+INFO  16:58:30,230 - Program(
+  ProgName(
+   test302
+  ) [ProgName]
+  ASTVarDeclList(
+    NoSpecDecl(
+    ) [NoSpecDecl]
+    Type(
+     bool
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       ibool
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        StmtList(
+          StmtList(
+            StmtList(
+              StmtList(
+                NoStmt(
+                ) [NoStmt]
+                DesignatorStmt(
+                  AssignStmt(
+                    ASTDesignator(
+                     ibool
+                    ) [ASTDesignator]
+                    Assignop(
+                    ) [Assignop]
+                    ASTDesExpr(
+                      OpExpr(
+                        SingleTerm(
+                          SingleFactor(
+                            BoolConst(
+                             false
+                            ) [BoolConst]
+                          ) [SingleFactor]
+                        ) [SingleTerm]
+                      ) [OpExpr]
+                    ) [ASTDesExpr]
+                  ) [AssignStmt]
+                ) [DesignatorStmt]
+              ) [StmtList]
+              PrintStmt(
+                OpExpr(
+                  SingleTerm(
+                    SingleFactor(
+                      Var(
+                        ASTDesignator(
+                         ibool
+                        ) [ASTDesignator]
+                      ) [Var]
+                    ) [SingleFactor]
+                  ) [SingleTerm]
+                ) [OpExpr]
+              ) [PrintStmt]
+            ) [StmtList]
+            PrintStmt(
+              OpExpr(
+                SingleTerm(
+                  SingleFactor(
+                    Var(
+                      ASTDesignator(
+                       eol
+                      ) [ASTDesignator]
+                    ) [Var]
+                  ) [SingleFactor]
+                ) [SingleTerm]
+              ) [OpExpr]
+            ) [PrintStmt]
+          ) [StmtList]
+          DesignatorStmt(
+            AssignStmt(
+              ASTDesignator(
+               ibool
+              ) [ASTDesignator]
+              Assignop(
+              ) [Assignop]
+              ASTDesExpr(
+                OpExpr(
+                  SingleTerm(
+                    SingleFactor(
+                      BoolConst(
+                       true
+                      ) [BoolConst]
+                    ) [SingleFactor]
+                  ) [SingleTerm]
+                ) [OpExpr]
+              ) [ASTDesExpr]
+            ) [AssignStmt]
+          ) [DesignatorStmt]
+        ) [StmtList]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   ibool
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  16:58:30,233 - Deklarisana promenljiva ibool na liniji 6
+INFO  16:58:30,233 - Obradjuje se funkcija main na liniji 11
+INFO  16:58:30,233 - Dodeljena vrednost promenljivoj  na liniji 13
+INFO  16:58:30,233 - Print pozvan  na liniji 14
+INFO  16:58:30,233 - Print pozvan  na liniji 16
+INFO  16:58:30,233 - Dodeljena vrednost promenljivoj  na liniji 18
+INFO  16:58:30,234 - Print pozvan  na liniji 19
+INFO  16:58:30,234 - Print calls = 3
+INFO  16:58:30,234 - Generating bytecode file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.obj
+INFO  16:58:30,244 - Parsiranje uspesno zavrseno!

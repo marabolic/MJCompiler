@@ -1,0 +1,24 @@
+//Test 302
+
+program test302
+
+
+bool ibool;
+int i;
+
+{
+	
+	void main()
+	{	
+		i=0;
+		ibool = false;
+		print(ibool);
+		
+		print(eol);
+		
+		ibool = true;
+		print(ibool);
+		
+	}
+}
+

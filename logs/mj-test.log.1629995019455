@@ -1,0 +1,551 @@
+INFO  18:12:46,561 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\testArrayMul.mj
+INFO  18:12:46,642 - #2 program
+INFO  18:12:46,642 - #42 test302
+INFO  18:12:46,642 - #4 const
+INFO  18:12:46,646 - #42 int
+INFO  18:12:46,646 - #42 jedan
+INFO  18:12:46,647 - #34 =
+INFO  18:12:46,649 - #39 1
+INFO  18:12:46,649 - #14 ;
+INFO  18:12:46,651 - #42 int
+INFO  18:12:46,651 - #42 i
+INFO  18:12:46,651 - #14 ;
+INFO  18:12:46,652 - #42 bool
+INFO  18:12:46,652 - #42 ibool
+INFO  18:12:46,653 - #14 ;
+INFO  18:12:46,653 - #42 int
+INFO  18:12:46,653 - #42 niz
+INFO  18:12:46,653 - #17 [
+INFO  18:12:46,653 - #18 ]
+INFO  18:12:46,654 - #14 ;
+INFO  18:12:46,654 - #42 int
+INFO  18:12:46,654 - #42 niz1
+INFO  18:12:46,657 - #17 [
+INFO  18:12:46,657 - #18 ]
+INFO  18:12:46,657 - #14 ;
+INFO  18:12:46,657 - #42 int
+INFO  18:12:46,658 - #42 niz2
+INFO  18:12:46,658 - #14 ;
+INFO  18:12:46,658 - #12 {
+INFO  18:12:46,658 - #8 void
+INFO  18:12:46,660 - #42 main
+INFO  18:12:46,662 - #15 (
+INFO  18:12:46,663 - #16 )
+INFO  18:12:46,664 - #12 {
+INFO  18:12:46,664 - #42 niz
+INFO  18:12:46,665 - #34 =
+INFO  18:12:46,665 - #9 new
+INFO  18:12:46,666 - #42 int
+INFO  18:12:46,666 - #17 [
+INFO  18:12:46,666 - #39 3
+INFO  18:12:46,667 - #18 ]
+INFO  18:12:46,669 - #14 ;
+INFO  18:12:46,669 - #42 niz
+INFO  18:12:46,670 - #17 [
+INFO  18:12:46,672 - #39 0
+INFO  18:12:46,672 - #18 ]
+INFO  18:12:46,672 - #34 =
+INFO  18:12:46,673 - #39 1
+INFO  18:12:46,673 - #14 ;
+INFO  18:12:46,673 - #42 niz
+INFO  18:12:46,673 - #17 [
+INFO  18:12:46,673 - #39 1
+INFO  18:12:46,674 - #18 ]
+INFO  18:12:46,674 - #34 =
+INFO  18:12:46,674 - #39 2
+INFO  18:12:46,674 - #14 ;
+INFO  18:12:46,674 - #42 niz
+INFO  18:12:46,675 - #17 [
+INFO  18:12:46,676 - #39 2
+INFO  18:12:46,676 - #18 ]
+INFO  18:12:46,676 - #34 =
+INFO  18:12:46,676 - #39 3
+INFO  18:12:46,676 - #14 ;
+INFO  18:12:46,677 - #42 niz1
+INFO  18:12:46,677 - #34 =
+INFO  18:12:46,677 - #42 niz
+INFO  18:12:46,677 - #23 *
+INFO  18:12:46,677 - #39 2
+INFO  18:12:46,679 - #14 ;
+INFO  18:12:46,687 - #5 print
+INFO  18:12:46,687 - #15 (
+INFO  18:12:46,687 - #42 niz1
+INFO  18:12:46,687 - #17 [
+INFO  18:12:46,687 - #39 0
+INFO  18:12:46,688 - #18 ]
+INFO  18:12:46,688 - #16 )
+INFO  18:12:46,688 - #14 ;
+INFO  18:12:46,688 - #5 print
+INFO  18:12:46,688 - #15 (
+INFO  18:12:46,689 - #42 niz1
+INFO  18:12:46,689 - #17 [
+INFO  18:12:46,689 - #39 1
+INFO  18:12:46,689 - #18 ]
+INFO  18:12:46,690 - #16 )
+INFO  18:12:46,690 - #14 ;
+INFO  18:12:46,690 - #5 print
+INFO  18:12:46,690 - #15 (
+INFO  18:12:46,691 - #42 niz1
+INFO  18:12:46,691 - #17 [
+INFO  18:12:46,691 - #39 2
+INFO  18:12:46,691 - #18 ]
+INFO  18:12:46,691 - #16 )
+INFO  18:12:46,691 - #14 ;
+INFO  18:12:46,692 - #5 print
+INFO  18:12:46,692 - #15 (
+INFO  18:12:46,692 - #42 eol
+INFO  18:12:46,692 - #16 )
+INFO  18:12:46,692 - #14 ;
+INFO  18:12:46,692 - #42 niz2
+INFO  18:12:46,692 - #34 =
+INFO  18:12:46,693 - #42 niz
+INFO  18:12:46,693 - #23 *
+INFO  18:12:46,693 - #42 niz1
+INFO  18:12:46,693 - #14 ;
+INFO  18:12:46,693 - #5 print
+INFO  18:12:46,693 - #15 (
+INFO  18:12:46,694 - #42 niz2
+INFO  18:12:46,694 - #16 )
+INFO  18:12:46,694 - #14 ;
+INFO  18:12:46,694 - #5 print
+INFO  18:12:46,694 - #15 (
+INFO  18:12:46,694 - #42 eol
+INFO  18:12:46,694 - #16 )
+INFO  18:12:46,694 - #14 ;
+INFO  18:12:46,695 - #13 }
+INFO  18:12:46,695 - #13 }
+INFO  18:12:46,716 - Program(
+  ProgName(
+   test302
+  ) [ProgName]
+  ASTVarDeclList(
+    ASTVarDeclList(
+      ASTVarDeclList(
+        ASTVarDeclList(
+          ASTVarDeclList(
+            ASTConstDeclList(
+              NoSpecDecl(
+              ) [NoSpecDecl]
+              Type(
+               int
+              ) [Type]
+              SingleConstDecl(
+                ConstDecl(
+                  ConstName(
+                   jedan
+                  ) [ConstName]
+                  ASTNumber(
+                   1
+                  ) [ASTNumber]
+                ) [ConstDecl]
+              ) [SingleConstDecl]
+            ) [ASTConstDeclList]
+            Type(
+             int
+            ) [Type]
+            SingleVarDecl(
+              ASTVarDecl(
+               i
+              ) [ASTVarDecl]
+            ) [SingleVarDecl]
+          ) [ASTVarDeclList]
+          Type(
+           bool
+          ) [Type]
+          SingleVarDecl(
+            ASTVarDecl(
+             ibool
+            ) [ASTVarDecl]
+          ) [SingleVarDecl]
+        ) [ASTVarDeclList]
+        Type(
+         int
+        ) [Type]
+        SingleVarDecl(
+          ArrayDecl(
+           niz
+          ) [ArrayDecl]
+        ) [SingleVarDecl]
+      ) [ASTVarDeclList]
+      Type(
+       int
+      ) [Type]
+      SingleVarDecl(
+        ArrayDecl(
+         niz1
+        ) [ArrayDecl]
+      ) [SingleVarDecl]
+    ) [ASTVarDeclList]
+    Type(
+     int
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       niz2
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        StmtList(
+          StmtList(
+            StmtList(
+              StmtList(
+                StmtList(
+                  StmtList(
+                    StmtList(
+                      StmtList(
+                        StmtList(
+                          StmtList(
+                            StmtList(
+                              NoStmt(
+                              ) [NoStmt]
+                              DesignatorStmt(
+                                AssignStmt(
+                                  ASTDesignator(
+                                   niz
+                                  ) [ASTDesignator]
+                                  Assignop(
+                                  ) [Assignop]
+                                  ASTDesExpr(
+                                    OpExpr(
+                                      SingleTerm(
+                                        SingleFactor(
+                                          NewArray(
+                                            Type(
+                                             int
+                                            ) [Type]
+                                            ArrSize(
+                                            ) [ArrSize]
+                                            OpExpr(
+                                              SingleTerm(
+                                                SingleFactor(
+                                                  NumConst(
+                                                   3
+                                                  ) [NumConst]
+                                                ) [SingleFactor]
+                                              ) [SingleTerm]
+                                            ) [OpExpr]
+                                          ) [NewArray]
+                                        ) [SingleFactor]
+                                      ) [SingleTerm]
+                                    ) [OpExpr]
+                                  ) [ASTDesExpr]
+                                ) [AssignStmt]
+                              ) [DesignatorStmt]
+                            ) [StmtList]
+                            DesignatorStmt(
+                              AssignStmt(
+                                DesignatorArray(
+                                  DesArrayName(
+                                   niz
+                                  ) [DesArrayName]
+                                  OpExpr(
+                                    SingleTerm(
+                                      SingleFactor(
+                                        NumConst(
+                                         0
+                                        ) [NumConst]
+                                      ) [SingleFactor]
+                                    ) [SingleTerm]
+                                  ) [OpExpr]
+                                ) [DesignatorArray]
+                                Assignop(
+                                ) [Assignop]
+                                ASTDesExpr(
+                                  OpExpr(
+                                    SingleTerm(
+                                      SingleFactor(
+                                        NumConst(
+                                         1
+                                        ) [NumConst]
+                                      ) [SingleFactor]
+                                    ) [SingleTerm]
+                                  ) [OpExpr]
+                                ) [ASTDesExpr]
+                              ) [AssignStmt]
+                            ) [DesignatorStmt]
+                          ) [StmtList]
+                          DesignatorStmt(
+                            AssignStmt(
+                              DesignatorArray(
+                                DesArrayName(
+                                 niz
+                                ) [DesArrayName]
+                                OpExpr(
+                                  SingleTerm(
+                                    SingleFactor(
+                                      NumConst(
+                                       1
+                                      ) [NumConst]
+                                    ) [SingleFactor]
+                                  ) [SingleTerm]
+                                ) [OpExpr]
+                              ) [DesignatorArray]
+                              Assignop(
+                              ) [Assignop]
+                              ASTDesExpr(
+                                OpExpr(
+                                  SingleTerm(
+                                    SingleFactor(
+                                      NumConst(
+                                       2
+                                      ) [NumConst]
+                                    ) [SingleFactor]
+                                  ) [SingleTerm]
+                                ) [OpExpr]
+                              ) [ASTDesExpr]
+                            ) [AssignStmt]
+                          ) [DesignatorStmt]
+                        ) [StmtList]
+                        DesignatorStmt(
+                          AssignStmt(
+                            DesignatorArray(
+                              DesArrayName(
+                               niz
+                              ) [DesArrayName]
+                              OpExpr(
+                                SingleTerm(
+                                  SingleFactor(
+                                    NumConst(
+                                     2
+                                    ) [NumConst]
+                                  ) [SingleFactor]
+                                ) [SingleTerm]
+                              ) [OpExpr]
+                            ) [DesignatorArray]
+                            Assignop(
+                            ) [Assignop]
+                            ASTDesExpr(
+                              OpExpr(
+                                SingleTerm(
+                                  SingleFactor(
+                                    NumConst(
+                                     3
+                                    ) [NumConst]
+                                  ) [SingleFactor]
+                                ) [SingleTerm]
+                              ) [OpExpr]
+                            ) [ASTDesExpr]
+                          ) [AssignStmt]
+                        ) [DesignatorStmt]
+                      ) [StmtList]
+                      DesignatorStmt(
+                        AssignStmt(
+                          ASTDesignator(
+                           niz1
+                          ) [ASTDesignator]
+                          Assignop(
+                          ) [Assignop]
+                          ASTDesExpr(
+                            OpExpr(
+                              SingleTerm(
+                                MulFactors(
+                                  SingleFactor(
+                                    Var(
+                                      ASTDesignator(
+                                       niz
+                                      ) [ASTDesignator]
+                                    ) [Var]
+                                  ) [SingleFactor]
+                                  Mulop(
+                                  ) [Mulop]
+                                  NumConst(
+                                   2
+                                  ) [NumConst]
+                                ) [MulFactors]
+                              ) [SingleTerm]
+                            ) [OpExpr]
+                          ) [ASTDesExpr]
+                        ) [AssignStmt]
+                      ) [DesignatorStmt]
+                    ) [StmtList]
+                    PrintStmt(
+                      OpExpr(
+                        SingleTerm(
+                          SingleFactor(
+                            Var(
+                              DesignatorArray(
+                                DesArrayName(
+                                 niz1
+                                ) [DesArrayName]
+                                OpExpr(
+                                  SingleTerm(
+                                    SingleFactor(
+                                      NumConst(
+                                       0
+                                      ) [NumConst]
+                                    ) [SingleFactor]
+                                  ) [SingleTerm]
+                                ) [OpExpr]
+                              ) [DesignatorArray]
+                            ) [Var]
+                          ) [SingleFactor]
+                        ) [SingleTerm]
+                      ) [OpExpr]
+                    ) [PrintStmt]
+                  ) [StmtList]
+                  PrintStmt(
+                    OpExpr(
+                      SingleTerm(
+                        SingleFactor(
+                          Var(
+                            DesignatorArray(
+                              DesArrayName(
+                               niz1
+                              ) [DesArrayName]
+                              OpExpr(
+                                SingleTerm(
+                                  SingleFactor(
+                                    NumConst(
+                                     1
+                                    ) [NumConst]
+                                  ) [SingleFactor]
+                                ) [SingleTerm]
+                              ) [OpExpr]
+                            ) [DesignatorArray]
+                          ) [Var]
+                        ) [SingleFactor]
+                      ) [SingleTerm]
+                    ) [OpExpr]
+                  ) [PrintStmt]
+                ) [StmtList]
+                PrintStmt(
+                  OpExpr(
+                    SingleTerm(
+                      SingleFactor(
+                        Var(
+                          DesignatorArray(
+                            DesArrayName(
+                             niz1
+                            ) [DesArrayName]
+                            OpExpr(
+                              SingleTerm(
+                                SingleFactor(
+                                  NumConst(
+                                   2
+                                  ) [NumConst]
+                                ) [SingleFactor]
+                              ) [SingleTerm]
+                            ) [OpExpr]
+                          ) [DesignatorArray]
+                        ) [Var]
+                      ) [SingleFactor]
+                    ) [SingleTerm]
+                  ) [OpExpr]
+                ) [PrintStmt]
+              ) [StmtList]
+              PrintStmt(
+                OpExpr(
+                  SingleTerm(
+                    SingleFactor(
+                      Var(
+                        ASTDesignator(
+                         eol
+                        ) [ASTDesignator]
+                      ) [Var]
+                    ) [SingleFactor]
+                  ) [SingleTerm]
+                ) [OpExpr]
+              ) [PrintStmt]
+            ) [StmtList]
+            DesignatorStmt(
+              AssignStmt(
+                ASTDesignator(
+                 niz2
+                ) [ASTDesignator]
+                Assignop(
+                ) [Assignop]
+                ASTDesExpr(
+                  OpExpr(
+                    SingleTerm(
+                      MulFactors(
+                        SingleFactor(
+                          Var(
+                            ASTDesignator(
+                             niz
+                            ) [ASTDesignator]
+                          ) [Var]
+                        ) [SingleFactor]
+                        Mulop(
+                        ) [Mulop]
+                        Var(
+                          ASTDesignator(
+                           niz1
+                          ) [ASTDesignator]
+                        ) [Var]
+                      ) [MulFactors]
+                    ) [SingleTerm]
+                  ) [OpExpr]
+                ) [ASTDesExpr]
+              ) [AssignStmt]
+            ) [DesignatorStmt]
+          ) [StmtList]
+          PrintStmt(
+            OpExpr(
+              SingleTerm(
+                SingleFactor(
+                  Var(
+                    ASTDesignator(
+                     niz2
+                    ) [ASTDesignator]
+                  ) [Var]
+                ) [SingleFactor]
+              ) [SingleTerm]
+            ) [OpExpr]
+          ) [PrintStmt]
+        ) [StmtList]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   eol
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  18:12:46,724 - Deklarisana konstanta jedan vrednost 1 na liniji 3
+INFO  18:12:46,724 - Deklarisana promenljiva i na liniji 5
+INFO  18:12:46,724 - Deklarisana promenljiva ibool na liniji 6
+INFO  18:12:46,725 - Deklarisan niz niz na liniji 8
+INFO  18:12:46,725 - Deklarisan niz niz1 na liniji 9
+INFO  18:12:46,725 - Deklarisana promenljiva niz2 na liniji 10
+INFO  18:12:46,725 - Obradjuje se funkcija main na liniji 15
+INFO  18:12:46,726 - Novi niz  na liniji 18
+INFO  18:12:46,726 - Dodeljena vrednost nizu  na liniji 18
+INFO  18:12:46,727 - Dodeljena vrednost elementu niza  na liniji 19
+INFO  18:12:46,727 - Dodeljena vrednost elementu niza  na liniji 20
+INFO  18:12:46,727 - Dodeljena vrednost elementu niza  na liniji 21
+INFO  18:12:46,727 - Mnozenje sa niza skalarom, na liniji: 24
+INFO  18:12:46,727 - Dodeljena vrednost nizu  na liniji 24
+INFO  18:12:46,727 - Print pozvan  na liniji 25
+INFO  18:12:46,727 - Print pozvan  na liniji 26
+INFO  18:12:46,727 - Print pozvan  na liniji 27
+INFO  18:12:46,728 - Print pozvan  na liniji 28
+INFO  18:12:46,728 - Mnozenje sa niza nizom, na liniji: 30
+INFO  18:12:46,728 - Dodeljena vrednost promenljivoj  na liniji 30
+INFO  18:12:46,728 - Print pozvan  na liniji 31
+INFO  18:12:46,728 - Print pozvan  na liniji 32
+INFO  18:12:46,728 - Print calls = 6
+INFO  18:12:46,729 - Generating bytecode file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\program.obj
+INFO  18:12:46,752 - Parsiranje uspesno zavrseno!

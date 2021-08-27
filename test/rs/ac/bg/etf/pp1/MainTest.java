@@ -27,7 +27,7 @@ public class MainTest {
 	
 	public static void main(String[] args) throws Exception {
 		CompilerImpl com = new CompilerImpl();
-		List<CompilerError> list = com.compile("test/testWhile.mj", "test/program.obj");
+		List<CompilerError> list = com.compile("test/javniTestBAvg.mj", "test/program.obj");
 		
 		if (list != null) {
 			for	(int i = 0; i < list.size(); i++) {

@@ -19,6 +19,9 @@ public class CodeGenerator extends VisitorAdaptor{
 	
 	private boolean minusSet = false;
 	private int beginDoWhile;
+	private int breakAddr;
+	private int i = 0;
+	private boolean isFactorArrSize = false;
 	
 	public int getMainPc(){
 		return mainPc;
@@ -29,7 +32,34 @@ public class CodeGenerator extends VisitorAdaptor{
 	}
 	
 	public void visit(ProgName progName) {
+		Tab.lenObj.setAdr(Code.pc);
+		Code.put(Code.enter);
+		Code.put(1);
+		Code.put(1);
+		Code.put(Code.load_n);
+		Code.put(Code.arraylength);
+		Code.put(Code.exit);
+		Code.put(Code.return_);
 		
+		//CHR METHOD
+		Tab.chrObj.setAdr(Code.pc);
+		Code.put(Code.enter);
+		Code.put(1);
+		Code.put(1);
+		Code.put(Code.load_n);
+		Code.loadConst(256);
+		Code.put(Code.rem);
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+		
+		//ORD METHOD
+		Tab.ordObj.setAdr(Code.pc);
+		Code.put(Code.enter);
+		Code.put(1);
+		Code.put(1);
+		Code.put(Code.load_n);
+		Code.put(Code.exit);
+		Code.put(Code.return_);		
 	}
 	
 	public void visit(MethodTypeName methodTypeName){
@@ -79,16 +109,28 @@ public class CodeGenerator extends VisitorAdaptor{
 	
 	// STATEMENTS
 	
-	public void visit(DoStart doStart) {
-		beginDoWhile = Code.pc;
+	public void visit(BreakStmt breakStmt) {
+		Code.putJump(0);
+		breakAddr = Code.pc - 2;
 	}
 	
-	public void visit(WhileEnd whileEnd) {
+	public void visit(ContinueStmt continueStmt) {
+		Code.putJump(beginDoWhile);
+	}
+	
+	public void visit(DoStart doStart) {
+		beginDoWhile = Code.pc;
 		
 	}
 	
+	public void visit(WhileEnd whileEnd) {
+		Code.loadConst(0);
+		Code.putFalseJump(Code.le, beginDoWhile);
+		Code.fixup(breakAddr);
+	}
+	
 	public void visit(PrintStmt printStmt){
-		if((printStmt.getExpr().struct == Tab.charType)){
+		if((printStmt.getExpr().obj.getType() == Tab.charType)){
 			Code.loadConst(1);
 			Code.put(Code.bprint);
 		}else{
@@ -99,7 +141,7 @@ public class CodeGenerator extends VisitorAdaptor{
 	
 	public void visit(PrintStmtNum printStmt) {
 		Code.loadConst(printStmt.getWidth());
-		if((printStmt.getExpr().struct == Tab.charType)){
+		if((printStmt.getExpr().obj.getType() == Tab.charType)){
 			Code.put(Code.bprint);
 		}else{
 			Code.put(Code.print);
@@ -176,7 +218,7 @@ public class CodeGenerator extends VisitorAdaptor{
 	}
 	
 	public void visit (MulCondFacts cond) {
-		Code.put(Code.mul); 
+		Code.put(Code.mul);
 	}
 	
 	public void visit (CondFactRel cond) {
@@ -208,8 +250,9 @@ public class CodeGenerator extends VisitorAdaptor{
 	
 	// TERMS
 	
+	
 	public void visit(OpExpr term) {
-		
+
 	}
 
 	public void visit(NegOpExpr term) {
@@ -235,10 +278,203 @@ public class CodeGenerator extends VisitorAdaptor{
 			minusSet = false;
 		}
 	}
+	
+	
+	
+	public void visit(Mulop mulop) {
+		
+	}
+	
 
 	public void visit(MulFactors term) {
 		if (term.getMuloper() instanceof Mulop) {
-			Code.put(Code.mul);
+			if (term.getTerm().obj.getKind() == Struct.Array) {
+				if (term.getFactor().struct.getKind() == Struct.Int) {
+					System.out.println("jedan array");
+					
+					int origArr = Code.dataSize - 1, scalar = Code.dataSize - 2, counter = Code.dataSize - 3, newArr = Code.dataSize - 4;
+					
+					//global init
+					
+					Code.put(Code.putstatic);
+					Code.put2(scalar);
+					Code.put(Code.putstatic);
+					Code.put2(origArr);
+					Code.put(Code.getstatic);
+					Code.put2(origArr);
+					
+					Code.put(Code.arraylength);
+					Code.put(Code.dup);
+					Code.put(Code.putstatic);
+					Code.put2(counter);
+					Code.put(Code.newarray);
+					Code.put(1);
+					Code.put(Code.putstatic);
+					Code.put2(newArr);
+					
+					
+					//counter decrement
+					Code.put(Code.getstatic);
+					Code.put2(counter);
+					Code.loadConst(1);
+					Code.put(Code.sub);
+					Code.put(Code.putstatic);
+					Code.put2(counter);
+					
+					//get elem
+					
+					Code.put(Code.getstatic);
+					Code.put2(newArr);
+					Code.put(Code.getstatic);
+					Code.put2(counter);
+					Code.put(Code.getstatic);
+					Code.put2(origArr);
+					Code.put(Code.getstatic);
+					Code.put2(counter);
+					Code.put(Code.aload);
+					Code.put(Code.getstatic);
+					Code.put2(scalar);
+					Code.put(Code.mul);
+					
+					
+					Code.put(Code.astore);
+					
+					Code.put(Code.getstatic);
+					Code.put2(counter);
+					Code.loadConst(0);
+					Code.putFalseJump(Code.eq, Code.pc -30);
+					
+					Code.put(Code.getstatic);
+					Code.put2(newArr);
+					
+				}
+				
+				
+				if (term.getFactor().struct.getKind() == Struct.Array) {
+						System.out.println(" oba array");
+						int arr1 = Code.dataSize - 1, arr2 = Code.dataSize - 2, counter = Code.dataSize - 3, len2 = Code.dataSize - 4;
+						
+						//global init
+						
+						Code.put(Code.putstatic);
+						Code.put2(arr1);
+						Code.put(Code.putstatic);
+						Code.put2(arr2);
+						
+						Code.put(Code.getstatic);
+						Code.put2(arr1);
+						Code.put(Code.arraylength);
+						Code.put(Code.dup);
+						Code.put(Code.putstatic);
+						Code.put2(counter);
+						
+						Code.put(Code.getstatic);
+						Code.put2(arr2);
+						Code.put(Code.arraylength);
+						Code.putFalseJump(Code.ne, Code.pc + 5);
+						Code.put(Code.trap);
+						Code.put(1);
+						
+						Code.loadConst(0);
+						
+						//counter decrement
+						Code.put(Code.getstatic);
+						Code.put2(counter);
+						Code.loadConst(1);
+						Code.put(Code.sub);
+						Code.put(Code.putstatic);
+						Code.put2(counter);
+						
+						//get elem
+						
+						
+						Code.put(Code.getstatic);
+						Code.put2(arr1);
+						Code.put(Code.getstatic);
+						Code.put2(counter);
+						Code.put(Code.aload);
+						Code.put(Code.getstatic);
+						Code.put2(arr2);
+						Code.put(Code.getstatic);
+						Code.put2(counter);
+						Code.put(Code.aload);
+						Code.put(Code.mul);
+						Code.put(Code.add);
+						
+						
+						
+						Code.put(Code.getstatic);
+						Code.put2(counter);
+						Code.loadConst(0);
+						Code.putFalseJump(Code.eq, Code.pc -28);
+						
+					
+				}
+			}else {
+
+				if (term.getFactor().struct.getKind() == Struct.Array) {
+					int origArr = Code.dataSize - 1, scalar = Code.dataSize - 2, counter = Code.dataSize - 3, newArr = Code.dataSize - 4;
+					
+					//global init
+										
+					Code.put(Code.putstatic);
+					Code.put2(origArr);
+					Code.put(Code.putstatic);
+					Code.put2(scalar);
+					Code.put(Code.getstatic);
+					Code.put2(origArr);
+					
+					Code.put(Code.arraylength);
+					Code.put(Code.dup);
+					Code.put(Code.putstatic);
+					Code.put2(counter);
+					Code.put(Code.newarray);
+					Code.put(1);
+					Code.put(Code.putstatic);
+					Code.put2(newArr);
+					
+					
+					//counter decrement
+					Code.put(Code.getstatic);
+					Code.put2(counter);
+					Code.loadConst(1);
+					Code.put(Code.sub);
+					Code.put(Code.putstatic);
+					Code.put2(counter);
+					
+					//get elem
+					
+					Code.put(Code.getstatic);
+					Code.put2(newArr);
+					Code.put(Code.getstatic);
+					Code.put2(counter);
+					Code.put(Code.getstatic);
+					Code.put2(origArr);
+					Code.put(Code.getstatic);
+					Code.put2(counter);
+					Code.put(Code.aload);
+					Code.put(Code.getstatic);
+					Code.put2(scalar);
+					Code.put(Code.mul);
+					
+					
+					Code.put(Code.astore);
+					
+					Code.put(Code.getstatic);
+					Code.put2(counter);
+					Code.loadConst(0);
+					Code.putFalseJump(Code.eq, Code.pc -30);
+					
+					Code.put(Code.getstatic);
+					Code.put2(newArr);
+						
+				}
+				else {
+					Code.put(Code.mul);
+				}
+				
+			}
+			
 		}
 		else if (term.getMuloper() instanceof Divop) {
 			Code.put(Code.div);
@@ -251,6 +487,10 @@ public class CodeGenerator extends VisitorAdaptor{
 	
 	
 	// FACTOR
+	
+	public void visit(ArrSize arrSize) {
+		isFactorArrSize = true;
+	}
 
 	public void visit(Var factor) {
 		
@@ -265,7 +505,7 @@ public class CodeGenerator extends VisitorAdaptor{
 	}
 	
 	public void visit(BoolConst factor) {
-		Code.loadConst(factor.getB1()=="true"?1:0);
+		Code.loadConst(factor.getB1().equals("true")?1:0);
 	}
 	
 	public void visit(NewArray factor) {
@@ -276,6 +516,7 @@ public class CodeGenerator extends VisitorAdaptor{
 		else {
 			Code.put(1);
 		}
+		
 	}
 	
 	

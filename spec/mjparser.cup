@@ -86,11 +86,11 @@ nonterminal StatementList, Statement, Addop, Muloper, Assignop, Relop, Minus;
 nonterminal DesignatorStatement, IfInsideStmt, ElseInsideStmt, IfPrepare, IfElseInsideStmt;
 nonterminal DeclList, VarDecl, ConstDeclList, ConstDecl, ConstName;
 
-nonterminal MethodDecl, Else, DesExpr, VarDeclComma, CaseList, DoStart, WhileEnd; 
+nonterminal MethodDecl, Else, DesExpr, VarDeclComma, CaseList, DoStart, WhileEnd, ArrSize; 
 
 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition, FuncCall;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName, DesArrayName;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Factor, CondFact, CondTerm, Condition, FuncCall;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName, DesArrayName, Expr, Term, TermSum;
 
 nonterminal BasicTypes, CondInParens;
 
@@ -306,11 +306,13 @@ Factor ::= (Var) Designator:d
 		|
 			(BoolConst) BOOL 
 		|
-			(NewArray) NEW Type LBRACKET Expr RBRACKET
+			(NewArray) NEW Type LBRACKET ArrSize Expr RBRACKET
 		|
 			(ExprInParens) LPAREN Expr RPAREN
 		;
 		
+		
+ArrSize ::= (ArrSize) /* epsilon */;
 
 FuncCall ::= (FuncCall) Designator:func LPAREN ActualPars RPAREN;
 

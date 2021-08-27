@@ -111,11 +111,12 @@ nonterminal DesExpr DesExpr;
 nonterminal VarDeclComma VarDeclComma;
 nonterminal CaseList CaseList;
 nonterminal DoStart DoStart;
-nonterminal WhileEnd WhileEnd; 
+nonterminal WhileEnd WhileEnd;
+nonterminal ArrSize ArrSize; 
 
 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Expr, Factor, Term, TermSum, CondFact, CondTerm, Condition, FuncCall;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName, DesArrayName;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, VarDeclList, Factor, CondFact, CondTerm, Condition, FuncCall;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodTypeName, DesArrayName, Expr, Term, TermSum;
 
 nonterminal BasicTypes BasicTypes;
 nonterminal CondInParens CondInParens;
@@ -332,11 +333,13 @@ Factor ::= (Var) Designator:d {: RESULT=new Var(d); RESULT.setLine(dleft); :}
 		|
 			(BoolConst) BOOL:B1 {: RESULT=new BoolConst(B1); RESULT.setLine(B1left); :} 
 		|
-			(NewArray) NEW Type:T1 LBRACKET Expr:E2 RBRACKET {: RESULT=new NewArray(T1, E2); RESULT.setLine(T1left); :}
+			(NewArray) NEW Type:T1 LBRACKET ArrSize:A2 Expr:E3 RBRACKET {: RESULT=new NewArray(T1, A2, E3); RESULT.setLine(T1left); :}
 		|
 			(ExprInParens) LPAREN Expr:E1 RPAREN {: RESULT=new ExprInParens(E1); RESULT.setLine(E1left); :}
 		;
 		
+		
+ArrSize ::= (ArrSize) {: RESULT=new ArrSize(); :} /* epsilon */;
 
 FuncCall ::= (FuncCall) Designator:func LPAREN ActualPars:A1 RPAREN {: RESULT=new FuncCall(func, A1); RESULT.setLine(funcleft); :};
 

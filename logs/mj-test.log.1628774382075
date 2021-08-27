@@ -1,0 +1,382 @@
+INFO  15:19:33,659 - Compiling source file: C:\Users\makib\Desktop\MJCompiler\MJCompiler\test\testWhile.mj
+INFO  15:19:33,694 - #2 program
+INFO  15:19:33,694 - #42 test302
+INFO  15:19:33,694 - #4 const
+INFO  15:19:33,695 - #42 int
+INFO  15:19:33,695 - #42 jedan
+INFO  15:19:33,696 - #34 =
+INFO  15:19:33,696 - #39 1
+INFO  15:19:33,696 - #14 ;
+INFO  15:19:33,697 - #42 int
+INFO  15:19:33,698 - #42 i
+INFO  15:19:33,698 - #14 ;
+INFO  15:19:33,698 - #42 bool
+INFO  15:19:33,698 - #42 ibool
+INFO  15:19:33,698 - #14 ;
+INFO  15:19:33,698 - #12 {
+INFO  15:19:33,699 - #8 void
+INFO  15:19:33,699 - #42 main
+INFO  15:19:33,700 - #15 (
+INFO  15:19:33,701 - #16 )
+INFO  15:19:33,701 - #12 {
+INFO  15:19:33,701 - #42 ibool
+INFO  15:19:33,702 - #34 =
+INFO  15:19:33,702 - #40 false
+INFO  15:19:33,702 - #14 ;
+INFO  15:19:33,703 - #42 i
+INFO  15:19:33,703 - #34 =
+INFO  15:19:33,703 - #39 0
+INFO  15:19:33,703 - #14 ;
+INFO  15:19:33,703 - #10 do
+INFO  15:19:33,703 - #12 {
+INFO  15:19:33,704 - #43 if
+INFO  15:19:33,704 - #15 (
+INFO  15:19:33,704 - #42 i
+INFO  15:19:33,704 - #26 ==
+INFO  15:19:33,704 - #39 2
+INFO  15:19:33,705 - #16 )
+INFO  15:19:33,705 - #42 ibool
+INFO  15:19:33,706 - #34 =
+INFO  15:19:33,706 - #39 1
+INFO  15:19:33,706 - #14 ;
+INFO  15:19:33,706 - #42 i
+INFO  15:19:33,707 - #35 ++
+INFO  15:19:33,707 - #14 ;
+INFO  15:19:33,707 - #5 print
+INFO  15:19:33,707 - #15 (
+INFO  15:19:33,707 - #42 ibool
+INFO  15:19:33,707 - #16 )
+INFO  15:19:33,707 - #14 ;
+INFO  15:19:33,707 - #13 }
+INFO  15:19:33,708 - #11 while
+INFO  15:19:33,708 - #15 (
+INFO  15:19:33,708 - #42 i
+INFO  15:19:33,708 - #30 <
+INFO  15:19:33,708 - #39 5
+INFO  15:19:33,709 - #16 )
+INFO  15:19:33,709 - #14 ;
+INFO  15:19:33,709 - #5 print
+INFO  15:19:33,709 - #15 (
+INFO  15:19:33,709 - #42 eol
+INFO  15:19:33,709 - #16 )
+INFO  15:19:33,710 - #14 ;
+INFO  15:19:33,710 - #5 print
+INFO  15:19:33,710 - #15 (
+INFO  15:19:33,710 - #42 i
+INFO  15:19:33,710 - #16 )
+INFO  15:19:33,710 - #14 ;
+INFO  15:19:33,710 - #5 print
+INFO  15:19:33,710 - #15 (
+INFO  15:19:33,710 - #42 eol
+INFO  15:19:33,710 - #16 )
+INFO  15:19:33,710 - #14 ;
+INFO  15:19:33,710 - #5 print
+INFO  15:19:33,710 - #15 (
+INFO  15:19:33,710 - #42 ibool
+INFO  15:19:33,710 - #16 )
+INFO  15:19:33,710 - #14 ;
+INFO  15:19:33,710 - #13 }
+INFO  15:19:33,710 - #13 }
+INFO  15:19:33,719 - Program(
+  ProgName(
+   test302
+  ) [ProgName]
+  ASTVarDeclList(
+    ASTVarDeclList(
+      ASTConstDeclList(
+        NoSpecDecl(
+        ) [NoSpecDecl]
+        Type(
+         int
+        ) [Type]
+        SingleConstDecl(
+          ConstDecl(
+            ConstName(
+             jedan
+            ) [ConstName]
+            ASTNumber(
+             1
+            ) [ASTNumber]
+          ) [ConstDecl]
+        ) [SingleConstDecl]
+      ) [ASTConstDeclList]
+      Type(
+       int
+      ) [Type]
+      SingleVarDecl(
+        ASTVarDecl(
+         i
+        ) [ASTVarDecl]
+      ) [SingleVarDecl]
+    ) [ASTVarDeclList]
+    Type(
+     bool
+    ) [Type]
+    SingleVarDecl(
+      ASTVarDecl(
+       ibool
+      ) [ASTVarDecl]
+    ) [SingleVarDecl]
+  ) [ASTVarDeclList]
+  ASTMethodDecList(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodTypeName(
+        NoType(
+        ) [NoType]
+       main
+      ) [MethodTypeName]
+      NoFormParams(
+      ) [NoFormParams]
+      NoSpecDecl(
+      ) [NoSpecDecl]
+      StmtList(
+        StmtList(
+          StmtList(
+            StmtList(
+              StmtList(
+                StmtList(
+                  StmtList(
+                    NoStmt(
+                    ) [NoStmt]
+                    DesignatorStmt(
+                      AssignStmt(
+                        ASTDesignator(
+                         ibool
+                        ) [ASTDesignator]
+                        Assignop(
+                        ) [Assignop]
+                        ASTDesExpr(
+                          OpExpr(
+                            SingleTerm(
+                              SingleFactor(
+                                BoolConst(
+                                 false
+                                ) [BoolConst]
+                              ) [SingleFactor]
+                            ) [SingleTerm]
+                          ) [OpExpr]
+                        ) [ASTDesExpr]
+                      ) [AssignStmt]
+                    ) [DesignatorStmt]
+                  ) [StmtList]
+                  DesignatorStmt(
+                    AssignStmt(
+                      ASTDesignator(
+                       i
+                      ) [ASTDesignator]
+                      Assignop(
+                      ) [Assignop]
+                      ASTDesExpr(
+                        OpExpr(
+                          SingleTerm(
+                            SingleFactor(
+                              NumConst(
+                               0
+                              ) [NumConst]
+                            ) [SingleFactor]
+                          ) [SingleTerm]
+                        ) [OpExpr]
+                      ) [ASTDesExpr]
+                    ) [AssignStmt]
+                  ) [DesignatorStmt]
+                ) [StmtList]
+                DoWhile(
+                  DoStart(
+                  ) [DoStart]
+                  SurroundStmt(
+                    StmtList(
+                      StmtList(
+                        StmtList(
+                          NoStmt(
+                          ) [NoStmt]
+                          IfStatement(
+                            CondInParens(
+                              SingleCondTerm(
+                                SingleCondFact(
+                                  CondFactRel(
+                                    OpExpr(
+                                      SingleTerm(
+                                        SingleFactor(
+                                          Var(
+                                            ASTDesignator(
+                                             i
+                                            ) [ASTDesignator]
+                                          ) [Var]
+                                        ) [SingleFactor]
+                                      ) [SingleTerm]
+                                    ) [OpExpr]
+                                    CompEqual(
+                                    ) [CompEqual]
+                                    OpExpr(
+                                      SingleTerm(
+                                        SingleFactor(
+                                          NumConst(
+                                           2
+                                          ) [NumConst]
+                                        ) [SingleFactor]
+                                      ) [SingleTerm]
+                                    ) [OpExpr]
+                                  ) [CondFactRel]
+                                ) [SingleCondFact]
+                              ) [SingleCondTerm]
+                            ) [CondInParens]
+                            IfPrepare(
+                            ) [IfPrepare]
+                            IfInsideStmt(
+                              DesignatorStmt(
+                                AssignStmt(
+                                  ASTDesignator(
+                                   ibool
+                                  ) [ASTDesignator]
+                                  Assignop(
+                                  ) [Assignop]
+                                  ASTDesExpr(
+                                    OpExpr(
+                                      SingleTerm(
+                                        SingleFactor(
+                                          NumConst(
+                                           1
+                                          ) [NumConst]
+                                        ) [SingleFactor]
+                                      ) [SingleTerm]
+                                    ) [OpExpr]
+                                  ) [ASTDesExpr]
+                                ) [AssignStmt]
+                              ) [DesignatorStmt]
+                            ) [IfInsideStmt]
+                          ) [IfStatement]
+                        ) [StmtList]
+                        DesignatorStmt(
+                          Increment(
+                            ASTDesignator(
+                             i
+                            ) [ASTDesignator]
+                          ) [Increment]
+                        ) [DesignatorStmt]
+                      ) [StmtList]
+                      PrintStmt(
+                        OpExpr(
+                          SingleTerm(
+                            SingleFactor(
+                              Var(
+                                ASTDesignator(
+                                 ibool
+                                ) [ASTDesignator]
+                              ) [Var]
+                            ) [SingleFactor]
+                          ) [SingleTerm]
+                        ) [OpExpr]
+                      ) [PrintStmt]
+                    ) [StmtList]
+                  ) [SurroundStmt]
+                  SingleCondTerm(
+                    SingleCondFact(
+                      CondFactRel(
+                        OpExpr(
+                          SingleTerm(
+                            SingleFactor(
+                              Var(
+                                ASTDesignator(
+                                 i
+                                ) [ASTDesignator]
+                              ) [Var]
+                            ) [SingleFactor]
+                          ) [SingleTerm]
+                        ) [OpExpr]
+                        LessThan(
+                        ) [LessThan]
+                        OpExpr(
+                          SingleTerm(
+                            SingleFactor(
+                              NumConst(
+                               5
+                              ) [NumConst]
+                            ) [SingleFactor]
+                          ) [SingleTerm]
+                        ) [OpExpr]
+                      ) [CondFactRel]
+                    ) [SingleCondFact]
+                  ) [SingleCondTerm]
+                  WhileEnd(
+                  ) [WhileEnd]
+                ) [DoWhile]
+              ) [StmtList]
+              PrintStmt(
+                OpExpr(
+                  SingleTerm(
+                    SingleFactor(
+                      Var(
+                        ASTDesignator(
+                         eol
+                        ) [ASTDesignator]
+                      ) [Var]
+                    ) [SingleFactor]
+                  ) [SingleTerm]
+                ) [OpExpr]
+              ) [PrintStmt]
+            ) [StmtList]
+            PrintStmt(
+              OpExpr(
+                SingleTerm(
+                  SingleFactor(
+                    Var(
+                      ASTDesignator(
+                       i
+                      ) [ASTDesignator]
+                    ) [Var]
+                  ) [SingleFactor]
+                ) [SingleTerm]
+              ) [OpExpr]
+            ) [PrintStmt]
+          ) [StmtList]
+          PrintStmt(
+            OpExpr(
+              SingleTerm(
+                SingleFactor(
+                  Var(
+                    ASTDesignator(
+                     eol
+                    ) [ASTDesignator]
+                  ) [Var]
+                ) [SingleFactor]
+              ) [SingleTerm]
+            ) [OpExpr]
+          ) [PrintStmt]
+        ) [StmtList]
+        PrintStmt(
+          OpExpr(
+            SingleTerm(
+              SingleFactor(
+                Var(
+                  ASTDesignator(
+                   ibool
+                  ) [ASTDesignator]
+                ) [Var]
+              ) [SingleFactor]
+            ) [SingleTerm]
+          ) [OpExpr]
+        ) [PrintStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [ASTMethodDecList]
+) [Program]
+INFO  15:19:33,722 - Deklarisana konstanta jedan vrednost 1 na liniji 5
+INFO  15:19:33,722 - Deklarisana promenljiva i na liniji 7
+INFO  15:19:33,722 - Deklarisana promenljiva ibool na liniji 8
+INFO  15:19:33,722 - Obradjuje se funkcija main na liniji 13
+INFO  15:19:33,722 - Dodeljena vrednost promenljivoj  na liniji 15
+INFO  15:19:33,722 - Dodeljena vrednost promenljivoj  na liniji 16
+INFO  15:19:33,722 - CondFactRel je tipa bool na liniji 18
+ERROR 15:19:33,722 - Greska na liniji 18 : nekompatibilni tipovi u dodeli vrednosti!  na liniji 18
+INFO  15:19:33,723 - Condition je tipa bool
+INFO  15:19:33,723 - Inkrementirana vrednost promenljive  na liniji 19
+INFO  15:19:33,723 - Print pozvan  na liniji 20
+INFO  15:19:33,723 - CondFactRel je tipa bool na liniji 21
+INFO  15:19:33,724 - Print pozvan  na liniji 23
+INFO  15:19:33,724 - Print pozvan  na liniji 24
+INFO  15:19:33,724 - Print pozvan  na liniji 25
+INFO  15:19:33,724 - Print pozvan  na liniji 26
+INFO  15:19:33,724 - Print calls = 5
+ERROR 15:19:33,725 - Parsiranje NIJE uspesno zavrseno!
